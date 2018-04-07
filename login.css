@@ -1,14 +1,3 @@
-@import '../../shared/mixins',
-        '../../shared/reset',
-        '../../shared/about-light';
-
-/*
- * Copyright (c) 2012-2013 Thibaut Courouble
- * http://www.cssflow.com
- *
- * Licensed under the MIT License:
- * http://www.opensource.org/licenses/mit-license.php
- */
 
 body {
   font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
