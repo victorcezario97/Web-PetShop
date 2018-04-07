@@ -1,0 +1,5 @@
+estoque.html {produto.css, dropdown.css, lateral_bar.css}
+
+produto.css: fazer a barra horizontal de produtos;
+dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima;
+lateral_bar.css:  contém as categorias da página e um botão de search. 
