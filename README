@@ -1,5 +1,12 @@
-estoque.html {produto.css, dropdown.css, lateral_bar.css}
+topnav.css: Contém o css para a barra superior, 
+deve ser utilizado em todas as páginas
+
+
+estoque.html {topnav.css, produto.css, dropdown.css, lateral_bar.css}
 
 produto.css: fazer a barra horizontal de produtos;
 dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima;
 lateral_bar.css:  contém as categorias da página e um botão de search. 
+
+Login.html: Página de login separada.
+
