@@ -1,0 +1,36 @@
+body{
+	margin:0;
+}
+
+.topnav{
+	overflow: hidden;
+	/*background-color: royalblue;*/
+	background-color: #1b6db0;
+}
+
+.topnav a{
+	float: left;
+	color: white;
+	/*display: block;*/
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.topnav a:hover{
+	/*color: blue;*/
+	background-color: dodgerblue;
+}
+
+/*Botão Login/Register*/
+.login_button{ 
+	float: right;
+	padding: 12px 16px;
+	background-color: inherit;
+	border: none;
+	color: white;
+}
+
+.login_button a:hover{
+	background-color: dodgerblue;
+}
