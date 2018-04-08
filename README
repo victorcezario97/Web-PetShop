@@ -1,12 +1,12 @@
-topnav.css: Contém o css para a barra superior, 
-deve ser utilizado em todas as páginas
+IMPORTANTE: Utilizar os css já criados para manter um único padrão
+e para facilitar uma possível alteração no futuro!
 
+topnav.css: Contém o css para a barra superior, deve ser utilizado em todas as páginas
+selection.css: fazer a barra horizontal de produtos; (NÃO É O SLIDSHOW)
+dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima, utilizado na barra superior;
+lateral_bar.css:  contém as categorias da página e um botão de search, "menu" lateral. 
 
-estoque.html {topnav.css, selection.css, dropdown.css, lateral_bar.css}
+Home: {topnav.css, dropdown.css, selection.css}
 
-selection.css: fazer a barra horizontal de produtos;
-dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima;
-lateral_bar.css:  contém as categorias da página e um botão de search. 
-
-Login.html: Página de login separada.
+SE CRIAR OUTRO CSS COM DESIGN ADICIONAL, DESCREVER NESSE ARQUIVO!
 
