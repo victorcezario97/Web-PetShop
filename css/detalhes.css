@@ -35,3 +35,9 @@
     background-image:url("../img/ugly_cat.jpg");
     background-repeat:no-repeat;
 }
+
+.central_info{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
