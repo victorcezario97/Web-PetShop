@@ -8,5 +8,5 @@ lateral_bar.css:  contém as categorias da página e um botão de search, "menu"
 
 Home: {topnav.css, dropdown.css, selection.css}
 
-SE CRIAR OUTRO CSS COM DESIGN ADICIONAL, DESCREVER NESSE ARQUIVO!
+SE CRIAR OUTRO CSS QUE PODE SER UTILIZADO EM OUTRAS PÁGINAS, DESCREVER NESSE ARQUIVO!
 
