@@ -5,8 +5,10 @@ topnav.css: Contém o css para a barra superior, deve ser utilizado em todas as 
 selection.css: fazer a barra horizontal de produtos; (NÃO É O SLIDSHOW)
 dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima, utilizado na barra superior;
 lateral_bar.css:  contém as categorias da página e um botão de search, "menu" lateral. 
+home-admin.css: css do dashboard da tela de administrador
 
 Home: {topnav.css, dropdown.css, selection.css}
+Home-admin: {topnav.css, dropdown.css, home-admin.css}
 
 SE CRIAR OUTRO CSS QUE PODE SER UTILIZADO EM OUTRAS PÁGINAS, DESCREVER NESSE ARQUIVO!
 
