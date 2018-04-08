@@ -4,13 +4,15 @@
     padding-left: 20px;
 }
 
-.produto_block{
+.produto_block, .produto_block:visited {
 	display: inline-block;
 	border-style: solid;
 	border-radius: 3px;
 	border-color: black;
 	border-width: 0.5px;
 	margin: 20px;
+	text-decoration: none;
+	color: blue;
 }
 
 .produto_img{
@@ -22,7 +24,7 @@
 	width: 180px;
 	text-align: center;
 	max-width: 180px;
-	max-height: 40px;
+	max-height: 40px
 }
 
 .produto_preco{

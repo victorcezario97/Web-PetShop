@@ -1,0 +1,25 @@
+.confirm_box{
+	display: inline-block;
+	width: 350px;
+	height: 500px;
+	border-style: solid;
+	border-color: black;
+	border-radius: 3px;
+	border-width: 2px;
+	margin: 20px;
+}
+
+.confirm_title{
+	text-align: center;
+	background-color: #1b6db0;
+	color: white;
+	padding: 1px;
+	border-bottom-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+.confirm_inner{
+	text-align: left;
+	padding: 5px;
+}
