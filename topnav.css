@@ -12,6 +12,7 @@ body{
 	float: left;
 	color: white;
 	/*display: block;*/
+	font-size: 16px;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -23,14 +24,19 @@ body{
 }
 
 /*Botão Login/Register*/
-.login_button{ 
-	float: right;
-	padding: 12px 16px;
-	background-color: inherit;
-	border: none;
-	color: white;
+.login_button{
+	cursor: pointer;
+	float: right; 
+	font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
 }
 
-.login_button a:hover{
+.topnav a:hover, .login_button {
 	background-color: dodgerblue;
 }
