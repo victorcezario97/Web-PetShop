@@ -1,5 +1,45 @@
-/* navbar foi subtituido por topnav.css*/
-/*dropdiv doi substituido por dropdown.css*/
 
-/*O arquivo foi mantido para uma possível alteração no corpo do 
-da página*/
+body {
+  font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  color: #404040;
+  background: #c1cdcd;
+}
+
+.horizontal_div{
+  text-align: center;
+  padding: 50px;
+}
+.info_img{
+  width: 100px;
+  height: 100px;
+  padding: 0px;
+  margin: 0;  
+}
+
+.info_box{
+  background-color: white;
+  display: inline-block;
+  margin: 20px;
+  width: 200px;
+  border-radius: 3px;
+}
+
+.info_text_div{
+  padding: 1px;
+  text-align: center;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.info_text{
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.info_number{
+  font-size: 20px;
+  padding: 0;
+  margin-top: -5px;
+  margin-bottom: 6px;
+}
