@@ -1,0 +1,17 @@
+footer .footer {
+	display: block;
+	position: absolute;
+	/*bottom: 0;*/
+	background-color: gray;
+	width: 100%;
+	text-align: center;
+}
+
+footer .footer_fixed{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	background-color: gray;
+	width: 100%;
+	text-align: center;
+}
