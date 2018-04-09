@@ -6,12 +6,15 @@ selection.css: fazer a barra horizontal de produtos; (NÃO É O SLIDSHOW)
 dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima, utilizado na barra superior;
 lateral_bar.css:  contém as categorias da página e um botão de search, "menu" lateral. 
 home-admin.css: css do dashboard da tela de administrador
+finalizar_compra.css: css das "caixas" com os dados para confirmação
 
 Home: {topnav.css, dropdown.css, selection.css}
 Home-admin: {topnav.css, dropdown.css, home-admin.css} (Tela principal do administrador)
 Login: {topnav.css, dropdown.css, login.css}
 Produto: {topnav.css, dropdown.css, home-admin.css, produto.css} (Olhar um produto de forma individual e gerenciar)
 Registrar: {topnav.css, dropdown.css, home-admin.css, registrar.css} (Registrar um conta pela no site)
+Finalizar Compra: {topnav.css, dropdown.css, home-admin.css, home.css, finalizar_compra.css}
+Carrinho: {topnav.css, dropdown.css, selection.css, home.css, home-admin.css}
 
 
 SE CRIAR OUTRO CSS QUE PODE SER UTILIZADO EM OUTRAS PÁGINAS, DESCREVER NESSE ARQUIVO!
