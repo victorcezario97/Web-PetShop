@@ -2,7 +2,7 @@
 body {
   font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
   color: #404040;
-  background: #0ca3d2;
+  background: #c1cdcd;
 }
 
 .container {
@@ -72,7 +72,7 @@ body {
 .login-help {
   margin: 20px 0;
   font-size: 11px;
-  color: white;
+  color: blue;
   text-align: center;
   text-shadow: 0 1px #2a85a1;
 
