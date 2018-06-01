@@ -173,17 +173,40 @@ body {
   color: black;
 }
 
-.menu .menu_list #Editar {
+#Editar {
   background-color: #FFF;
   overflow-y: scroll;
   height: 317px;
 }
 
-.menu .menu_list #Remover {
+#Remover {
   background-color: #FFF;
   overflow-y: scroll;
   height: 317px;
   display: none; 
+}
+
+#Edit {
+    display: none;
+}
+
+#Edit .edit_time {
+    width: 200px;
+    margin-top: 10px;
+}
+
+#Edit .edit_date {
+    width: 200px;
+    margin-top: 15px;
+}
+
+#Edit .edit_vet {
+    width: 200px;
+    margin-top: 15px;
+}
+
+.menu .menu_list {
+    height: 317px;
 }
 
 .menu .menu_list #Editar .animal:hover {
@@ -196,6 +219,18 @@ body {
 
 .menu #menubtn {
     background-color: blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    display: none;
+}
+
+.menu #menubtn1 {
+    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -256,6 +291,15 @@ img.avatar {
 
 .container .label {
     width: 409.5px;
+}
+
+.container1 {
+    height: 370px;
+     overflow-y: scroll;
+}
+
+.container1 .veterinario {
+
 }
 
 span.psw {
