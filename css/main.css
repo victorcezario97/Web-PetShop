@@ -1,0 +1,64 @@
+.navbar{
+ background:#1b6db0;
+ /*background:#F97300;*/
+ /*background: transparent;;*/
+ /*laranja :#F97300*/
+}
+.nav-link{
+ margin-right: 1em !important;
+ color: white;
+}
+.nav-brand{
+	color:white;
+}
+/*.navbar-collapse{
+ justify-content: flex-end;
+}*/
+.navbar-toggler{
+  background:#fff !important;
+}
+.dropdown .btn{
+	font-size: 16px; 
+	border: none;
+    outline: none;
+	color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown:hover .btn{
+	background-color: dodgerblue;
+}
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+.dropdown-menu{
+    background-color:#1b6db0;
+}
+.dropdown-item{
+	color: white;
+}
+.dropdown-menu .dropdown-item:hover{
+    background-color:dodgerblue;
+}
+.dropdown > .dropdown-toggle:active {
+   /* Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+.login-btn{
+	cursor: pointer;
+	float: right;
+    border: none;
+    color: white;
+    background-color: dodgerblue;
+    font-family: inherit;
+}
+.myjumbotron {
+    position: relative;
+    background-image: url('../img/animals2.png');
+    background-size: cover;
+}
+.banner{
+    color: blue; 
+}
