@@ -54,6 +54,14 @@
     background-color: dodgerblue;
     font-family: inherit;
 }
+.mybtn{
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: dodgerblue;
+    font-family: inherit;
+}
+
 .myjumbotron {
     position: relative;
     background-image: url('../img/animals2.png');
