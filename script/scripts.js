@@ -35,4 +35,37 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+function displayMode1() {
+  document.getElementById('Editar').style.display='block';
+  document.getElementById('Remover').style.display='none';
+  document.getElementById('menubtn').style.display='none';
+  document.getElementById('menubtn1').style.display='none';
+  document.getElementById('Edit').style.display='none';
+}
+
+function displayMode2() {
+  document.getElementById('Editar').style.display='none';
+  document.getElementById('Remover').style.display='block';
+  document.getElementById('menubtn').style.display='block';
+  document.getElementById('menubtn1').style.display='none';
+  document.getElementById('Edit').style.display='none';
 } 
+
+function displayMode3() {
+  document.getElementById('Edit').style.display='block';
+  document.getElementById('Editar').style.display='none';
+  document.getElementById('menubtn1').style.display='block';
+}
+
+function delete_animal() {
+  
+  for (let i = 0; i < 30; i++) {
+    let animal = "Animal"+(i+1);
+    if (document.getElementById(animal).checked) {
+      let animalClass = "animal"+(i+1);
+      document.getElementById(animalClass).style.display = 'none';
+    }  
+  }
+}  
