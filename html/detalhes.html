@@ -1,112 +1,135 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Detalhes</title>
-	<link rel="stylesheet" type="text/css" href="../css/topnav.css">
-	<link rel="stylesheet" type="text/css" href="../css/dropdown.css">
-	<link rel="stylesheet" type="text/css" href="../css/lateral_bar.css">
-	<link rel="stylesheet" type="text/css" href="../css/selection.css">
-	<link rel="stylesheet" type="text/css" href="../css/home.css">
-	<link rel="stylesheet" type="text/css" href="../css/detalhes.css">
-	<link rel="stylesheet" type="text/css" href="../css/produto.css">
-	<link rel="stylesheet" type="text/css" href="../css/footer.css">
-</head>
+  <title>Plus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/detalhes.css">
+  <link rel="stylesheet" type="text/css" href="../css/produto.css">
 
+</head>
 <body>
 
-<div class="topnav">  <!-- Barra superior-->
-  <div class="dropdown">
-      <button class="dropbtn" title="Notifications">Agendar</button>
-      <div class="dropdown-content">
-        <a href="" title="">Opção 1</a>
-        <a href="" title="">Opção 2</a>
-        <a href="" title="">Opção 3</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn" title="Notifications">Cachorros</button>
-      <div class="dropdown-content">
-        <a href="produtos.html#Cachorro_alimento" title="">Alimentos</a>
-        <a href="produtos.html#Cachorro_acessorios" title="">Acessórios</a>
-        <a href="produtos.html#Cachorro_higiene" title="">Higiene</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn" title="Notifications">Gatos</button>
-      <div class="dropdown-content">
-        <a href="produtos.html#Gato_alimentos" title="">Alimentos</a>
-        <a href="produtos.html#Gato_acessorios" title="">Acessórios</a>
-        <a href="produtos.html#Gato_higiene" title="">Higiene</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn" title="Notifications">Farmácia</button>
-      <div class="dropdown-content">
-        <a href="produtos.html#Farmacia_vermifugo" title="">Vermífugos</a>
-        <a href="produtos.html#Farmacia_antipulga" title="">Antipulgas</a>
-        <a href="produtos.html#Farmacia_eutanasia" title="">Eutanásia</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn" title="Notifications">Mais</button>
-      <div class="dropdown-content">
-        <a href="produtos.html#Peixes" title="">Peixes</a>
-        <a href="produtos.html#Roedores" title="">Roedores</a>
-        <a href="produtos.html#Cobras" title="">Cobras</a>
-      </div>
-    </div>
-  <button class="login_button">Login/Registrar</button>
+<div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
+  <div class="container banner">
+    <h1>Plus</h1>
+    <p>Seu filho bem cuidado</p> 
+  </div>
 </div>
 
-<!-- Meus animais -->
-<div id = "my_pets">
-	<h1> Meus animais </h1>
+<nav class="navbar navbar-expand-sm">
+  <a class="navbar-brand" href="">
+  <img src="../img/p2.png" width="30" height="30" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Agendar
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Cachorros
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Gatos
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Farmácia
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Mais
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </div>
+  </div>  
+  <button type="button" class="btn login-btn">Entrar/Cadastrar</button> 
+</nav>
+
+<!-- Seu html deve ser escrito a partir daqui -->
+
+  <div class="row"><h1 style="margin-left: 20px">Meus animais</h1></div>
+<div class="row container">
+
+  <!-- Imagem do produto -->
+  <div class="col container">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Nome">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <img style="width: 200px; margin-left: 20px" src="../img/ugly_cat.jpg">
+    <br>
+    <button class="btn">Inserir Imagem</button>
+  </div>
+
+  <div class="info col" >
+    <h2>Informações do pet</h2><br>
+    <h3>Nome: </h3> 
+      <p>Esse é o nome do pet </p>
+    <hr>
+
+    <h3>Idade: </h3> 
+      <p>Essa é a idade do pet </p>
+    <hr>
+
+    <h3>Raça: </h3>  
+      <p>Essa é a raça do pet </p>
+    <hr>
+
+  <a class="mybtn" style="display: inline-block;" href="home.html">Editar</a>
+  </div>
+</div>
+
+ <!-- Seu html não pode passar daqui -->
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
+  <p>Plus © No mercado desde ontem</p>
 </div>
 
 
-<!-- Barra lateral -->
-<div class="lateral_bar">
-	<div><input type="text" placeholder="Procurar"></div>
-	
-	<div>
-		<button id = "pet1"> 
-		</button>
-	</div>
-	<div>
-		<button id = "pet2"> 
-		</button>
-	</div>
-</div>
-
-<div class="info">
-	<div>
-		<h2>Informações do pet</h2><br>
-		<h3>Nome: </h3> 
-			<p>Esse é o nome do pet </p>
-		<hr>
-
-		<h3>Idade: </h3> 
-			<p>Essa é a idade do pet </p>
-		<hr>
-
-		<h3>Raça: </h3>  
-			<p>Essa é a raça do pet </p>
-		<hr>
-	</div>
-	<a class="button" style="display: inline-block;" href="home.html">Editar</a>
-</div>
-
-
-<!-- Rodapé da página -->
-<div>
-  <footer>
-  	<div class="footer_fixed">
-  		<p><p>© 2007-2018 <a href="#">PetPlus</a></p></div></p>
-  	</div>
-  </footer>
-</div>
+  <script type="text/javascript" src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script type="text/javascript" src="../script/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../script/main.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
-
 </html>
