@@ -211,11 +211,11 @@ body {
 }
 
 .menu .menu_list #Editar .animal:hover {
-  background: white;
+  background: #ddd;
 }
 
 .menu .menu_list #Remover .animal:hover {
-    background: white;
+    background: #ddd;
 }
 
 .menu #menubtn {
