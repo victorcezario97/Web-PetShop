@@ -66,6 +66,7 @@ function delete_animal() {
     if (document.getElementById(animal).checked) {
       let animalClass = "animal"+(i+1);
       document.getElementById(animalClass).style.display = 'none';
+      document.getElementById("a"+(i+1)).style.display = 'none';
     }  
   }
 }  
