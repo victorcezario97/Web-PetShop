@@ -87,36 +87,33 @@
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
-  <div class="row"><h1 style="margin-left: 20px">Meus animais</h1>
-    <a href="register_pet.html" title="register_pet" class="button" style="margin-top: 7px"> Cadastrar Animal </a>
+  <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Informações</h1>
   </div>
 <div class="row container">
 
   <!-- Imagem do produto -->
   <div class="col container">
-    <form class="form-inline" style="margin-bottom: 30px">
-      <input class="form-control mr-sm-2" type="search" placeholder="Nome">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <img style="width: 200px; margin-left: auto; margin-right: auto; display: block" src="../img/ugly_cat.jpg" alt="Foto do Animal">
+    <img style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;" src="../img/ugly_cat.jpg" alt="Foto do Animal">
     <br>
+    <button class="btn" style="display: block; margin-right: auto; margin-left: auto">Alterar Imagem</button>
   </div>
 
-  <div class="info col" >
+  <div class="info col">
     <h2>Informações do pet</h2><br>
     <h3>Nome: </h3> 
-      <p>Esse é o nome do pet </p>
+      <input id="nome_pet" style="width: 100%" />
     <hr>
 
     <h3>Idade: </h3> 
-      <p>Essa é a idade do pet </p>
+      <input id="idade_pet" type="number" style="width: 40px;" max="99" />
     <hr>
 
     <h3>Raça: </h3>  
-      <p>Essa é a raça do pet </p>
+      <input id="raca_pet" style="width: 100%" />
     <hr>
 
-  <a class="button" style="display: inline-block;" href="edit_pet.html">Editar</a>
+  <a class="button" style="display: inline-block;" href="detalhes.html" id="salvar_pet">Salvar</a>
+  <p>OBS: Campos em branco permanecerão inalterados.</p>
   </div>
 </div>
 

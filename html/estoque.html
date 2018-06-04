@@ -1,87 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Estoque</title>
-	<link rel="stylesheet" type="text/css" href="../css/topnav.css">
-	<link rel="stylesheet" type="text/css" href="../css/dropdown.css">
-	<link rel="stylesheet" type="text/css" href="../css/home.css">
-	<link rel="stylesheet" type="text/css" href="../css/lateral_bar.css">
-	<link rel="stylesheet" type="text/css" href="../css/selection.css">
-	<link rel="stylesheet" type="text/css" href="../css/footer.css">
-</head>
+  <title>Plus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/lateral_bar.css">
 
+</head>
 <body>
 
-
-<div class="topnav">  <!-- Barra superior-->
-		<div class="dropdown">
-			<button class="dropbtn" title="Notifications">Cadastrar</button>
-			<div class="dropdown-content">
-				<a href="new_user.html" title="">Novo Usuário</a>
-				<a href="new_admin.html" title="">Novo Administrador</a>
-				<a href="new_product.html" title="">Novo Produto</a>
-				<a href="new_service.html" title="">Novo Serviço</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn" title="Notifications">Gerenciar</button>
-			<div class="dropdown-content">
-				<a href="" title="">Serviços</a>
-				<a href="" title="">Produtos</a>
-				<a href="" title="">Usuários</a>
-				<a href="" title="">Administradores</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<a href="estoque.html" class="dropbtn" title="Notifications">Estoque</a>
-		</div>
-		<div class="dropdown">
-			<a href="home-admin.html" class="dropbtn" title="Notifications">Analytics</a>
-		</div>
-		<button class="login_button">Olá, administrador</button>
-	</div>
-
-
-<div class="lateral_bar">
-	<div><input style="width: 200px" type="text" placeholder="Search.."></div>
-	<a href="#">Farmácia</a>
-	<a href="#">Cachorro</a>
-	<a href="#">Gato</a>
-	<a href="#">Pássaros</a>
-	<a href="#">Cobras</a>
-	<a href="#">Outros</a>
+<div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
+  <div class="container banner">
+    <h1>Plus</h1>
+    <p>Seu filho bem cuidado</p> 
+  </div>
 </div>
 
-<div class="selection">
-	<H2>Farmácia</H2>	
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<H2>Cachorro</H2>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<H2>Cobras</H2>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
-	<a href="#link"><img src="../img/royal_canin.png" style="width:100px"></a>
+<nav class="navbar navbar-expand-sm">
+  <a class="navbar-brand" href="">
+  <img src="../img/p2.png" width="30" height="30" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Cadastrar
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Gerenciar
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Estoque
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Analytics
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
+		  </div>
+	  </div> 
+  </div>  
+  <button type="button" class="btn login-btn">Olá, Administrador</button> 
+</nav>
+
+<!-- Seu html deve ser escrito a partir daqui -->
+<div class="row container">
+	<div class="lateral_bar container col">
+		<br>
+		<div>
+		  <form class="form-inline">
+	      <input class="form-control mr-sm-2" type="search" placeholder="Nome">
+	      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+	      </form>
+		</div>
+		<a href="#farmacia">Farmácia</a>
+		<a href="#cachorro">Cachorro</a>
+		<a href="#">Gato</a>
+		<a href="#">Pássaros</a>
+		<a href="#">Cobras</a>
+		<a href="#">Outros</a>
+	</div>
+
+	<div class="selection container col">
+		<H2 id="farmacia">Farmácia</H2>	
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<H2 id="cachorro">Cachorro</H2>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<H2>Cobras</H2>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+		<a href="#link"><img src="../img/royal_canin.png" style="width:100px" alt="Imagem do Produto"></a>
+	</div>
+</div>
+ <!-- Seu html não pode passar daqui -->
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
+  <p>Plus © No mercado desde ontem</p>
 </div>
 
 
-<footer>
-	<div class="footer_fixed">
-		<p><p>© 2007-2018 <a href="#">PetPlus</a></p></div></p>
-	</div>
-</footer>
+  <script src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../script/bootstrap.min.js"></script>
+  <script src="../script/main.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>

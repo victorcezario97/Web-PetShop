@@ -1,77 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Cadastrar Produto</title>
-	<link rel="stylesheet" type="text/css" href="../css/topnav.css">
-	<link rel="stylesheet" type="text/css" href="../css/dropdown.css">
-	<link rel="stylesheet" type="text/css" href="../css/home.css">
-	<link rel="stylesheet" type="text/css" href="../css/home-admin.css">
-	<link rel="stylesheet" type="text/css" href="../css/produto.css">
-	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+  <title>Plus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
+  <link rel="stylesheet" type="text/css" href="../css/produto.css">
+
 </head>
 <body>
 
-<div class="topnav">  <!-- Barra superior-->
-		<div class="dropdown">
-			<button class="dropbtn" title="Notifications">Cadastrar</button>
-			<div class="dropdown-content">
-				<a href="new_user.html" title="">Novo Usuário</a>
-				<a href="new_admin.html" title="">Novo Administrador</a>
-				<a href="new_product.html" title="">Novo Produto</a>
-				<a href="new_service.html" title="">Novo Serviço</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<button class="dropbtn" title="Notifications">Gerenciar</button>
-			<div class="dropdown-content">
-				<a href="" title="">Serviços</a>
-				<a href="" title="">Produtos</a>
-				<a href="" title="">Usuários</a>
-				<a href="" title="">Administradores</a>
-			</div>
-		</div>
-		<div class="dropdown">
-			<a href="estoque.html" class="dropbtn" title="Notifications">Estoque</a>
-		</div>
-		<div class="dropdown">
-			<a href="home-admin.html" class="dropbtn" title="Notifications">Analytics</a>
-		</div>
-		<button class="login_button">Olá, administrador</button>
-	</div>
-
-<h1 style="margin-left: 20px">Cadastrar Produto</h1>
-
-<!-- Imagem do produto -->
-<div class="produto">
-	<img style="width: 200px; margin-left: 20px" src="../img/object.jpg">
-	<button>Inserir Imagem</button>
+<div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
+  <div class="container banner">
+    <h1>Plus</h1>
+    <p>Seu filho bem cuidado</p> 
+  </div>
 </div>
 
-<div class="info">
-	<h3>Nome do Produto:</h3>
-	<button>Inserir Nome</button>
-	<hr>
-	<h3>Descrição do Produto:</h3>
-	<textarea name="comentarios"; style="width: 300px"></textarea>
-	<div><button>Inserir Descrição</button></div>
-	<hr>
-	<h3>Quantidade no Estoque:</h3>
-	<button>Inserir Quantidade</button>
-	<hr>
-	<h3>Preço:</h3>
-	<button>Inserir Preço</button>
-	<hr>
+<nav class="navbar navbar-expand-sm">
+  <a class="navbar-brand" href="">
+  <img src="../img/p2.png" width="30" height="30" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="dropdown">
+		  <a type="button" class="btn dropdown-toggle" style="color: white" href="agendar.html">
+		    Agendar
+		  </a>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Cachorros
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="produtos.html#Cachorro_alimentos">Alimentos</a>
+		    <a class="dropdown-item" href="produtos.html#Cachorro_acessorios">Acessórios</a>
+	    	<a class="dropdown-item" href="produtos.html#Cachorro_higiene">Higiene</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Gatos
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="produtos.html#Gato_alimentos">Alimentos</a>
+		    <a class="dropdown-item" href="produtos.html#Gato_acessorios">Acessórios</a>
+	    	<a class="dropdown-item" href="produtos.html#Gato_higiene">Higiene</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Farmácia
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="produtos.html#Farmacia_vermifugo">Vermífugo</a>
+		    <a class="dropdown-item" href="produtos.html#Farmacia_antipulga">Antipulga</a>
+	    	<a class="dropdown-item" href="produtos.html#Farmacia_eutanasia">Eutanásia</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Mais
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="produtos.html#Peixes">Peixes</a>
+		    <a class="dropdown-item" href="produtos.html#Roedores">Roedores</a>
+	    	<a class="dropdown-item" href="produtos.html#Cobras">Cobras</a>
+		  </div>
+	  </div>
+  </div>  
+  <a type="button" class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+</nav>
 
-	<div style="text-align: center">
-	<a class="button" style="display: inline-block;" href="#">Cadastrar</a>
+<!-- Seu html deve ser escrito a partir daqui -->
+
+	<div class="row"><h1 style="margin-left : 20px; text-align: center">Cadastrar Produto</h1></div>
+<div class="row container">
+
+	<!-- Imagem do produto -->
+	<div class="col container">
+		<img style="width: 200px; margin-left: 20px" src="../img/object.jpg" alt="Imagem do Novo Produto">
+		<br>
+		<button class="btn">Inserir Imagem</button>
+	</div>
+
+	<div class="info col" >
+		<h3>Nome do Produto:</h3>
+		<button class="btn">Inserir Nome</button>
+		<hr>
+		<h3>Descrição do Produto:</h3>
+		<textarea name="comentarios" style="width: 300px"></textarea>
+		<div><button class="btn" >Inserir Descrição</button></div>
+		<hr>
+		<h3>Quantidade no Estoque:</h3>
+		<button class="btn">Inserir Quantidade</button>
+		<hr>
+		<h3>Preço:</h3>
+		<button class="btn">Inserir Preço</button>
+		<hr>
+
+		<div style="text-align: center">
+		<a class="button mybtn" style="display: inline-block;" href="#">Cadastrar</a>
+		</div>
 	</div>
 </div>
 
-<footer>
-	<div class="footer">
-		<p><p>© 2007-2018 <a href="#">PetPlus</a></p></div></p>
-	</div>
-</footer>
+ <!-- Seu html não pode passar daqui -->
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
+  <p>Plus © No mercado desde ontem</p>
+</div>
+
+
+  <script src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../script/bootstrap.min.js"></script>
+  <script src="../script/main.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>
