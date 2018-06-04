@@ -2,7 +2,7 @@ var db;
 const dbName = "DBPetShop";
 var typeLogged;
 var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
-var adminId, adminName, adminUser, adminPhoto, adminEmail, adminPassword;
+var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;

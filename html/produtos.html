@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Plus</title>
+  <title>Produtos</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -29,8 +29,8 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div class="dropdown">
-		  <a type="button" class="btn dropdown-toggle" style="color: white" href="agendar.html">
+      <div>
+		  <a class="mybtn2" style="color: white" href="agendar.html">
 		    Agendar
 		  </a>
 	  </div> 
@@ -80,10 +80,17 @@
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
-<div class="selection">
-<!-- Cachorro -->
+<div class="container">
+<div class="container">
+<form class="form-inline" style="margin-bottom: 30px">
+	<H5>Pesquisar produto: </H5>
+      <input class="form-control mr-sm-2" type="search" placeholder="Nome">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
 
-<H2 id = "Cachorro">Cachorro</H2>
+<div class="container col">
+<H2 class="container" id = "Cachorro">Cachorro</H2>
 <h3 id = "Cachorro_alimentos">Alimentos</h3>
   <a class="produto_block" href="produto.html">
 			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
@@ -547,6 +554,8 @@
 				<p class="produto_preco">R$16,90</p>
 			</div>
 		</a>
+	</div>
+</div>
 </div>
 
  <!-- Seu html não pode passar daqui -->

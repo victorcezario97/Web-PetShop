@@ -19,6 +19,7 @@ function validateLogin(result, type){
       adminName = result.name;
       adminUser = result.user;
       adminPhoto = result.photo;
+      adminPhone = result.phone;
       adminEmail = result.email;
       adminEmail = result.email;
       adminPassword = result.password;

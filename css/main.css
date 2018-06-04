@@ -55,11 +55,27 @@
     font-family: inherit;
 }
 .mybtn{
-    cursor: pointer;
-    border: none;
-    color: white;
+  background-color: #1b6db0;
+ display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: white;
+}
+.mybtn:hover{
     background-color: dodgerblue;
-    font-family: inherit;
+    text-decoration: none;
 }
 
 .myjumbotron {
@@ -72,6 +88,7 @@
 }
 
 .mybtn2{
+  color:white;
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -90,6 +107,30 @@
 }
 
 .mybtn2:hover{
-    background-color: dodgerblue;
-    text-decoration: none;
+  background-color: dodgerblue;  
+  text-decoration: none;
+}
+
+.mainbtn{
+  color:white;
+  background-color: dodgerblue;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.mainbtn:hover{
+  color: blue;
+  text-decoration: none;
 }
