@@ -17,14 +17,7 @@ const Clientes = [
   {name: "Bolsomito", user: "mitinho", address: "Rua das mitagens, 13", photo: null, phone: "13131313", email: "mito@gmail.com", password: "123456"}
 ];
 
-/*
-  // Trata erros de todos os requests
-db.onerror = function(event){ 
-  alert("Database error: " + event.target.errorCode);
-};
-*/
 
-//window.addEventListener("load", function(event) {
 // Abre o banco
 function openDB(){
 	if ("indexedDB" in window)  // Conecta
@@ -32,7 +25,6 @@ function openDB(){
 	else
 		window.alert("O browser não tem suporte para esse IndexedDB.");
 
-	//localStorage.setItem("hasCodeRunBefore", null);
 	//indexedDB.deleteDatabase(dbName);
 	//window.alert("deleta");
 	var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
@@ -46,8 +38,6 @@ function openDB(){
 	request.onerror = function(event){
 		window.alert("Erro: " + event.target.errorCode);
 	};
-
-	//window.alert("Até onerror");
 
 	request.onupgradeneeded = function(event) { // Criando ou atualizando banco
 		window.alert("onupgradeneeded");
@@ -67,14 +57,11 @@ function openDB(){
 
 		// Criação do objectStore terminada antes de adicionar dado a ele.
 		objectStore.transaction.oncomplete = function(event){
-			//if (localStorage.getItem("hasCodeRunBefore") === null) {	// Popula o banco uma vez só
-	        	var clientesObjectStore = db.transaction("clients", "readwrite").objectStore("clients");
-				for(var i in Clientes){
-					window.alert("Popula");
-					clientesObjectStore.add(Clientes[i]);
-				}
-				//localStorage.setItem("hasCodeRunBefore", true);
-			//}
+	    	var clientesObjectStore = db.transaction("clients", "readwrite").objectStore("clients");
+			for(var i in Clientes){
+				window.alert("Popula");
+				clientesObjectStore.add(Clientes[i]);
+			}
 		};
 	};
 }
