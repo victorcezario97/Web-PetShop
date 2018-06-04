@@ -7,7 +7,7 @@ estoque.html OK
 finalizar_compra.html WARNINGS date
 home-admin.html OK
 home.html
-index.html WARNINGS Que isso?
+index.html WARNINGS Que isso?  ---- *Layout padrão
 login.html WARNINGS h1	BACK
 new_admin.html OK
 new_product.html OK

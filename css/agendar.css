@@ -44,13 +44,13 @@ body {
 	top: -9px;			  
 }
 
-.navbar {
+.mynavbar {
     overflow: hidden;
     background-color: #333;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar a {
+.mynavbar a {
     float: left;
     font-size: 16px;
     color: white;
@@ -59,12 +59,12 @@ body {
     text-decoration: none;
 }
 
-.dropdown {
+.mydropdown {
     float: left;
     overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.mydropdown .dropbtn {
     font-size: 16px;    
     border: none;
     outline: none;
@@ -75,11 +75,11 @@ body {
     margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: blue;
+.mynavbar a:hover, .mydropdown:hover .dropbtn {
+    background-color: dodgerblue;
 }
 
-.dropdown-content {
+.mydropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -89,13 +89,13 @@ body {
     z-index: 1;
 }
 
-.dropdown-content .header {
+.mydropdown-content .myheader {
     background: blue;
     padding: 16px;
     color: white;
 }
 
-.dropdown:hover .dropdown-content {
+.mydropdown:hover .mydropdown-content {
     display: block;
 }
 
@@ -120,7 +120,7 @@ body {
     background-color: #ddd;
 }
 
-.row:after {
+.myrow:after {
 	width: inherit;
     content: "";
     display: table;
@@ -154,14 +154,15 @@ body {
 
 .menu_navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #1b6db0;
+  color:white;
   top: 0;
 }
 
 .menu_navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 14px 19.8px;
   text-decoration: none;
@@ -169,7 +170,7 @@ body {
 }
 
 .menu_navbar a:hover {
-  background: #ddd;
+  background: dodgerblue;
   color: black;
 }
 
@@ -210,11 +211,11 @@ body {
 }
 
 .menu .menu_list #Editar .animal:hover {
-  background: #ddd;
+  background: white;
 }
 
 .menu .menu_list #Remover .animal:hover {
-    background: #ddd;
+    background: white;
 }
 
 .menu #menubtn {
@@ -285,20 +286,20 @@ img.avatar {
     border-radius: 50%;
 }
 
-.container {
+.mycontainer {
     padding: 16px;
 }
 
-.container .label {
+.mycontainer .label {
     width: 409.5px;
 }
 
-.container1 {
+.mycontainer1 {
     height: 370px;
      overflow-y: scroll;
 }
 
-.container1 .veterinario {
+.mycontainer1 .veterinario {
 
 }
 
