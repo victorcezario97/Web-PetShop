@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Plus</title>
+  <title>Cadastrar Animal</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -31,24 +31,19 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div class="dropdown">
-      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+      <div>
+      <a class="mybtn2" style="color: white" href="agendar.html">
         Agendar
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
+      </a>
     </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_higiene">Higiene</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -56,9 +51,9 @@
         Gatos
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Gato_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="produtos.html#Gato_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="produtos.html#Gato_higiene">Higiene</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -66,9 +61,9 @@
         Farmácia
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_vermifugo">Vermífugo</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_antipulga">Antipulga</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_eutanasia">Eutanásia</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -76,9 +71,9 @@
         Mais
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Peixes">Peixes</a>
+        <a class="dropdown-item" href="produtos.html#Roedores">Roedores</a>
+        <a class="dropdown-item" href="produtos.html#Cobras">Cobras</a>
       </div>
     </div>
   </div>  
@@ -87,9 +82,7 @@
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
-  <div class="row"><h1 style="margin-left: 20px">Meus animais</h1>
-    <a href="register_pet.html" title="register_pet" class="button" style="margin-top: 7px"> Cadastrar Animal </a>
-  </div>
+  <div ><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Meu Animais</h1>
 <div class="row container">
 
   <!-- Imagem do produto -->
@@ -116,10 +109,15 @@
       <p>Essa é a raça do pet </p>
     <hr>
 
-  <a class="button" style="display: inline-block;" href="edit_pet.html">Editar</a>
+  <a class="mybtn" style="display: inline-block;" href="edit_pet.html">Editar</a>
   </div>
 </div>
 
+
+<div class="container row">
+<button class="mainbtn justify-content-center align-items-center" onclick="location.href='register_pet.html'" type="button" style="vertical-align: center; margin: 0 auto">
+     Cadastrar Animal</button>
+</div>
  <!-- Seu html não pode passar daqui -->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
