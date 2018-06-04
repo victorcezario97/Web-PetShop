@@ -1,19 +1,19 @@
 agendar.html
-carrinho.html WARNINGS
-detalhes.html
-edit_admin.html WARNINGS
-edit_profile.html WARNINGS
-estoque.html
-finalizar_compra.html WARNINGS
-home-admin.html
+carrinho.html OK
+detalhes.html OK
+edit_admin.html OK
+edit_profile.html OK
+estoque.html OK
+finalizar_compra.html WARNINGS date
+home-admin.html OK
 home.html
 index.html WARNINGS Que isso?
-login.html WARNINGS
-new_admin.html WARNINGS
-new_product.html
-new_service.html
-new_user.html WARNINGS
-produto.html
-produtos.html
+login.html WARNINGS h1
+new_admin.html OK
+new_product.html OK
+new_service.html OK
+new_user.html OK
+produto.html OK
+produtos.html OK
 profile.html
-registrar.html WARNINGS
+registrar.html OK
