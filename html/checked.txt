@@ -1,4 +1,4 @@
-agendar.html
+﻿agendar.html
 carrinho.html OK
 detalhes.html OK
 edit_admin.html OK
@@ -9,7 +9,7 @@ home-admin.html OK
 home.html
 index.html WARNINGS Que isso?  ---- *Layout padrão
 login.html WARNINGS h1	BACK
-new_admin.html OK
+new_admin.html OK	BACK
 new_product.html OK
 new_service.html OK
 new_user.html OK	BACK
