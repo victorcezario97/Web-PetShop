@@ -9,12 +9,28 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 
 	request.onsuccess = function(event){
 		window.alert("Usuário de email " + userEmail + " cadastrado com sucesso!");
-		$("#name").val("");
-		$("#email").val("");
-		$("#user").val("");
-		$("#password").val("");
-		$("#address").val("");
-		$("#phone").val("");
+		let page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+		// Se estamos na página new_user
+		if(page === "new_user.html"){
+			$("#name").val("");
+			$("#email").val("");
+			$("#user").val("");
+			$("#password").val("");
+			$("#address").val("");
+			$("#phone").val("");
+		}
+		else if(page === "registrar.html"){
+			clientId = event.result.id;
+		    clientName = event.result.name;
+		    clientUser = event.result.user;
+		    clientAddress = event.result.address;
+		    clientPhoto = event.result.photo;
+		    clientPhone = event.result.phone;
+		    clientEmail = event.result.email;
+		    clientPassword = event.result.password;
+		    // Abre home
+		    window.location.href = "home.html";
+		}
 	};
 
 	request.onerror = function(event){
@@ -95,4 +111,13 @@ function cadastrar(){
 		phone = null;
 
 	validateClient(name, email, user, password, address, phone);
+}
+
+function checkPassword(){
+	let psw = $("#password").val();
+	let pswRepeat = $("#psw-repeat").val();
+	if(psw === pswRepeat)
+		cadastrar();
+	else
+		window.alert("As senhas não batem.");
 }

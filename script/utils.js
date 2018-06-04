@@ -28,7 +28,7 @@ function openDB(){
 	//indexedDB.deleteDatabase(dbName);
 	//window.alert("deleta");
 	var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
-
+	//window.alert(location.pathname.substring(location.pathname.lastIndexOf("/") + 1));
 	// db é uma instância de IDBDatabase
 	request.onsuccess = function(event) {  
 		db = event.target.result;

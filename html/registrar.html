@@ -94,17 +94,34 @@
         <hr>
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required id="email">
+        <input type="email" placeholder="login@email.com" name="email" required id="email">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required id = "psw">
+        <label for="user"><b>Usuário</b></label>
+        <input type="text" placeholder="Usuário" name="user" required id="user">
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required id="psw-repeat">
+        <label for="psw"><b>Senha</b></label>
+        <input type="password" placeholder="Senha" name="psw" required id = "password">
+
+        <label for="psw-repeat"><b>Confirme a senha</b></label>
+        <input type="password" placeholder="Confirme" name="psw-repeat" required id="psw-repeat">
+
+        <label for="name"><b>Nome</b></label>
+        <input type="text" placeholder="Nome" name="name" required id="name">
+
+        <label for="phone"><b>Telefone</b></label>
+        <input type="text" placeholder="(11)99999-9999" name="phone" id="phone">
+
+        <label for="address"><b>Endereço</b></label>
+        <input type="text" placeholder="Endereço" name="address" id="address">
+
+        <label for="image"><b>Foto</b></label>
+        <img src="../img/perfil.jpg" style="margin-top: 20px; width: 100px" alt="Imagem de Perfil">
+          <button>Enviar imagem</button>
+
         <hr>
 
         <p>Ao criar a conta você concorda com os <a href="#">Termos de Uso</a>.</p>
-        <button type="submit" class="registerbtn">Registrar</button>
+        <button type="submit" class="registerbtn" onclick = "checkPassword();">Registrar</button>
      </div>
 
       <div class="container signin">
@@ -126,5 +143,7 @@
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/utils.js"></script>
+  <script src="../script/new_user.js"></script>
 </body>
 </html>
