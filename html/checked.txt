@@ -8,12 +8,12 @@ finalizar_compra.html WARNINGS date
 home-admin.html OK
 home.html
 index.html WARNINGS Que isso?
-login.html WARNINGS h1
+login.html WARNINGS h1	BACK
 new_admin.html OK
 new_product.html OK
 new_service.html OK
-new_user.html OK
+new_user.html OK	BACK
 produto.html OK
 produtos.html OK
 profile.html
-registrar.html OK
+registrar.html OK	BACK

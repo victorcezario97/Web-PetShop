@@ -1,6 +1,8 @@
 var db;
 const dbName = "DBPetShop";
+var typeLogged;
 var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
+var adminId, adminName, adminUser, adminPhoto, adminEmail, adminPassword;
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -17,6 +19,7 @@ const Clientes = [
   {name: "Bolsomito", user: "mitinho", address: "Rua das mitagens, 13", photo: null, phone: "13131313", email: "mito@gmail.com", password: "123456"}
 ];
 
+const Admins = [{name: "admin", user: "admin", email: "admin@gmail.com", photo: null, password: "admin"}];
 
 // Abre o banco
 function openDB(){
@@ -45,22 +48,35 @@ function openDB(){
 
 		// objectStore com as infos do cliente. Id como keyPath pois é único
 		let objectStore = db.createObjectStore("clients", {keyPath: "id", autoIncrement: true});
+		let objectStoreAdmin = db.createObjectStore("admins", {keyPath: "id", autoIncrement: true});
 
+		// Clients
 		// Cria índices pra buscar por email e id. Unique: true pois é único.
 		objectStore.createIndex("email", "email", {unique: true});
 		objectStore.createIndex("user", "user", {unique: true});
 		objectStore.createIndex("id", "id", {unique: true});
-
 		// Cria índice pra buscar por nome. Unique: false pois não é único.
 		objectStore.createIndex("name", "name", {unique: false});
 		window.alert("onupgradeneeded");
 
+		//Admin
+		objectStoreAdmin.createIndex("email", "email", {unique: true});
+		objectStoreAdmin.createIndex("user", "user", {unique: true});
+		objectStoreAdmin.createIndex("id", "id", {unique: true});
+		// Cria índice pra buscar por nome. Unique: false pois não é único.
+		objectStoreAdmin.createIndex("name", "name", {unique: false});
+
+
 		// Criação do objectStore terminada antes de adicionar dado a ele.
 		objectStore.transaction.oncomplete = function(event){
 	    	var clientesObjectStore = db.transaction("clients", "readwrite").objectStore("clients");
-			for(var i in Clientes){
-				window.alert("Popula");
+			for(var i in Clientes)
 				clientesObjectStore.add(Clientes[i]);
+
+			var adminsObjectStore = db.transaction("admins", "readwrite").objectStore("admins");
+			for(var i in Clientes){
+				adminsObjectStore.add(Admins[i]);
+				window.alert("Cadastra admin");
 			}
 		};
 	};
