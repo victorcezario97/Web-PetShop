@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Plus</title>
+  <title>Edit Profile</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -32,7 +32,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Cadastrar
+		    Agendar
 		  </button>
 		  <div class="dropdown-menu">
 		    <a class="dropdown-item" href="#">Link 1</a>
@@ -42,7 +42,7 @@
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Gerenciar
+		    Cachorros
 		  </button>
 		  <div class="dropdown-menu">
 		    <a class="dropdown-item" href="#">Link 1</a>
@@ -52,7 +52,7 @@
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Estoque
+		    Gatos
 		  </button>
 		  <div class="dropdown-menu">
 		    <a class="dropdown-item" href="#">Link 1</a>
@@ -62,7 +62,7 @@
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Analytics
+		    Farmácia
 		  </button>
 		  <div class="dropdown-menu">
 		    <a class="dropdown-item" href="#">Link 1</a>
@@ -70,31 +70,38 @@
 	    	<a class="dropdown-item" href="#">Link 3</a>
 		  </div>
 	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Mais
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
+		  </div>
+	  </div>
   </div>  
-  <button type="button" class="btn login-btn">Olá, Administrador</button> 
+  <button type="button" class="btn login-btn">Olá, Usuário</button> 
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
 <div class="horizontal_div container">
 	<div class="confirm_box" style="height: 500px">
-		<div class="confirm_title"><h2>Novo Administrador</h2></div>
+		<div class="confirm_title"><h2>Editar Perfil</h2></div>
 		<div class="confirm_inner">
 			<p style="margin-bottom: 0px;">Nome e Sobrenome:</p>
-			<input type="email" name="Email" style="margin-top: -20px; width: 95% ">
+			<input type="text" name="Nome" style="margin-top: -20px; width: 95% ">
 
 			<p style="margin-bottom: 0px;">Email:</p>
 			<input type="email" name="Email" style="margin-top: -20px; width: 95% ">
 			
 			<p style="margin-bottom: 0px;">Endereço:</p>
-			<input type="email" name="Email" style="margin-top: -20px; width: 95% ">
+			<input type="text" name="Endereco" style="margin-top: -20px; width: 95% ">
 
 			<div class="horixontal_div">
-				<div style="display: inline-block;">
-					<p style="margin-bottom: 0px;">ID:</p>
-					<input type="text" name="ID" style="margin-top: -20px;max-width: 100px" placeholder="999">		
-				</div>
-				<div style="display: inline-block; margin-left: 50px;">
+				
+				<div style="display: inline-block; margin-left: 0px;">
 					<p style="margin-bottom: 0px;">Telefone:</p>
 					<input type="tel" name="Telefone" style="margin-top: -20px;max-width: 100px" placeholder="(11)99999-9999">		
 				</div>
@@ -103,14 +110,15 @@
 				<input type="radio" name="Sexo" value="Feminino" style="margin-top: -20px;">Feminino
 
 				<div>
-					<img src="../img/perfil.jpg" style="margin-top: 20px; width: 100px" alt= "Imagem de Perfil">
+					<img src="../img/perfil.jpg" style="margin-top: 20px; width: 100px" alt="Imagem de Perfil">
 					<button>Alterar Imagem</button>
 				</div>
 				<div style="text-align: center">
-					<a class="button" style="display: inline-block;" href="#">Cadastrar</a>
+					<a class="mybtn" style="display: inline-block;" href="#">Salvar</a>
 				</div>
 			</div>
 		</div>
+		<p>OBS: Campos em branco permanecerão inalterados.</p>
 	</div>
 </div>
 
