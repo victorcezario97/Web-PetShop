@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="../css/agendar.css">
+  <link rel="stylesheet" type="text/css" href="../css/login.css">
   <link rel="stylesheet" type="text/css" href="../css/selection.css">
   <link rel="stylesheet" type="text/css" href="../css/home.css">
 
@@ -23,11 +24,11 @@
 
 <nav class="navbar navbar-expand-sm">
   <a class="navbar-brand" href="">
-  <img src="../img/p2.png" width="30" height="30" alt="">
+  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
-      <a href="home.html"><img src="../img/hamburger.png" width="30" height="30" alt=""></a>
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -76,7 +77,10 @@
 		  </div>
 	  </div>
   </div>  
-  <a class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <div>
+      <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+    	 Entrar/Cadastrar</button>
+	  </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
@@ -248,8 +252,10 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="../script/bootstrap.min.js"></script>
-  <script src="../script/main.js"></script>
   <script type="text/javascript" src="../script/scripts.js"></script>
+  <script src="../script/main.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/utils.js"></script>
+  <script src="../script/login.js"></script>
 </body>
 </html>
