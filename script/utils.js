@@ -3,6 +3,7 @@ const dbName = "DBPetShop";
 var typeLogged;
 var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
 var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
+var carrinho = [];
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -56,6 +57,7 @@ function openDB(){
 		let objectStoreAdmin = db.createObjectStore("admins", {keyPath: "id", autoIncrement: true});
 		let objectStorePets = db.createObjectStore("pets", {keyPath: "id", autoIncrement: true});
 		let objectStoreProducts = db.createObjectStore("products", {keyPath: "id", autoIncrement: true});
+		let objectStoreServices = db.createObjectStore("services", {keyPath: "id", autoIncrement: true});
 
 		// Clients
 		// Cria índices pra buscar por email e id. Unique: true pois é único.
@@ -81,8 +83,13 @@ function openDB(){
 
 		// Products
 		objectStoreProducts.createIndex("id", "id", {unique: true});
-		objectStoreProducts.createIndex("name", "name", {unique: true});
+		objectStoreProducts.createIndex("name", "name", {unique: false});
 		objectStoreProducts.createIndex("category", "category", {unique: false});
+
+		// Services
+		objectStoreServices.createIndex("id", "id", {unique: true});
+		objectStoreServices.createIndex("name", "name", {unique: false});
+		//objectStoreServices.createIndex("category", "category", {unique: false});
 
 
 		// Criação do objectStore terminada antes de adicionar dado a ele.

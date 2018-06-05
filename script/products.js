@@ -1,6 +1,6 @@
 // Cadastra um produto
 function register(){
-	var productId, productName, productQtd, productDesc, productPrice, productCategory;
+	var productId, productName, productQtd, productDesc, productPrice, productCategory, productPhoto;
 	productName = $("#nome_produto").val();
 	productDesc = $("#comentarios_produto").val();
 	productQtd = $("#qtd_produto").val();
