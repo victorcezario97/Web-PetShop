@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/agendar.css">
   <link rel="stylesheet" type="text/css" href="../css/selection.css">
   <link rel="stylesheet" type="text/css" href="../css/home.css">
 
@@ -26,14 +27,13 @@
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
-      <img src="../img/hamburger.png" width="30" height="30" alt="">
+      <a href="home.html"><img src="../img/hamburger.png" width="30" height="30" alt=""></a>
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <div>
-		  <a class="mybtn2" style="color: white" href="agendar.html">
-		    Agendar
-		  </a>
+      <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+    	 Agendar</button>
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -76,30 +76,32 @@
 		  </div>
 	  </div>
   </div>  
-  <a type="button" class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <a class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
+<!-- O html será trocado aqui na SPA -->
+<div id="troca">
  <!-- Slideshow container -->
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="../img/index.jpeg" style="width:100%">
+    <img src="../img/index.jpeg" style="width:100%" alt="imagem">
     <!-- <div class="text">Caption Text</div> -->
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="../img/roubo_petz.jpg" style="width:100%">
+    <img src="../img/roubo_petz.jpg" style="width:100%" alt="imagem">
     <!-- <div class="text">Caption Two</div> -->
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="../img/index2.jpeg" style="width:100%">
+    <img src="../img/index2.jpeg" style="width:100%" alt="imagem">
     <!-- <div class="text">Caption Three</div> -->
   </div>
 
@@ -115,8 +117,6 @@
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
 </div> 
-	
-</div>
 
 <div class="selection">
   <H2>Farmácia</H2>
@@ -234,6 +234,7 @@
 				<p class="produto_preco">R$16,90</p>
 			</div>
 		</a>
+</div>
 </div>
 
  <!-- Seu html não pode passar daqui -->
