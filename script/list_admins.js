@@ -37,7 +37,6 @@ function getAdmin(admin){
 
 	var request = objectStore.get(admin);
 	request.onsuccess = function(){
-		console.log(request.result);
 		document.getElementById('nome_admin').value = request.result.name;
 		document.getElementById('username_admin').value = request.result.user;
 		document.getElementById('email_admin').value = request.result.email;
@@ -53,11 +52,8 @@ function update(id){
     // var id = document.getElementById('id_user').getAttribute("name");
     let objectStore = db.transaction(["admins"], "readwrite").objectStore("admins");
 
-    console.log(id);
-
     var request = objectStore.get(id);
     request.onsuccess = function(){
-        console.log(request.result);
         var data = request.result;
 
         var nome = document.getElementById('nome_admin').value;

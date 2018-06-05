@@ -37,7 +37,6 @@ function getUser(client){
 
 	var request = objectStore.get(client);
 	request.onsuccess = function(){
-		console.log(request.result);
 		document.getElementById('id_user').innerHTML = request.result.id;
 		document.getElementById('id_user').setAttribute("name", request.result.id);
 		document.getElementById('nome_user').value = request.result.name;
@@ -55,11 +54,9 @@ function update(id){
 	// var id = document.getElementById('id_user').getAttribute("name");
 	let objectStore = db.transaction(["clients"], "readwrite").objectStore("clients");
 
-	console.log(id);
 
 	var request = objectStore.get(id);
 	request.onsuccess = function(){
-		console.log(request.result);
 		var data = request.result;
 
 		var nome = document.getElementById('nome_user').value;
