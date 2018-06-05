@@ -7,8 +7,10 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../css/agendar.css"> -->
   <link rel="stylesheet" type="text/css" href="../css/selection.css">
   <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
+  <link rel="stylesheet" type="text/css" href="../css/finalizar_compra.css">
 
 </head>
 <body>
@@ -22,7 +24,7 @@
 
 <nav class="navbar navbar-expand-sm">
   <a class="navbar-brand" href="">
-  <img src="../img/p2.png" width="30" height="30" alt="">
+  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
@@ -30,55 +32,59 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <a class="mybtn2" style="color: white" href="agendar.html">
-		    Agendar
-	  </a>
+      <div>
+      <a href="agendar.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button></a>
+    </div> 
       <div class="dropdown">
-		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Cachorros
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Cachorro_alimentos">Alimentos</a>
-		    <a class="dropdown-item" href="produtos.html#Cachorro_acessorios">Acessórios</a>
-	    	<a class="dropdown-item" href="produtos.html#Cachorro_higiene">Higiene</a>
-		  </div>
-	  </div> 
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Cachorros
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="produtos.html#Cachorro_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_higiene">Higiene</a>
+      </div>
+    </div> 
       <div class="dropdown">
-		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Gatos
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Gato_alimentos">Alimentos</a>
-		    <a class="dropdown-item" href="produtos.html#Gato_acessorios">Acessórios</a>
-	    	<a class="dropdown-item" href="produtos.html#Gato_higiene">Higiene</a>
-		  </div>
-	  </div> 
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Gatos
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="produtos.html#Gato_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="produtos.html#Gato_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="produtos.html#Gato_higiene">Higiene</a>
+      </div>
+    </div> 
       <div class="dropdown">
-		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Farmácia
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Farmacia_vermifugo">Vermífugo</a>
-		    <a class="dropdown-item" href="produtos.html#Farmacia_antipulga">Antipulga</a>
-	    	<a class="dropdown-item" href="produtos.html#Farmacia_eutanasia">Eutanásia</a>
-		  </div>
-	  </div> 
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Farmácia
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="produtos.html#Farmacia_vermifugo">Vermífugo</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_antipulga">Antipulga</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_eutanasia">Eutanásia</a>
+      </div>
+    </div> 
       <div class="dropdown">
-		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Mais
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Peixes">Peixes</a>
-		    <a class="dropdown-item" href="produtos.html#Roedores">Roedores</a>
-	    	<a class="dropdown-item" href="produtos.html#Cobras">Cobras</a>
-		  </div>
-	  </div>
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Mais
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="produtos.html#Peixes">Peixes</a>
+        <a class="dropdown-item" href="produtos.html#Roedores">Roedores</a>
+        <a class="dropdown-item" href="produtos.html#Cobras">Cobras</a>
+      </div>
+    </div>
   </div>  
-  <a class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <div>
+      <button class="mybtn2">Olá, usuário</button>
+    </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
+<div id="troca">
 <h1 style="text-align: center; margin-top: 50px;margin-bottom: -30px;">MEU CARRINHO:</h1>
 <div class="horizontal_div">
 	<a class="produto_block" href="produto.html">
@@ -117,10 +123,11 @@
 <div> 
 <p style="text-align: center">
 	<a class="mainbtn" style="display: inline-block;" href="home.html">Continuar Comprando</a>
-	<a class="mainbtn" style="display: inline-block;" href="finalizar_compra.html">Confirmar Compra</a>
+	<button class="mainbtn justify-content-center align-items-center" onclick="singlePage('single/s-confirmar_compra.html');" type="button" style="vertical-align: center; margin: 0 auto">
+     Confirmar Compra</button>
 </p>
 </div>
-
+</div>
  <!-- Seu html não pode passar daqui -->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
@@ -133,6 +140,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
+  <script src="../script/scripts.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>

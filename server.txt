@@ -1,0 +1,13 @@
+python -m SimpleHTTPServer 8000
+
+
+localhost:8000/single/s-agendar.html
+localhost:8000/single/s-agendar.html
+localhost:8000/single/s-confrimar_compra.html
+localhost:8000/single/s-login.html
+localhost:8000/single/s-registerpet.html
+localhost:8000/html/home.html
+
+
+
+
