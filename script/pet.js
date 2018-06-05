@@ -114,6 +114,7 @@ function update(){
 
 // Carrega os dados do pet
 function loadDatas(){
+	// As variáveis estarão setadas quando o pet for escolhido
 	$("#nome_pet").val(petName);
 	$("#idade_pet").val(petAge);
 	$("#raca_pet").val(petRaca);
