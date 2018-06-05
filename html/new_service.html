@@ -9,6 +9,8 @@
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
   <link rel="stylesheet" type="text/css" href="../css/produto.css">
+  <link rel="stylesheet" type="text/css" href="../css/finalizar_compra.css"> 
+
 
 </head>
 <body>
@@ -80,31 +82,33 @@
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
-<div class="container">
-	<h1 style="margin-left: 20px; text-align: center;">Cadastrar Serviço</h1>
-	<div class="row container">
 
-	<!-- Imagem do produto -->
-	<div class="col container">
-		<<<input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-              <img id="img" src="../img/service.jpeg" alt="Foto do produto" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
-	</div>
+<div class="horizontal_div container">
+	<div class="confirm_box" style="height: auto">
+		<div class="confirm_title"><h2>Cadastrar Serviço</h2></div>
+		<div class="confirm_inner">
+			<p style="margin-bottom: 0px;">Nome do Produto:</p>
+			<input type="text" id="nome_servico" style="margin-top: -20px; width: 95% ">
 
-	<div class="info col" >
-		<h3>Nome do Serviço:</h3>
-		<input id="nome_servico" style="width: 100%" />
-		<hr>
-		<h3>Descrição do Serviço:</h3>
-		<textarea name="comentarios" style="width: 300px" id="comentarios_servico"></textarea>
-		<hr>
-		<h3>Preço:</h3>
-		<p style="display: inline; font-size: 20px;">R$</p> <input id="preco_servico" type="number" min="1" step="any" />
-		<hr>
+			<p style="margin-bottom: 0px;">Descrição do Serviço:</p>
+			<textarea name="descricao" style="width: 95%" id="comentarios_servico"></textarea>
 
-	</div>
-	</div>
-	<div style="text-align: center">
-		<p><a class="mainbtn" style="display: inline-block;" onclick = "register();">Cadastrar</a></p>
+			<p style="margin-bottom: 0px;">Preço:</p>
+			<input id="preco_servico" type="number" min="1" step="0.01" style="margin-top: -20px; width: 95% ">
+			
+			<p style="margin-bottom: 0px;">Categoria</p>
+			<input id="categoria_servico" type="text" style="margin-top: -20px; width: 95% ">
+
+			<div class="horixontal_div">	
+				<div>
+ 					<img id="img" src="../img/service.jpeg" alt="Imagem do Serviço" style="margin-top: 20px; width: 100px"/>
+ 					<input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+				</div>
+				<div style="text-align: center">
+					<button  class="mainbtn" style="display: inline-block;" onclick = "register();">Cadastrar</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
