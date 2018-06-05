@@ -1,7 +1,7 @@
 var db;
 const dbName = "DBPetShop";
 var typeLogged;
-var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
+var clientId = 1, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
 var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
@@ -49,6 +49,7 @@ function openDB(){
 		// objectStore com as infos do cliente. Id como keyPath pois é único
 		let objectStore = db.createObjectStore("clients", {keyPath: "id", autoIncrement: true});
 		let objectStoreAdmin = db.createObjectStore("admins", {keyPath: "id", autoIncrement: true});
+		let objectStorePets = db.createObjectStore("pets", {keyPath: "id", autoIncrement: true});
 
 		// Clients
 		// Cria índices pra buscar por email e id. Unique: true pois é único.
@@ -65,6 +66,12 @@ function openDB(){
 		objectStoreAdmin.createIndex("id", "id", {unique: true});
 		// Cria índice pra buscar por nome. Unique: false pois não é único.
 		objectStoreAdmin.createIndex("name", "name", {unique: false});
+
+		//Pets
+		objectStorePets.createIndex("id", "id", {unique: true});
+		objectStorePets.createIndex("client", "client", {unique: false});
+		objectStorePets.createIndex("name", "name", {unique: true});
+		objectStorePets.createIndex("nameAndClient", ["name", "client"], {unique: false});
 
 
 		// Criação do objectStore terminada antes de adicionar dado a ele.
