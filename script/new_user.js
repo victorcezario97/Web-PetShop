@@ -1,4 +1,4 @@
-var page, registerType;
+var page, registerType, userPhoto = null;
 
 function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
 	// Cadastra
@@ -16,6 +16,8 @@ function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
 		$("#user").val("");
 		$("#password").val("");
 		$("#phone").val("");
+		$("#img").attr('src', '../img/perfil.jpg');
+		userPhoto = null;
 	};
 
 	request.onerror = function(event){
@@ -28,7 +30,7 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 	// Cadastra
 	let objectStoreRegister = db.transaction("clients", "readwrite").objectStore("clients");
 	//{id: 2, name: "Bolsomito", user: "mitinho", address: "Rua das mitagens, 13", photo: null, phone: "13131313", email: "mito@gmail.com", password: "123456"}
-	var newUser = {name: userName, user: userUser, address: userAddress, photo: null, phone: userPhone, email: userEmail, password: userPassword};
+	var newUser = {name: userName, user: userUser, address: userAddress, photo: userPhoto, phone: userPhone, email: userEmail, password: userPassword};
 
 	var request = objectStoreRegister.add(newUser);
 
@@ -43,6 +45,8 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 			$("#password").val("");
 			$("#address").val("");
 			$("#phone").val("");
+			$("#img").attr('src', '../img/perfil.jpg');
+			userPhoto = null;
 		}
 		else if(page === "registrar.html"){
 			clientId = event.result.id;
@@ -223,4 +227,22 @@ function checkPassword(){
 		cadastrar();
 	else
 		window.alert("As senhas não batem.");
+}
+
+// Muda a imagem e salva link
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#img')
+                .attr('src', e.target.result);
+                //.width(150)
+                //.height(200);
+            userPhoto = e.target.result;
+            alert(photo);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }

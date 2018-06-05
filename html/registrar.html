@@ -110,8 +110,8 @@
         <input type="text" placeholder="Endereço" name="address" id="address">
 
         <label for="image"><b>Foto</b></label>
-        <img src="../img/perfil.jpg" style="margin-top: 20px; width: 100px" alt="Imagem de Perfil">
-          <button class="mybtn">Enviar imagem</button>
+       <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+              <img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
 
         <hr>
 

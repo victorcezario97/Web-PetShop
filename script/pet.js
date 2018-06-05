@@ -177,5 +177,5 @@ function getUser(pet){
 		petRaca = request.result.raca;
 
 		//document.getElementById('salvar_user').setAttribute("onClick", "update(" + pet + ");")
-	}
+	};
 }

@@ -100,8 +100,8 @@
 
 				<div style="text-align: center; margin-top: 20px">
 			
-					<img src="../img/perfil.jpg" style="margin-top: 20px; width: 100px" alt= "Imagem de Perfil">
-					<button class="mybtn">Alterar Imagem</button>
+					<input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+   	 					<img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
 				</div>
 				<div style="text-align: center; margin-top: 30px">
 					<button class="mainbtn justify-content-center align-items-center" onclick="cadastrar();" style="vertical-align: center; margin: 0 auto">Cadastrar</button>
