@@ -49,14 +49,14 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 			userPhoto = null;
 		}
 		else if(page === "registrar.html"){
-			clientId = event.result.id;
-		    clientName = event.result.name;
-		    clientUser = event.result.user;
-		    clientAddress = event.result.address;
-		    clientPhoto = event.result.photo;
-		    clientPhone = event.result.phone;
-		    clientEmail = event.result.email;
-		    clientPassword = event.result.password;
+			clientId = request.result.id;
+		    clientName = request.result.name;
+		    clientUser = request.result.user;
+		    clientAddress = request.result.address;
+		    clientPhoto = request.result.photo;
+		    clientPhone = request.result.phone;
+		    clientEmail = request.result.email;
+		    clientPassword = request.result.password;
 		    // Abre home
 		    window.location.href = "home.html";
 		}
@@ -103,7 +103,7 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
     		window.alert("Email e usuário já cadastrados.");
     }
     else{   // Se não achou o email
-    	window.alert("não achou user client");
+    	window.alert("não achou email client");
       resultEmailClient = true;
       if(resultUserClient === true && resultEmailAdmin === true && resultUserAdmin === true){	// Se todos livres
       	if(registerType === "client")
