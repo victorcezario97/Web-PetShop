@@ -32,8 +32,11 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div>
-      <a href="agendar.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
+      <div> 
+      <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button> -->
+       <a href="agendar.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
        Agendar</button></a>
     </div> 
       <div class="dropdown">
@@ -78,8 +81,20 @@
     </div>
   </div>  
   <div>
-      <button class="mybtn2">Olá, usuário</button>
-    </div>
+  <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Entrar/Cadastrar</button> -->
+   <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="detalhes.html">Meus Pets</a>
+        <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
+   </a>
+  </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
@@ -122,9 +137,11 @@
 
 <div> 
 <p style="text-align: center">
-	<a class="mainbtn" style="display: inline-block;" href="home.html">Continuar Comprando</a>
-	<button class="mainbtn justify-content-center align-items-center" onclick="singlePage('single/s-confirmar_compra.html');" type="button" style="vertical-align: center; margin: 0 auto">
-     Confirmar Compra</button>
+	<a class="mainbtn" style="display: inline-block;" href="produtos.html">Continuar Comprando</a>
+  <!-- SPA -->
+	<!-- <button class="mainbtn justify-content-center align-items-center" onclick="singlePage('single/s-confirmar_compra.html');" type="button" style="vertical-align: center; margin: 0 auto">
+     Confirmar Compra</button> -->
+  <a href="finalizar_compra.html"><button class="mainbtn" style="vertical-align: center; margin: 0 auto">Confirmar Compra</button></a>
 </p>
 </div>
 </div>

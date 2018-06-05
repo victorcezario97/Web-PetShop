@@ -21,7 +21,7 @@
 
 <nav class="navbar navbar-expand-sm">
   <a class="navbar-brand" href="">
-  <img src="../img/p2.png" width="30" height="30" alt="">
+  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
@@ -29,11 +29,13 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div>
-        <a class="mybtn2" style="color: white" href="agendar.html">
-          Agendar
-        </a>
-      </div>
+      <div> 
+      <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button> -->
+       <a href="agendar.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button></a>
+    </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
@@ -75,7 +77,21 @@
       </div>
     </div>
   </div>  
-  <a type="button" class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <div>
+  <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Entrar/Cadastrar</button> -->
+   <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="detalhes.html">Meus Pets</a>
+        <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
+   </a>
+  </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
@@ -116,8 +132,9 @@
 </div>
 
 </div>
-<div style="text-align: center">
-<p><a type="button" class="mainbtn" style="display: inline-block;" href="edit_profile.html">Editar Perfil</a></p>  
+  <div style="text-align: center">
+  <p><a type="button" class="mainbtn" style="display: inline-block;" href="edit_profile.html">Editar Perfil</a></p>  
+</div>
 </div>
  <!-- Seu html não pode passar daqui -->
 

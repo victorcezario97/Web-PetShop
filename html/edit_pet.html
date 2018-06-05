@@ -23,7 +23,7 @@
 
 <nav class="navbar navbar-expand-sm">
   <a class="navbar-brand" href="">
-  <img src="../img/p2.png" width="30" height="30" alt="">
+  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
@@ -31,24 +31,21 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div class="dropdown">
-      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-        Agendar
-      </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
+      <div> 
+      <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button> -->
+       <a href="agendar.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button></a>
     </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="produtos.html#Cachorro_higiene">Higiene</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -56,9 +53,9 @@
         Gatos
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Gato_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="produtos.html#Gato_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="produtos.html#Gato_higiene">Higiene</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -66,9 +63,9 @@
         Farmácia
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_vermifugo">Vermífugo</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_antipulga">Antipulga</a>
+        <a class="dropdown-item" href="produtos.html#Farmacia_eutanasia">Eutanásia</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -76,13 +73,27 @@
         Mais
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="produtos.html#Peixes">Peixes</a>
+        <a class="dropdown-item" href="produtos.html#Roedores">Roedores</a>
+        <a class="dropdown-item" href="produtos.html#Cobras">Cobras</a>
       </div>
     </div>
   </div>  
-  <a class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <div>
+  <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Entrar/Cadastrar</button> -->
+   <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="detalhes.html">Meus Pets</a>
+        <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
+   </a>
+  </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
