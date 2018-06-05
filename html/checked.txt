@@ -11,7 +11,7 @@ home.html
 index.html WARNINGS Que isso?  ---- *Layout padrão
 login.html WARNINGS h1	BACK
 new_admin.html OK	BACK
-new_product.html OK
+new_product.html OK	BACK
 new_service.html OK
 new_user.html OK	BACK
 produto.html OK

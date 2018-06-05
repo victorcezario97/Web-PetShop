@@ -12,6 +12,11 @@ window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || 
 window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
 // (Mozilla nunca usou prefixo nesses objetos, então não precisamos window.mozIDB*)
 
+/*
+Registros de produtos incluem, pelo menos: nome, id, foto, descrição, preço, quantidade (em estoque), quantidade vendida. 
+Produtos podem ser, por exemplo: comida de cachorro/gato, casinhas, osso de brinquedo, coleiras, etc.
+*/
+
 // Popula inicialmente a tabela de clientes
 // O registro de cada cliente inclui, pelo menos: nome, id, endereço, foto, telefone, email
 const Clientes = [
@@ -50,6 +55,7 @@ function openDB(){
 		let objectStore = db.createObjectStore("clients", {keyPath: "id", autoIncrement: true});
 		let objectStoreAdmin = db.createObjectStore("admins", {keyPath: "id", autoIncrement: true});
 		let objectStorePets = db.createObjectStore("pets", {keyPath: "id", autoIncrement: true});
+		let objectStoreProducts = db.createObjectStore("products", {keyPath: "id", autoIncrement: true});
 
 		// Clients
 		// Cria índices pra buscar por email e id. Unique: true pois é único.
@@ -72,6 +78,11 @@ function openDB(){
 		objectStorePets.createIndex("client", "client", {unique: false});
 		objectStorePets.createIndex("name", "name", {unique: true});
 		objectStorePets.createIndex("nameAndClient", ["name", "client"], {unique: false});
+
+		// Products
+		objectStoreProducts.createIndex("id", "id", {unique: true});
+		objectStoreProducts.createIndex("name", "name", {unique: true});
+		objectStoreProducts.createIndex("category", "category", {unique: false});
 
 
 		// Criação do objectStore terminada antes de adicionar dado a ele.
