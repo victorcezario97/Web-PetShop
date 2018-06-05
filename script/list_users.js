@@ -89,6 +89,4 @@ function update(id){
 			window.alert("Alterado com sucesso!");
 		}
 	}
-
 }
-
