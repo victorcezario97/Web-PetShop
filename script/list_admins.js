@@ -44,5 +44,51 @@ function getAdmin(admin){
 		document.getElementById('telefone_admin').value = request.result.phone;
 		document.getElementById('endereco_admin').value = request.result.address;
 		document.getElementById('senha_admin').value = request.result.password;
+
+        document.getElementById('salvar_admin').setAttribute("onClick", "update(" + admin + ");")
 	}
+}
+
+function update(id){
+    // var id = document.getElementById('id_user').getAttribute("name");
+    let objectStore = db.transaction(["admins"], "readwrite").objectStore("admins");
+
+    console.log(id);
+
+    var request = objectStore.get(id);
+    request.onsuccess = function(){
+        console.log(request.result);
+        var data = request.result;
+
+        var nome = document.getElementById('nome_admin').value;
+        if(nome != null && nome != ""){
+            data.name = nome;
+        }
+        var username = document.getElementById('username_admin').value;
+        if(username != null && username != ""){
+            data.user = username;
+        }
+        var email = document.getElementById('email_admin').value;
+        if(email != null && email != ""){
+            data.email = email;
+        }
+        var telefone = document.getElementById('telefone_admin').value;
+        if(telefone != null && telefone != ""){
+            data.phone = telefone;
+        }
+        var endereco = document.getElementById('endereco_admin').value;
+        if(endereco != null && endereco != ""){
+            data.address = endereco;
+        }
+        var senha = document.getElementById('senha_admin').value;
+        if(senha != null && senha != ""){
+            data.password = senha;
+        }
+
+        var updateRequest = objectStore.put(data);
+        updateRequest.onsuccess = function(){
+            window.alert("Alterado com sucesso!");
+        }
+    }
+
 }
