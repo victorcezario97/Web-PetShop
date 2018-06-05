@@ -7,10 +7,11 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="../css/agendar.css">
   <link rel="stylesheet" type="text/css" href="../css/detalhes.css">
   <link rel="stylesheet" type="text/css" href="../css/produto.css">
   <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <link rel="stylesheet" type="text/css" href="../css/finalizar_compra.css"> 
+
 
 </head>
 <body>
@@ -101,43 +102,43 @@
 <div id="troca">
 <div class="container">
 <h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Meu Animais</h1>
-<div class="row container">
 
-  <!-- Imagem do produto -->
+ <div class="row container">
+  <div class="confirm_box col" style="height: auto">
+    <div class="confirm_title"><h2>Informações do Pet</h2></div>
+    <div class="confirm_inner">
+      <p style="margin-bottom: 0px;">Nome:</p>
+      <input type="text" name="Nome" id = "nome_pet" style="margin-top: -20px; width: 95% ">
+      
+      <p style="margin-bottom: 0px;">Idade:</p>
+      <input id="idade_pet" type="number" style="width: 40px;" max="99" />
+
+      <p style="margin-bottom: 0px;">Raça:</p>
+      <input type="text" name="Endereco" id = "raca_pet" style="margin-top: -20px; width: 95% ">
+
+      <div class="horixontal_div">
+        <div>
+          <img id="img" src="../img/ugly_cat.jpg" alt="Foto do pet" style="margin-top: 20px; width: 100px"; display: block; margin-left: auto; margin-right: auto;"/>
+          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+        </div>
+      </div>
+
+    </div>
+    <div>
+    <p style="text-align: center;"><a class="mybtn" style="display: inline-block;" href="edit_pet.html">Editar</a></p>
+    </div>
+  </div>
 
   <div class="col container">
-    <h4>Animais Cadastrados</h4>
+    <h4 style="text-align: center;">Pets Cadastrados</h4>
 
     <nav style="overflow-y: scroll; height: 200px">
             <ul id="user_list">
                 
             </ul>
-        </nav>
-  </div>
-
-  <div class="col container">
-    <img style="width: 200px; margin-left: auto; margin-right: auto; display: block" src="../img/ugly_cat.jpg" alt="Foto do Animal">
-    <br>
-  </div>
-
-  <div class="info col" >
-    <h2>Informações do pet</h2><br>
-    <h3>Nome: </h3> 
-      <p>Esse é o nome do pet </p>
-    <hr>
-
-    <h3>Idade: </h3> 
-      <p>Essa é a idade do pet </p>
-    <hr>
-
-    <h3>Raça: </h3>  
-      <p>Essa é a raça do pet </p>
-    <hr>
-
-  <a class="mybtn" style="display: inline-block;" href="edit_pet.html">Editar</a>
+    </nav>
   </div>
 </div>
-
 
 <div class="container">
 <!-- SPA -->
