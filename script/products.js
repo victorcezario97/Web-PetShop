@@ -1,10 +1,11 @@
+var productPhoto = null;
+
 // Cadastra um produto
 function register(){
-	var productId, productName, productQtd, productDesc, productPrice, productCategory, productPhoto;
+	var productId, productName, productQtd, productDesc, productPrice, productCategory;
 	productName = $("#nome_produto").val();
 	productDesc = $("#comentarios_produto").val();
 	productQtd = $("#qtd_produto").val();
-	productPhoto = null;
 	productPrice = $("#preco_produto").val();
 	productCategory = $("#categoria_produto").val();
 
@@ -30,9 +31,28 @@ function register(){
 		$("#qtd_produto").val("");
 		$("#preco_produto").val("");
 		$("#categoria_produto").val("");
+		$("#img").attr("src", "../img/object.jpg");
+		productPhoto = null;
 	};
 
 	request.onerror = function(event){
 		window.alert("Houve um erro durante o cadastro. Por favor, tente novamente mais tarde.");
 	};
+}
+
+// Muda a imagem e salva link
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#img')
+                .attr('src', e.target.result);
+                //.width(150)
+                //.height(200);
+            productPhoto = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }

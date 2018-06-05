@@ -86,11 +86,8 @@
 
 	<!-- Imagem do produto -->
 	<div class="col container">
-		<img style="width: 200px; margin-left: auto; margin-right: auto; display: block" src="../img/object.jpg" alt="Imagem do Novo Produto">
-		<br>
-		<div>
-			<button class="mybtn justify-content-center align-items-center" onclick="#" type="button" style="margin-left: auto; margin-right: auto; display: block">Inserir Imagem</button>
-		</div>
+		<<input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+              <img id="img" src="../img/object.jpg" alt="Foto do produto" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
 		</div>
 
 	<div class="info col" >

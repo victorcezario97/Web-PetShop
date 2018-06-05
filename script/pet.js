@@ -195,7 +195,6 @@ function readURL(input) {
                 //.width(150)
                 //.height(200);
             petPhoto = e.target.result;
-            alert(photo);
         };
 
         reader.readAsDataURL(input.files[0]);
