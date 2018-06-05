@@ -1,4 +1,33 @@
-var petName, petAge, petRaca, petPhoto;
+var petName, petNewName, petAge, petRaca, petPhoto, petId;
+	
+// Finaliza o update do pet
+function finishUpdate(){
+	var objectStore = db.transaction(["pets"], "readwrite").objectStore("pets");
+	var request = objectStore.get(petId);
+
+	request.onerror = function(event) {
+		window.alert("Erro durante a atualização. Por favor, tente novamente.");
+	};
+
+	request.onsuccess = function(event) {
+	  // Obter os valores antigos
+	  var data = request.result;
+	  
+	  // atualiza os dados
+	  data.name = petNewName;
+	  data.age = petAge;
+	  data.raca = pet.Raca;
+
+	  // Atualizar esse dado no banco
+	  var requestUpdate = objectStore.put(data);
+	   requestUpdate.onerror = function(event) {
+	   	window.alert("Erro durante a atualização. Por favor, tente novamente.");
+	   };
+	   requestUpdate.onsuccess = function(event) {
+	     window.alert("Dados atualizados com sucesso!");
+	   };
+	};
+}
 
 // Finaliza o cadastro do pet
 function finishRegister(){
@@ -22,15 +51,25 @@ function finishRegister(){
 }
 
 // Retorna um pet dado um nome
-function getPet(callback){
+function getPet(callback, operation){
 	var index = db.transaction("pets", "readonly").objectStore("pets").index("nameAndClient");
 	var request = index.get(IDBKeyRange.only([petName, clientId]));
 
 	request.onsuccess = function(event){
-		if(request.result == undefined)
-			callback();
-		else
-			alert("Parece que você já tem um pet com esse nome. Por favor, cadastre com outro nome.");
+		if(request.result == undefined){	// Se não encontrou o pet
+			if(operation === "register")	// Se for pra registrar
+				callback();
+			else	// Se for pra update
+				alert("Houve um erro ao retornar as informações do seu pet. Por favor, tente novamente mais tarde.");
+		}
+		else{	// Se encontrou o pet
+			if(operation === "register")	// Se for pra registrar	
+				alert("Parece que você já tem um pet com esse nome. Por favor, cadastre com outro nome.");
+			else{		// Se for pra update
+				petId = request.result.id;
+				callback();
+			}
+		}
 	};
 
 	request.onerror = function(event){
@@ -53,20 +92,32 @@ function register(){
 	if(petAge === "")
 		petAge = null;
 
-	getPet(finishRegister);
+	getPet(finishRegister, "register");
 }
 
 // Atualiza os dados de um pet
 function update(){
-	var petName = $("#nome_pet").val();
-	var petAge = $("#idade_pet").val();
-	var petRaca = $("#raca_pet").val();
-	var petPhoto = null;
+	petNewName = $("#nome_pet").val();
+	petAge = $("#idade_pet").val();
+	petRaca = $("#raca_pet").val();
+	petPhoto = null;
 
-	if(name === "" || raca === ""){
+	if(petNewName === "" || petRaca === ""){
 		alert("Tenha certeza de que foram inseridos o nome e a raça do seu pet.");
 		return;
 	}
 	if(petAge === "")
-		petIdade = null;
+		petAge = null;
+
+	getPet(finishUpdate, "update");
 }
+
+// Carrega os dados do pet
+function loadDatas(){
+	$("#nome_pet").val(petName);
+	$("#idade_pet").val(petAge);
+	$("#raca_pet").val(petRaca);
+}
+
+if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) === "edit_pet.html")
+	loadDatas();

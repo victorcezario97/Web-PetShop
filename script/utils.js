@@ -1,7 +1,7 @@
 var db;
 const dbName = "DBPetShop";
 var typeLogged;
-var clientId = 1, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
+var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
 var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.

@@ -3,7 +3,7 @@ carrinho.html OK
 detalhes.html OK
 edit_admin.html OK	BACK
 edit_profile.html OK	BACK
-edit_pet		
+edit_pet		BACK		
 estoque.html OK
 finalizar_compra.html WARNINGS date
 home-admin.html OK
