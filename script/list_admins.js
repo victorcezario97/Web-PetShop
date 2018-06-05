@@ -5,7 +5,7 @@ request.onsuccess = function(){
 	var myIndex = objectStore.index('email');
 	var getAllRequest = myIndex.getAll();
 	getAllRequest.onsuccess = function() {
-		document.getElementById('user_list').appendChild(makeUL(getAllRequest.result));
+		document.getElementById('admin_list').appendChild(makeUL(getAllRequest.result));
   	}
 }
 
@@ -20,7 +20,7 @@ function makeUL(array) {
         var it = document.createElement('button');
         // Set its contents:
         it.appendChild(document.createTextNode(array[i].user + " / " + array[i].email));
-        it.setAttribute("onClick", "getUser(" + array[i].id + ");");
+        it.setAttribute("onClick", "getAdmin(" + array[i].id + ");");
         it.setAttribute("name", array[i].id);
         item.appendChild(it);
 
@@ -32,17 +32,17 @@ function makeUL(array) {
     return list;
 }
 
-function getUser(client){
-	let objectStore = db.transaction(["clients"]).objectStore("clients");
+function getAdmin(admin){
+	let objectStore = db.transaction(["admins"]).objectStore("admins");
 
-	var request = objectStore.get(client);
+	var request = objectStore.get(admin);
 	request.onsuccess = function(){
 		console.log(request.result);
-		document.getElementById('nome_user').value = request.result.name;
-		document.getElementById('username_user').value = request.result.user;
-		document.getElementById('email_user').value = request.result.email;
-		document.getElementById('telefone_user').value = request.result.phone;
-		document.getElementById('endereco_user').value = request.result.address;
-		document.getElementById('senha_user').value = request.result.password;
+		document.getElementById('nome_admin').value = request.result.name;
+		document.getElementById('username_admin').value = request.result.user;
+		document.getElementById('email_admin').value = request.result.email;
+		document.getElementById('telefone_admin').value = request.result.phone;
+		document.getElementById('endereco_admin').value = request.result.address;
+		document.getElementById('senha_admin').value = request.result.password;
 	}
 }
