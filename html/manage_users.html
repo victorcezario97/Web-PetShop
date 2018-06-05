@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Novo Animal</title>
+  <title>Edit Pet</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -31,10 +31,15 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div>
-      <a class="mybtn2" style="color: white" href="agendar.html">
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Agendar
-      </a>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
     </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -82,38 +87,47 @@
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
-<div class="container">
-  <h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Novo Animal</h1>
+  <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Informações</h1>
+  </div>
 <div class="row container">
 
   <!-- Imagem do produto -->
-  <div class="col container">
-    <img style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;" src="../img/pet_icon.png" alt="Foto do Animal">
-    <br>
-    <button class="mybtn" style="display: block; margin-right: auto; margin-left: auto">Inserir Imagem</button>
-  </div>
+   <nav style="overflow-y: scroll; height: 200px">
+            <ul id="user_list">
+                
+            </ul>
+        </nav>
 
   <div class="info col">
-    <h2>Informações do pet</h2><br>
-    <h3>Nome: </h3> 
-      <input id="nome_pet" style="width: 100%" />
+    <h4>Dados do Usuário</h4><br>
+
+    <p>Nome: </p> 
+      <input id="nome_user" style="width: 100%" />
     <hr>
 
-    <h3>Idade: </h3> 
-      <input id="idade_pet" type="number" style="width: 40px;" max="99" />
+    <p>Username: </p> 
+      <input id="username_user" style="width: 100%;"/>
     <hr>
 
-    <h3>Raça: </h3>  
-      <input id="raca_pet" style="width: 100%" />
+    <p>Email: </p>  
+      <input id="email_user" style="width: 100%" />
     <hr>
 
+    <p>Telefone: </p>  
+      <input id="telefone_user" style="width: 100px%" />
+    <hr>
+
+    <p>Endereço: </p>  
+      <input id="endereco_user" style="width: 100%" />
+    <hr>
+
+    <p>Senha: </p>  
+      <input id="senha_user" style="width: 100%" />
+    <hr>
+
+   <a class="mainbtn" style="display: inline-block;" href="detalhes.html" id="salvar_pet">Salvar</a>
+  <p>OBS: Campos em branco permanecerão inalterados.</p>
   </div>
-
-</div>
-    <div class="row container">
-    <button class="mainbtn justify-content-center align-items-center" id="salvar_pet" onclick="register();" type="button" style="vertical-align: center; margin: 0 auto">
-     Salvar</button>
-    </div>
 </div>
 
  <!-- Seu html não pode passar daqui -->
@@ -128,8 +142,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
-  <script src="../script/utils.js"></script>
-  <script src="../script/pet.js"></script>
+  <script src="../script/utils.js" async="false" defer="false"></script>
+  <script src="../script/list_users.js" async="false" defer="false"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>

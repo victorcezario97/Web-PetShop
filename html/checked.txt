@@ -1,8 +1,9 @@
 ﻿agendar.html
 carrinho.html OK
 detalhes.html OK
-edit_admin.html OK
+edit_admin.html OK	BACK
 edit_profile.html OK	BACK
+edit_pet		BACK		
 estoque.html OK
 finalizar_compra.html WARNINGS date
 home-admin.html OK
@@ -17,6 +18,7 @@ produto.html OK
 produtos.html OK
 profile.html
 registrar.html OK	BACK
+register_pet		BACK
 
 Cliente:
 Nome
@@ -34,8 +36,3 @@ Usuário
 Senha
 Telefone
 Foto
-
-Edita cliente si
-Edita admin si
-Edita cliente admin
-Edita admin admin
