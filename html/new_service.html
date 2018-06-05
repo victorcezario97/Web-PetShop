@@ -86,21 +86,20 @@
 
 	<!-- Imagem do produto -->
 	<div class="col container">
-		<img style="width: 200px; margin-left: 20px" src="../img/service.jpeg" alt="Imagem do Novo Serviço">
+		<img style="width: 200px; margin-left: auto; margin-right: auto; display: block" src="../img/service.jpeg" alt="Imagem do Novo Serviço">
 		<br>
-		<button class="mybtn">Inserir Imagem</button>
+		<button class="mybtn" style=" margin-left: auto; margin-right: auto; display: block">Inserir Imagem</button>
 	</div>
 
 	<div class="info col" >
 		<h3>Nome do Serviço:</h3>
-		<button class="mybtn">Inserir Nome</button>
+		<input id="nome_servico" style="width: 100%" />
 		<hr>
 		<h3>Descrição do Serviço:</h3>
-		<textarea name="comentarios" style="width: 300px"></textarea>
-		<div><button class="mybtn" >Inserir Descrição</button></div>
+		<textarea name="comentarios" style="width: 300px" id="comentarios_servico"></textarea>
 		<hr>
 		<h3>Preço:</h3>
-		<button class="mybtn">Inserir Preço</button>
+		<p style="display: inline; font-size: 20px;">R$</p> <input id="preco_servico" type="number" min="1" step="any" />
 		<hr>
 
 	</div>

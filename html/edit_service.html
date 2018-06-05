@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Novo produto</title>
+  <title>Editar Serviço</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -30,8 +30,8 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div class="dropdown">
-		  <a type="button" class="btn dropdown-toggle" style="color: white" href="agendar.html">
+      <div>
+		  <a class="mybtn2" style="color: white" href="agendar.html">
 		    Agendar
 		  </a>
 	  </div> 
@@ -81,37 +81,36 @@
 
 <!-- Seu html deve ser escrito a partir daqui -->
 <div class="container">
-	<h1 style="margin-left : 20px; text-align: center">Cadastrar Produto</h1>
-<div class="row container">
+	<h1 style="margin-left: 20px; text-align: center;">Editar Serviço</h1>
+	<div class="row container">
 
 	<!-- Imagem do produto -->
 	<div class="col container">
-		<img style="width: 200px; margin-left: auto; margin-right: auto; display: block" src="../img/object.jpg" alt="Imagem do Novo Produto">
+		<img style="width: 200px; margin-left: auto; margin-right: auto; display: block" src="../img/service.jpeg" alt="Imagem do Novo Serviço">
 		<br>
-		<div>
-			<button class="mybtn justify-content-center align-items-center" onclick="#" type="button" style="margin-left: auto; margin-right: auto; display: block">Inserir Imagem</button>
-		</div>
-		</div>
+		<button class="mybtn" style=" margin-left: auto; margin-right: auto; display: block">Alterar Imagem</button>
+	</div>
 
 	<div class="info col" >
-		<h3>Nome do Produto:</h3>
-		<input id="nome_produto" style="width: 100%" />
+		<h3>Nome do Serviço:</h3>
+		<input id="nome_servico" style="width: 100%" />
 		<hr>
-		<h3>Descrição do Produto:</h3>
-		<textarea name="comentarios" style="width: 300px" id="comentarios_produto"></textarea>
-		<hr>
-		<h3>Quantidade no Estoque:</h3>
-		<input id="qtd_produto" type="number" min="0" />
+		<h3>Descrição do Serviço:</h3>
+		<textarea name="comentarios" style="width: 300px" id="comentarios_servico"></textarea>
 		<hr>
 		<h3>Preço:</h3>
-		<input id="preco_produto" type="number" min="1" step="0.01" />
+		<p style="display: inline; font-size: 20px;">R$</p> <input id="preco_servico" type="number" min="1" step="any" />
 		<hr>
+
 	</div>
-</div>
+	</div>
 	<div style="text-align: center">
-		<p><a class="mainbtn" style="display: inline-block;" href="#">Cadastrar</a></p>
+		<a class="mainbtn" style="display: inline-block;" href="#">Salvar</a>
+		<p>OBS: Campos em branco permanecerão inalterados.</p>
+
 	</div>
 </div>
+
  <!-- Seu html não pode passar daqui -->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
