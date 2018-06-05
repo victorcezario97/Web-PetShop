@@ -40,8 +40,8 @@ function getUser(client){
 		document.getElementById('id_user').innerHTML = request.result.id;
 		document.getElementById('id_user').setAttribute("name", request.result.id);
 		document.getElementById('nome_user').value = request.result.name;
-		document.getElementById('username_user').value = request.result.user;
-		document.getElementById('email_user').value = request.result.email;
+		document.getElementById('username_user').innerHTML = request.result.user;
+		document.getElementById('email_user').innerHTML = request.result.email;
 		document.getElementById('telefone_user').value = request.result.phone;
 		document.getElementById('endereco_user').value = request.result.address;
 		document.getElementById('senha_user').value = request.result.password;
@@ -62,14 +62,6 @@ function update(id){
 		var nome = document.getElementById('nome_user').value;
 		if(nome != null && nome != ""){
 			data.name = nome;
-		}
-		var username = document.getElementById('username_user').value;
-		if(username != null && username != ""){
-			data.user = username;
-		}
-		var email = document.getElementById('email_user').value;
-		if(email != null && email != ""){
-			data.email = email;
 		}
 		var telefone = document.getElementById('telefone_user').value;
 		if(telefone != null && telefone != ""){

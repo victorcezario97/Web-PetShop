@@ -1,6 +1,6 @@
 var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
 request.onsuccess = function(){
-	let objectStore = db.transaction(["clients"]).objectStore("clients");
+	let objectStore = db.transaction(["admins"]).objectStore("admins");
 
 	var myIndex = objectStore.index('email');
 	var getAllRequest = myIndex.getAll();
@@ -38,8 +38,8 @@ function getAdmin(admin){
 	var request = objectStore.get(admin);
 	request.onsuccess = function(){
 		document.getElementById('nome_admin').value = request.result.name;
-		document.getElementById('username_admin').value = request.result.user;
-		document.getElementById('email_admin').value = request.result.email;
+		document.getElementById('username_admin').innerHTML = request.result.user;
+		document.getElementById('email_admin').innerHTML = request.result.email;
 		document.getElementById('telefone_admin').value = request.result.phone;
 		document.getElementById('endereco_admin').value = request.result.address;
 		document.getElementById('senha_admin').value = request.result.password;
@@ -59,14 +59,6 @@ function update(id){
         var nome = document.getElementById('nome_admin').value;
         if(nome != null && nome != ""){
             data.name = nome;
-        }
-        var username = document.getElementById('username_admin').value;
-        if(username != null && username != ""){
-            data.user = username;
-        }
-        var email = document.getElementById('email_admin').value;
-        if(email != null && email != ""){
-            data.email = email;
         }
         var telefone = document.getElementById('telefone_admin').value;
         if(telefone != null && telefone != ""){
