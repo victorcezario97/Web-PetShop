@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 })
 
-function singlePage(page) {
+function singlePage(page){
 	var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", page, true);
 	xhttp.onreadystatechange = function() {
