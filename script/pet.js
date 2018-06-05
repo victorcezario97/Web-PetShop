@@ -1,4 +1,4 @@
-var petName, petNewName, petAge, petRaca, petPhoto, petId;
+var petName, petNewName, petAge, petRaca, petPhoto = null, petId;
 	
 // Finaliza o update do pet
 function finishUpdate(){
@@ -16,7 +16,8 @@ function finishUpdate(){
 	  // atualiza os dados
 	  data.name = petNewName;
 	  data.age = petAge;
-	  data.raca = pet.Raca;
+	  data.raca = petRaca;
+	  data.photo = petPhoto;
 
 	  // Atualizar esse dado no banco
 	  var requestUpdate = objectStore.put(data);
@@ -83,7 +84,7 @@ function register(){
 	petName = $("#nome_pet").val();
 	petAge = $("#idade_pet").val();
 	petRaca = $("#raca_pet").val();
-	petPhoto = null;
+	//petPhoto = null;
 
 	if(petName === "" || petRaca === ""){
 		alert("Tenha certeza de que foram inseridos o nome e a raça do seu pet.");
@@ -100,7 +101,7 @@ function update(){
 	petNewName = $("#nome_pet").val();
 	petAge = $("#idade_pet").val();
 	petRaca = $("#raca_pet").val();
-	petPhoto = null;
+	//petPhoto = null;
 
 	if(petNewName === "" || petRaca === ""){
 		alert("Tenha certeza de que foram inseridos o nome e a raça do seu pet.");
@@ -118,6 +119,7 @@ function loadDatas(){
 	$("#nome_pet").val(petName);
 	$("#idade_pet").val(petAge);
 	$("#raca_pet").val(petRaca);
+	$('#img').attr('src', petPhoto);
 }
 
 function loadPets(){
@@ -133,7 +135,7 @@ function loadPets(){
 
 if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) === "edit_pet.html"){
 	var requestX = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
-	request.onsuccess = function(){
+	requestX.onsuccess = function(){
 		let objectStore = db.transaction(["pets"], "readwrite").objectStore("pets");
 
 		var myIndex = objectStore.index('client');
@@ -168,14 +170,34 @@ function makeUL(array) {
 }
 
 function getUser(pet){
-	let objectStore = db.transaction(["clients"]).objectStore("clients");
+	let objectStore = db.transaction(["pets"]).objectStore("pets");
 
 	var request = objectStore.get(client);
 	request.onsuccess = function(){
+		petId = request.result.id;
 		petName = request.result.name;
 		petAge = request.result.age;
 		petRaca = request.result.raca;
-
+		petPhoto = request.result.photo;
+		loadDatas();
 		//document.getElementById('salvar_user').setAttribute("onClick", "update(" + pet + ");")
 	};
+}
+
+// Muda a imagem e salva link
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#img')
+                .attr('src', e.target.result);
+                //.width(150)
+                //.height(200);
+            petPhoto = e.target.result;
+            alert(photo);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }
