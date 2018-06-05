@@ -83,7 +83,15 @@
   <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Entrar/Cadastrar</button> -->
-   <a href="profile.html"><button class="login-btn" style="vertical-align: center; margin: 0 auto">Olá, usuário/Sair</button>
+   <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="detalhes.html">Meus Pets</a>
+        <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
    </a>
   </div>
 </nav>
@@ -96,8 +104,9 @@
 
   <!-- Imagem do produto -->
   <div class="col container">
+    
+    <img id="img" src="../img/pet_icon.png" alt="Foto do pet" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
     <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-              <img id="img" src="../img/perfil.jpg" alt="Foto do pet" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
   </div>
 
   <div class="info col">
@@ -117,9 +126,9 @@
   </div>
 
 </div>
-    <div class="row container">
-    <button class="mainbtn justify-content-center align-items-center" id="salvar_pet" onclick="register();" type="button" style="vertical-align: center; margin: 0 auto">
-     Salvar</button>
+    <div class="container">
+    <p style="text-align: center;"><button class="mainbtn justify-content-center align-items-center" id="salvar_pet" onclick="register();" type="button" style="vertical-align: center; margin: 0 auto">
+     Salvar</button></p>
     </div>
 </div>
 
