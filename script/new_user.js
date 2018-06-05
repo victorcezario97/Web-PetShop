@@ -215,6 +215,7 @@ function cadastrar(){
 	validateUser(name, email, user, password, address, phone);
 }
 
+// Checa a senha digitada
 function checkPassword(){
 	let psw = $("#password").val();
 	let pswRepeat = $("#psw-repeat").val();

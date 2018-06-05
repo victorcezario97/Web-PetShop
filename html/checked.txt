@@ -2,7 +2,7 @@
 carrinho.html OK
 detalhes.html OK
 edit_admin.html OK
-edit_profile.html OK
+edit_profile.html OK	BACK
 estoque.html OK
 finalizar_compra.html WARNINGS date
 home-admin.html OK
@@ -17,3 +17,25 @@ produto.html OK
 produtos.html OK
 profile.html
 registrar.html OK	BACK
+
+Cliente:
+Nome
+Email
+Usuário
+Senha
+Telefone
+Endereço
+Foto
+
+Admin:
+Nome
+Email
+Usuário
+Senha
+Telefone
+Foto
+
+Edita cliente si
+Edita admin si
+Edita cliente admin
+Edita admin admin
