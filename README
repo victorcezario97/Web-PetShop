@@ -1,23 +1,18 @@
-IMPORTANTE: Utilizar os css já criados para manter um único padrão
-e para facilitar uma possível alteração no futuro!
+O QUE FALTA FAZER?
 
-topnav.css: Contém o css para a barra superior, deve ser utilizado em todas as páginas
-selection.css: fazer a barra horizontal de produtos; (NÃO É O SLIDSHOW)
-dropdown.css: fazer o "menu que desce" quando passar o ponteiro por cima, utilizado na barra superior;
-lateral_bar.css:  contém as categorias da página e um botão de search, "menu" lateral. 
-home-admin.css: css do dashboard da tela de administrador
-finalizar_compra.css: css das "caixas" com os dados para confirmação
+1 - Criar um javascript para saber se o usuário já está logado;
+(Usado para mostrar Olá Usurário/Sair ou Entrar/Cadastrar)
 
-Home: {topnav.css, dropdown.css, selection.css}
-Home-admin: {topnav.css, dropdown.css, home-admin.css} (Tela principal do administrador)
-Login: {topnav.css, dropdown.css, login.css}
-Produto: {topnav.css, dropdown.css, home-admin.css, produto.css} (Olhar um produto de forma individual e gerenciar)
-Registrar: {topnav.css, dropdown.css, home-admin.css, registrar.css} (Registrar um conta pela no site)
-Finalizar Compra: {topnav.css, dropdown.css, home-admin.css, home.css, finalizar_compra.css}
-Carrinho: {topnav.css, dropdown.css, selection.css, home.css, home-admin.css}
+2 - "Linkar" as páginas de administrador;
+(De preferência no mesmo formato das páginas de usuário)
 
+3 - Testar se todos os links das páginas estão funcionando corretamente;
 
-SE CRIAR OUTRO CSS QUE PODE SER UTILIZADO EM OUTRAS PÁGINAS, DESCREVER NESSE ARQUIVO!
+4 - Implementar o banco (faltam quais páginas?);
 
+5 - Fazer a página agendar.html "rodar" de forma responsiva;
 
-****************** INDEX.HTML é o layout da página ********************************************************
+6 - Passar as páginas no validador W3C;
+(Pode ser feito no último dia)
+
+7 - ???
