@@ -84,9 +84,17 @@
   <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
     	 Entrar/Cadastrar</button> -->
-	 <a href="login.html"><button class="login-btn" style="vertical-align: center; margin: 0 auto">Entrar/Cadastrar</button>
-	 </a>
-	</div>
+	 <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="detalhes.html">Meus Pets</a>
+        <a class="dropdown-item" href="carrinho.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
+   </a>
+  </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->

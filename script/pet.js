@@ -132,39 +132,66 @@ function loadPets(){
   	}
 }
 
-
-if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) === "edit_pet.html"){
+/*
+var index = objectStore.index("nome");
+index.get("John").onsuccess = function(event) {
+  alert("O SSN de John é " + event.target.result.ssn);
+};
+*/
+/*
+if(location.pathname.substring(location.pathname.lastIndexOf("/") + 1) === "detalhes.html"){
 	var requestX = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
 	requestX.onsuccess = function(){
 		let objectStore = db.transaction(["pets"], "readwrite").objectStore("pets");
 
 		var myIndex = objectStore.index('client');
 		var getAllRequest = myIndex.getAll(clientId);
+		console.log("request");
 		getAllRequest.onsuccess = function() {
 			document.getElementById('user_list').appendChild(makeUL(getAllRequest.result));
 	  	};
 	};
 }
+*/
 
+// Popula a lista
+function startPets(){
+	console.log("Client ID = " + clientId);
+	var objectStore = db.transaction("pets", "readwrite").objectStore("pets");
 
-function makeUL(array) {
+	//var myIndex = objectStore.index("client");
+	objectStore.openCursor().onsuccess = function(event){
+		var pet = event.target.result;
+		//console.log("Pet " + pet.value.name)
+		if(pet != undefined){
+			if(pet.value.client == clientId)	// A key do index é 'client'. Logo, estamos perguntando se a 'client' do pet é o mesmo logado.
+				document.getElementById('user_list').appendChild(makeUL(pet.value));
+			pet.continue();
+		}
+		else
+			console.log("Sem pet");
+	};
+}
+
+function makeUL(pet) {
     // Create the list element:
     var list = document.createElement('ul');
+    console.log("Pet before. Animal = " + pet.name);
+    
+	//console.log("Pet");
+    // Create the list item:
+    var item = document.createElement('li');
+    var it = document.createElement('button');
+    // Set its contents:
+    it.appendChild(document.createTextNode(pet.raca + " / " + pet.name));
+    it.setAttribute("onClick", "getUser(" + pet.id + ");");
+    it.setAttribute("name", pet.id);
+    item.appendChild(it);
 
-    for(var i = 0; i < array.length; i++) {
-        // Create the list item:
-        var item = document.createElement('li');
-        var it = document.createElement('button');
-        // Set its contents:
-        it.appendChild(document.createTextNode(array[i].raca + " / " + array[i].name));
-        it.setAttribute("onClick", "getUser(" + array[i].id + ");");
-        it.setAttribute("name", array[i].id);
-        item.appendChild(it);
+    // Add it to the list:
+    list.appendChild(item);
 
-        // Add it to the list:
-        list.appendChild(item);
-    }
-
+    console.log("Antes do return");
     // Finally, return the constructed list:
     return list;
 }
@@ -172,8 +199,8 @@ function makeUL(array) {
 function getUser(pet){
 	let objectStore = db.transaction(["pets"]).objectStore("pets");
 
-	var request = objectStore.get(client);
-	request.onsuccess = function(){
+	var request = objectStore.get(pet);
+	request.onsuccess = function(event){
 		petId = request.result.id;
 		petName = request.result.name;
 		petAge = request.result.age;

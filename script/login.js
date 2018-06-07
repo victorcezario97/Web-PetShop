@@ -12,7 +12,18 @@ function validateLogin(result, type){
       clientEmail = result.email;
       clientPassword = result.password;
       typeLogged = "client";
-      window.alert("Bem-vindo, " + clientName);
+
+      sessionStorage.setItem("clientId", clientId);
+      sessionStorage.setItem("clientName", clientName);
+      sessionStorage.setItem("clientUser", clientUser);
+      sessionStorage.setItem("clientAddress", clientAddress);
+      sessionStorage.setItem("clientPhoto", clientPhoto);
+      sessionStorage.setItem("clientPhone", clientPhone);
+      sessionStorage.setItem("clientEmail", clientEmail);
+      sessionStorage.setItem("clientPassword", clientPassword);
+      sessionStorage.setItem("typeLogged", typeLogged);
+
+      window.alert("Bem-vindo, cliente " + clientName);
     }
     else{                 // Se é um admin
       adminId = result.id;
@@ -24,7 +35,7 @@ function validateLogin(result, type){
       adminEmail = result.email;
       adminPassword = result.password;
       typeLogged = "admin";
-      window.alert("Bem-vindo, " + adminName);
+      window.alert("Bem-vindo, administrador " + adminName);
     }
 
     // Abre home

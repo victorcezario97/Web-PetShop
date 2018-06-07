@@ -4,6 +4,7 @@ var typeLogged;
 var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
 var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
 var carrinho = [];
+var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
 window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -41,7 +42,9 @@ function openDB(){
 	// db é uma instância de IDBDatabase
 	request.onsuccess = function(event) {  
 		db = event.target.result;
-		window.alert("Abriu banco");
+		console.log("Abriu banco");
+		if(page === "detalhes.html")
+			startPets();
 	};
 
 	request.onerror = function(event){
@@ -49,7 +52,7 @@ function openDB(){
 	};
 
 	request.onupgradeneeded = function(event) { // Criando ou atualizando banco
-		window.alert("onupgradeneeded");
+		console.log("onupgradeneeded");
 		db = event.target.result;
 
 		// objectStore com as infos do cliente. Id como keyPath pois é único
@@ -66,7 +69,7 @@ function openDB(){
 		objectStore.createIndex("id", "id", {unique: true});
 		// Cria índice pra buscar por nome. Unique: false pois não é único.
 		objectStore.createIndex("name", "name", {unique: false});
-		window.alert("onupgradeneeded");
+		console.log("onupgradeneeded");
 
 		//Admin
 		objectStoreAdmin.createIndex("email", "email", {unique: true});
@@ -99,12 +102,45 @@ function openDB(){
 				clientesObjectStore.add(Clientes[i]);
 
 			var adminsObjectStore = db.transaction("admins", "readwrite").objectStore("admins");
-			for(var i in Clientes){
+			for(var i in Admins){
 				adminsObjectStore.add(Admins[i]);
-				window.alert("Cadastra admin");
+				console.log("Cadastra admin");
 			}
 		};
 	};
 }
 
+// Seta as variáveis
+function setVariables(){
+	/*
+	var typeLogged;
+var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
+var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
+var carrinho = [];
+*/
+	typeLogged = sessionStorage.getItem("typeLogged");
+	if(typeLogged === "client"){
+		clientId = parseInt(sessionStorage.getItem("clientId"));
+		clientName = sessionStorage.getItem("clientName");
+		clientUser = sessionStorage.getItem("clientUser");
+		clientAddress = sessionStorage.getItem("clientAddress");
+		clientPhoto = sessionStorage.getItem("clientPhoto");
+		clientPhone = sessionStorage.getItem("clientPhone");
+		clientEmail = sessionStorage.getItem("clientEmail");
+		clientPassword = sessionStorage.getItem("clientPassword");
+		carrinho = JSON.parse(sessionStorage.getItem("carrinho"));
+		// Para salvar o carrinho: localStorage.setItem("carrinho", JSON.stringify(carrinho));
+	}
+	else if(typeLogged === "admin"){
+		adminId = parseInt(sessionStorage.getItem("adminId"));
+		adminName = sessionStorage.getItem("adminName");
+		adminUser = sessionStorage.getItem("adminUser");
+		adminPhoto = sessionStorage.getItem("adminPhoto");
+		adminPhone = sessionStorage.getItem("adminPhone");
+		adminEmail = sessionStorage.getItem("adminEmail");
+		adminPassword = sessionStorage.getItem("adminPassword");
+	}
+}
+
+setVariables();
 openDB();
