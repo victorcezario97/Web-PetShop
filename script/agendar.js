@@ -3,13 +3,15 @@ var service; // armazenamento volátil do tipo de serviço
 var start, end; // intervalo do slot selecionado
 var flag = new Array(10).fill(true); // verifica qual slot não está ocupado
 
+var animal_name; // nome do animal
+var func_name; // nome do funcionário
 /*
 for (var i = 0; i < flag.length; i++) {
 	if () flag[i] = false; // definir condição para verificar se o slot de horario naquele dia está agendado para tal serviço
 }
 */
-/*
 
+/*
 // adiciona o primeiro nome na lista de veterinarios
 function addFirstName(name) {
 	var line = '<option value="'+name+'">';
@@ -35,25 +37,6 @@ for (var i = 0; i < 10; i++) {
 	this.add();
 }
 */
-// função que verifica se a data selecionada é válida para a realização do serviço
-function verifyDate(date1, date2) {
-	if (date1.getFullYear() > date2.getFullYear()) {
-		return false;
-	} else if (date1.getFullYear() == date2.getFullYear()){
-		if (date1.getMonth() > date2.getMonth()) {
-			return false;
-		} else if (date1.getMonth() == date2.getMonth()) {
-			if (date1.getDate() > date2.getDate()) {
-				console.log();
-				return false;
-			} else { 
-			 return true;
-			} 
-		} else return true;
-	}
-
-	return true;
-}
 
 // seleção de uma data do calendário
 function selectDate(day, month, year) {
@@ -61,7 +44,7 @@ function selectDate(day, month, year) {
 	var select_day = new Date(year, month-1, day); // data selecionada
 
 	// verifica se a data selecionada é válida para o agendamento de serviços
-	if (verifyDate(actual_day, select_day)) {
+	if (actual_day < select_day) {
 		this.day = day; // armazena o dia do agendamento
 		this.month = month; // armazena o mês do agendamento
 		this.year = year; // armazena o ano do agendamento
@@ -116,8 +99,11 @@ function selectSlot(start, end, index) {
 	}
 }
 
-/* implementar para salvar os dados coletados no indexedDB
-function saveDateBase() {
-	
+// implementar para salvar os dados coletados no indexedDB
+function saveDataBase() {
+	this.animal_name = document.getElementById('animal').value;
+	this.func_name = document.getElementById('funcao').value;
+
+	console.log(animal_name);
+	console.log(func_name);
 }
-*/

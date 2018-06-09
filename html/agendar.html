@@ -157,12 +157,12 @@
               <div class="mycontainer">
                 <div class="edit_name">
                   <label for="name"><b>Nome do Animal</b></label>
-                  <input type="text" placeholder="Nome do Animal" name="animal" required>
+                  <input id="animal" type="text" placeholder="Nome do Animal" name="animal" required>
                 </div>    
                 <div class="edit_vet">    
-                      <label for="name"><b>Veterinário</b></label>
-                      <input list="Veterinario" name="veterinario">
-                      <datalist id="Veterinario">
+                      <label for="name"><b>Funcionário</b></label>
+                      <input id="funcao" list="funcionario" name="veterinario">
+                      <datalist id="funcionario">
                         
                       </datalist>
                 </div>      
@@ -170,7 +170,7 @@
             </div>
 					</div>
 				</div>
-				<button id="menubtn">Corfirmar</button>
+				<button id="menubtn" onclick="saveDataBase()">Corfirmar</button>
         <!-- Utilizar o botão de baixo quando tiver implementado a função saveDataBase() no arquivo agendar.js -->
         <!-- A função deve armazenar todos os dados do agendamento no indexedDB -->
         <!-- <button id="menubtn" onclick="saveDataBase()">Corfirmar</button> -->

@@ -126,9 +126,28 @@ input[type=time], input[type=date] {
     width: 100%;
 }
 
+.select {
+    width: 150%;
+}
+
+.select:hover {
+    background: #ddd;
+}
+
+#select_left {
+    float: left;
+    padding-left: 20%;
+}
+
+#select_right {
+    float: right;
+    padding-right: 20%;
+}
+
 @media screen and (max-width: 800px) {
   #calendario {
-    width: 80%;
+    width: 60%;
+    height: 40%;
     margin-left: 10%;
     margin-top: 0px;
   }
