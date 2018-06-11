@@ -1,38 +1,23 @@
+Checando no W3C:
+
 ﻿agendar.html
-carrinho.html OK
-detalhes.html OK
-edit_admin.html OK	BACK
-edit_profile.html OK	BACK
-edit_pet		BACK		
-estoque.html OK
-finalizar_compra.html WARNINGS date
-home-admin.html OK
+carrinho.html
+detalhes.html
+edit_admin.html 	
+edit_profile.html	
+edit_pet				
+estoque.html
+finalizar_compra.html
+home-admin.html
 home.html
-index.html WARNINGS Que isso?  ---- *Layout padrão
-login.html WARNINGS h1	BACK
-new_admin.html OK	BACK
-new_product.html OK	BACK
-new_service.html OK
-new_user.html OK	BACK
-produto.html OK
-produtos.html OK
+login.html 		
+new_admin.html	
+new_product.html	
+new_service.html
+new_user.html		
+produto.html
+produtos.html
 profile.html
-registrar.html OK	BACK
-register_pet		BACK
+registrar.html 
+register_pet	
 
-Cliente:
-Nome
-Email
-Usuário
-Senha
-Telefone
-Endereço
-Foto
-
-Admin:
-Nome
-Email
-Usuário
-Senha
-Telefone
-Foto
