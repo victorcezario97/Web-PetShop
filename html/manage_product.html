@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Editar Serviço</title>
+  <title>Gerenciar Produto</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -30,86 +30,90 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div>
-		  <a class="mybtn2" style="color: white" href="agendar.html">
-		    Agendar
-		  </a>
-	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Cachorros
+		    Cadastrar
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Cachorro_alimentos">Alimentos</a>
-		    <a class="dropdown-item" href="produtos.html#Cachorro_acessorios">Acessórios</a>
-	    	<a class="dropdown-item" href="produtos.html#Cachorro_higiene">Higiene</a>
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
 		  </div>
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Gatos
+		    Gerenciar
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Gato_alimentos">Alimentos</a>
-		    <a class="dropdown-item" href="produtos.html#Gato_acessorios">Acessórios</a>
-	    	<a class="dropdown-item" href="produtos.html#Gato_higiene">Higiene</a>
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
 		  </div>
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Farmácia
+		    Estoque
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Farmacia_vermifugo">Vermífugo</a>
-		    <a class="dropdown-item" href="produtos.html#Farmacia_antipulga">Antipulga</a>
-	    	<a class="dropdown-item" href="produtos.html#Farmacia_eutanasia">Eutanásia</a>
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
 		  </div>
 	  </div> 
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Mais
+		    Analytics
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="produtos.html#Peixes">Peixes</a>
-		    <a class="dropdown-item" href="produtos.html#Roedores">Roedores</a>
-	    	<a class="dropdown-item" href="produtos.html#Cobras">Cobras</a>
+		    <a class="dropdown-item" href="#">Link 1</a>
+		    <a class="dropdown-item" href="#">Link 2</a>
+	    	<a class="dropdown-item" href="#">Link 3</a>
 		  </div>
-	  </div>
+	  </div> 
   </div>  
-  <a type="button" class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <button type="button" class="btn login-btn">Olá, Administrador</button> 
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
-<div class="horizontal_div container">
-	<div class="confirm_box" style="height: auto">
-		<div class="confirm_title"><h2>Editar Serviço</h2></div>
-		<div class="confirm_inner">
-			<p style="margin-bottom: 0px;">Nome do Produto:</p>
-			<input type="text" id="nome_servico" style="margin-top: -20px; width: 95% ">
+<div class="container">
+	<h1 style="margin-left: 20px; text-align: center">Gerenciar Produto</h1>
+<div class="row container">
 
-			<p style="margin-bottom: 0px;">Descrição do Serviço:</p>
-			<textarea name="descricao" style="width: 95%" id="comentarios_servico"></textarea>
+	<!-- Imagem do produto -->
+	<div class="col container">
+		<h3>Royal Canin</h3>
+		<img style="width: 200px; margin-left: 20px" src="../img/royal_canin.png" alt="Imagem do Produto">
+		<br>
+		<button class="mybtn">Alterar</button>
+	</div>
 
-			<p style="margin-bottom: 0px;">Preço:</p>
-			<input id="preco_servico" type="number" min="1" step="0.01" style="margin-top: -20px; width: 95% ">
-			
-			<p style="margin-bottom: 0px;">Categoria</p>
-			<input id="categoria_servico" type="text" style="margin-top: -20px; width: 95% ">
+	<div class="info col container" >
+		<h3>Descrição do Produto:</h3>
+		<p>- Com transgênico; </p>
+		<p>- Ração premium indicada para cães adultos;</p>
+		<p>- Alimento altamente digestível;</p>
+		<p>- Proporciona aos cães todo o sabor que eles adoram;</p>
+		<p>- Ingredientes rigorosamente selecionados;</p>
+		<p>- Proporciona aos cães uma nutrição equilibrada;</p>
+		<button class="mybtn">Alterar</button>
+		<hr>
+		<h3>Quantidade Disponível: 32 | Vendidos: 43</h3>
+		<button class="mybtn">Alterar</button>
+		<hr>
+		<h3>Preço: R$141,99</h3>
+		<button class="mybtn">Alterar</button>
+		<hr>
+		<h3>Deletar Produto do Site?</h3>
+		<button class="mybtn">Alterar</button>
 
-			<div class="horixontal_div">	
-				<div>
- 					<img id="img" src="../img/service.jpeg" alt="Imagem do Serviço" style="margin-top: 20px; width: 100px"/>
- 					<input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-				</div>
-				<div style="text-align: center">
-					<button  class="mainbtn" style="display: inline-block;" onclick = "register();">Cadastrar</button>
-					<p>Obs.: Os campos em brancos permanecerão inalterados</p>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
+	<div style="text-align: center">
+		<p><a class="mainbtn" style="display: inline-block;" href="#">Cadastrar</a></p>
+	</div>
+</div>
+
  <!-- Seu html não pode passar daqui -->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">

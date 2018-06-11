@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Perfil</title>
+  <title>Agendar</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" type="text/css" href="../css/profile.css">
+  <link rel="stylesheet" type="text/css" href="../css/selection.css">
+  <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <link rel="stylesheet" type="text/css" href="../css/agendar.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
 
 </head>
 <body>
@@ -95,47 +97,86 @@
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
-<div class="row container">
-<div id="ProfilePage">
-    <div id="LeftCol">
-        <div id="Photo"><img src="../img/perfil_icon.png"></div>
-        <div id="ProfileOptions">
-        <button class="mybtn">Editar</button>
-        </div>
-    </div>
-
-    <div id="Info">
-        <p>
-            <strong>Nome:</strong>
-            <span>Meu Nome</span>
-        </p>
-        <p>
-            <strong>Tel.:</strong>
-            <span>(99)99999-9999</span>
-        </p>
-        <p>
-            <strong>Endereço:</strong>
-            <span>Rua Qualquer Nº00</span>
-        </p>
-        <p>
-            <strong>Pet1:</strong>
-            <span>Doguero</span>
-        </p>
-        <p>
-            <strong>Pet2:</strong>
-            <span>Cobrero</span>
-        </p>
-    </div>
-
-    <!-- Needed because other elements inside ProfilePage have floats -->
-    <div style="clear:both"></div>
-</div>
-
-</div>
-  <div style="text-align: center">
-  <p><a type="button" class="mainbtn" style="display: inline-block;" href="edit_profile.html">Editar Perfil</a></p>  
-</div>
-</div>
+	<div class="body">	
+ 
+		<script type="text/javascript" src="../script/calendario.js"></script>
+		<div class="box">
+			<div class="header_box">
+				<h3>Seviços</h3>
+			</div>
+			<div class="menu">
+				<div class="menu_body" style="overflow-y: ">
+					<div class="menu_list">
+						<div id="opcoes">
+						  	<div class="celula" onclick="selectService('consulta')">
+						  		<div class="escolha">Consulta Veterinária</div>
+						  	</div>
+						  	<div class="celula" onclick="selectService('banho')">
+						  		<div class="escolha">Banho</div>
+						  	</div>
+						  	<div class="celula" onclick="selectService('tosa')">
+						  		<div class="escolha">Tosa</div>
+						  	</div>
+						  	<div class="celula" onclick="selectService('hospedagem')">
+						  		<div class="escolha">Hospedagem</div>
+						  	</div>
+						</div>
+            <div id="horario">
+              <div class="celula" onclick="selectSlot(7, 8, 0)">
+                <div class="escolha">7h - 8h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(8, 9, 1)">
+                <div class="escolha">8h - 9h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(9, 10, 2)">
+                <div class="escolha">9h - 10h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(10, 11, 3)">
+                <div class="escolha">10h - 11h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(11, 12, 4)">
+                <div class="escolha">11h - 12h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(14, 15, 5)">
+                <div class="escolha">14h - 15h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(15, 16, 6)">
+                <div class="escolha">15h - 16h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(16, 17, 7)">
+                <div class="escolha">16h - 17h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(17, 18, 8)">
+                <div class="escolha">17h - 18h</div>
+              </div>
+              <div class="celula" onclick="selectSlot(18, 19, 9)">
+                <div class="escolha">18h - 19h</div>
+              </div>
+            </div>
+            <div id="preenchimento">
+              <div class="mycontainer">
+                <div class="edit_name">
+                  <label for="name"><b>Nome do Animal</b></label>
+                  <input id="animal" type="text" placeholder="Nome do Animal" name="animal" required>
+                </div>    
+                <div class="edit_vet">    
+                      <label for="name"><b>Funcionário</b></label>
+                      <input id="funcao" list="funcionario" name="veterinario">
+                      <datalist id="funcionario">
+                        
+                      </datalist>
+                </div>      
+              </div>    
+            </div>
+					</div>
+				</div>
+				<button id="menubtn" onclick="saveDataBase()">Corfirmar</button>
+        <!-- Utilizar o botão de baixo quando tiver implementado a função saveDataBase() no arquivo agendar.js -->
+        <!-- A função deve armazenar todos os dados do agendamento no indexedDB -->
+        <!-- <button id="menubtn" onclick="saveDataBase()">Corfirmar</button> -->
+			</div>
+		</div>
+	</div>	
  <!-- Seu html não pode passar daqui -->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
@@ -143,11 +184,13 @@
 </div>
 
 
-  <script src="../script/jquery.min.js"></script>
+  <script type="text/javascript" src="../script/jquery.min.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="../script/bootstrap.min.js"></script>
-  <script src="../script/main.js"></script>
+  <script type="text/javascript" src="../script/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../script/main.js"></script>
+  <script type="text/javascript" src="../script/scripts.js"></script>
+  <script type="text/javascript" src="../script/agendar.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>

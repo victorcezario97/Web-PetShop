@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Produtos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/selection.css">
+
+</head>
+<body>
+
+<div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
+  <div class="container banner">
+    <h1>Plus</h1>
+    <p>Seu filho bem cuidado</p> 
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm">
+  <a class="navbar-brand" href="">
+  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div> 
+      <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+    	 Agendar</button> -->
+    	 <a href="schedule.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
+    	 Agendar</button></a>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Cachorros
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="products.html#Cachorro_alimentos">Alimentos</a>
+		    <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
+	    	<a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Gatos
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="products.html#Gato_alimentos">Alimentos</a>
+		    <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
+	    	<a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Farmácia
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="products.html#Farmacia_vermifugo">Vermífugo</a>
+		    <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
+	    	<a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Mais
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="products.html#Peixes">Peixes</a>
+		    <a class="dropdown-item" href="products.html#Roedores">Roedores</a>
+	    	<a class="dropdown-item" href="products.html#Cobras">Cobras</a>
+		  </div>
+	  </div>
+  </div>  
+  <div>
+  <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+    	 Entrar/Cadastrar</button> -->
+	 <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="details.html">Meus Pets</a>
+        <a class="dropdown-item" href="cart.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
+   </a>
+  </div>
+</nav>
+
+<!-- Seu html deve ser escrito a partir daqui -->
+
+<div class="container">
+<div class="container">
+<form class="form-inline" style="margin-bottom: 30px">
+	<H5>Pesquisar produto: </H5>
+      <input class="form-control mr-sm-2" type="search" placeholder="Nome">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div class="container col">
+<H2 class="container" id = "Cachorro">Cachorro</H2>
+<h3 id = "Cachorro_alimentos">Alimentos</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<h3 id = "Cachorro_acessorios">Acessórios</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<h3 id = "Cachorro_higiene">Higiene</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+
+  <H2 id = "Gato">Gato</H2> 
+  <h3 id = "Gato_alimentos">Alimentos </h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+
+<h3 id = "Gato_acessorios">Acessórios</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<h3 id = "Gato_higiene">Higiene</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<h2 id = "Farmacia">Farmácia</h2>
+<h3 id = "Farmacia_vermifugo">Vermífugo</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<h3 id = "Farmacia_antipulga">Antipulga</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<h3 id = "Farmacia_eutanasia">Eutanásia</h3>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  
+<H2 id = "Peixes">Peixes</H2>
+  
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+<H2 id = "Roedores">Roedores</H2>
+  
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+
+  
+  <H2 id = "Cobras">Cobras</H2>
+  
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+  <a class="produto_block" href="produto.html">
+			<img src="../img/racao_pedigree.png" alt="Ração Royal Canin" class="produto_img">
+			<div>
+				<p class="produto_nome" >Ração Pedigree Júnior Filhotes Raças Médias e Grandes 1kg</p>
+			</div>
+			<div>
+				<p class="produto_preco">R$16,90</p>
+			</div>
+		</a>
+	</div>
+</div>
+</div>
+
+ <!-- Seu html não pode passar daqui -->
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
+  <p>Plus © No mercado desde ontem</p>
+</div>
+
+
+  <script src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../script/bootstrap.min.js"></script>
+  <script src="../script/main.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+</body>
+</html>
