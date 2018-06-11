@@ -18,7 +18,19 @@ O QUE FALTA FAZER?
 7 - Falta tela de produto
 (Mostrar um produto específico)
 
-8 - Passar as páginas no validador W3C;
+8 - Botão "salvar" página edit_admin não funciona;
+9 - Botão "cadastrar" página edit_product não funciona;
+10- Edit_profile: botões "alterar imagem" e "salavar" não funcionam;
+11 - Botão "cadastrar" página edit_service não funciona;
+12 - Botão "salvar" manage_admins não funciona;
+13 - Página manage_product, nenhum botão funciona;
+14 - Botão "salvar" não funciona;
+15 - Barra "search" tela products não funcina;
+16 - Remover botão "edit" na tela edit_profile;
+17 - Tela purchase botão "oncfirma compra" não funciona;
+
+
+INT_MAX: Passar as páginas no validador W3C;
 (Pode ser feito no último dia)
  
 
