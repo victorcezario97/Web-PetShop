@@ -2,6 +2,7 @@
 <html lang="pt-br">
   <head>
     <title>Detalhes do Produto</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
       <link rel="stylesheet" type="text/css" href="../css/selection.css">
@@ -19,78 +20,87 @@
     </div>
 
     <nav class="navbar navbar-expand-sm">
-      <a class="navbar-brand" href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+  <a class="navbar-brand" href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon">
-          <img src="../img/hamburger.png" width="30" height="30" alt="">
-        </span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <div> 
-          <!-- Usado na SPA -->
-          <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
-           Agendar</button> -->
-           <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
-           Agendar</a>
-        </div> 
-          <div class="dropdown">
-          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-            Cachorros
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="products.html#Cachorro_alimentos">Alimentos</a>
-            <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
-            <a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
-          </div>
-        </div> 
-          <div class="dropdown">
-          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-            Gatos
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="products.html#Gato_alimentos">Alimentos</a>
-            <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
-            <a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
-          </div>
-        </div> 
-          <div class="dropdown">
-          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-            Farmácia
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="products.html#Farmacia_vermifugo">Vermífugo</a>
-            <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
-            <a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
-          </div>
-        </div> 
-          <div class="dropdown">
-          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-            Mais
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="products.html#Peixes">Peixes</a>
-            <a class="dropdown-item" href="products.html#Roedores">Roedores</a>
-            <a class="dropdown-item" href="products.html#Cobras">Cobras</a>
-          </div>
-        </div>
-      </div>  
-      <div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div> 
       <!-- Usado na SPA -->
-          <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
-           Entrar/Cadastrar</button> -->
-       <div class="dropdown login-btn">
-          <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-            Olá Usuário/Sair
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="details.html">Meus Pets</a>
-            <a class="dropdown-item" href="cart.html">Carrinho</a>
-            <a class="dropdown-item" href="profile.html">Perfil</a>
-          </div>
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button> -->
+       <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+       Agendar</a>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Cachorros
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="products.html#Cachorro_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
       </div>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Gatos
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="products.html#Gato_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
       </div>
-    </nav>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Farmácia
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="products.html#Farmacia_vermifugo">Vermífugo</a>
+        <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
+        <a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
+      </div>
+    </div> 
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Mais
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="products.html#Peixes">Peixes</a>
+        <a class="dropdown-item" href="products.html#Roedores">Roedores</a>
+        <a class="dropdown-item" href="products.html#Cobras">Cobras</a>
+      </div>
+    </div>
+  </div>  
+  <div>
+  <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Entrar/Cadastrar</button> -->
+   <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-details.html');" type="button" style="vertical-align: center; margin: 0 auto">Meus Pets</button>
+        </div>
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-cart.html');" type="button" style="vertical-align: center; margin: 0 auto">Carrinho</button>
+        </div>
+        <a class="dropdown-item" style="text-align: center" href="profile.html">Perfil</a>
+      </div>
+  </div>
+  </div>
+</nav>
+
+<!-- Seu código de estar abaixo %%-->
+
+
+
     <div class="body_container">
       <div class="box_container">
         <div class="image-frame">
@@ -111,8 +121,25 @@
       </div>
       <button id="btn">adicinar ao carrinho</button>  
     </div>
+
+<!-- Seu código não pode passar daqui %%-->
+
     <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
         <p>Plus © No mercado desde ontem</p>
     </div>
+
+    <script src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../script/bootstrap.min.js"></script>
+  <script src="../script/scripts.js"></script>
+  <script src="../script/main.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/utils.js"></script>
+  <script src="../script/login.js"></script>
+  <script src="../script/pet.js"></script>
+  <script src="../script/cart.js"></script>
+
+    
   </body>
 </html>
