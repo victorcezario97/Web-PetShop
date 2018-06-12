@@ -31,7 +31,7 @@ function createChild(prod){
 
 	let pprice = document.createElement("p");
 	pprice.setAttribute("class", "produto_preco");
-	pprice.innerHTML = prod.price;
+	pprice.innerHTML = "R$" + prod.price;
 
 
 
