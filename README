@@ -3,8 +3,6 @@ O QUE FALTA FAZER?
 1 - Criar um javascript para saber se o usuário já está logado;
 (Usado para mostrar Olá Usurário/Sair ou Entrar/Cadastrar)
 
-2 - "Linkar" as páginas de administrador;
-
 3 - Testar se todos os links das páginas estão funcionando corretamente;
 
 4 - Implementar o banco (faltam quais páginas?);
