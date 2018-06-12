@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
+  <link rel="stylesheet" type="text/css" href="../css/selection.css">
 
 </head>
 <body>
@@ -34,10 +35,22 @@
 		    Cadastrar
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="new_admin.html">Administrador</a>
-		    <a class="dropdown-item" href="new_user.html">Usuário</a>
-	    	<a class="dropdown-item" href="new_product.html">Produto</a>
-	    	<a class="dropdown-item" href="new_service.html">Serviço</a>
+		    <div>
+			      <button class="mybtn2" onclick="singlePage('single/s-new_admin.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Administrador</button>	
+			</div>
+		    <div>
+			      <button class="mybtn2" onclick="singlePage('single/s-new_user.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Usuário</button>	
+			</div>
+	    	<div>
+			      <button class="mybtn2" onclick="singlePage('single/s-new_product.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Produto</button>	
+			</div>
+	    	<div>
+			      <button class="mybtn2" onclick="singlePage('single/s-new_service.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Serviço</button>	
+			</div>
 		  </div>
 	  </div> 
       <div class="dropdown">
@@ -45,27 +58,34 @@
 		    Gerenciar
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="manage_admins.html">Administradores</a>
-		    <a class="dropdown-item" href="manage_users.html">Usuários</a>
-	    	<a class="dropdown-item" href="manage_product.html">Produtos</a>
-	    	<a class="dropdown-item" href="#">Serviços</a>
-
+		    <div>
+			      <button class="mybtn2" onclick="singlePage('single/s-manage_admins.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Administradores</button>	
+			</div>
+		    <div>
+			      <button class="mybtn2" onclick="singlePage('single/s-manage_users.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Usuários</button>	
+			</div>
+	    	<div>
+			      <button class="mybtn2" onclick="singlePage('single/s-manage_product.html');" type="button" style="vertical-align: center; margin: 0 auto">
+		       		Produto</button>	
+			</div>
 		  </div>
 	  </div> 
 	  <div>
-	      <a href="stock.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
-	       Estoque</a>
+	      <button class="mybtn2" onclick="singlePage('single/s-stock.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       		Estoque</button>	
 	  </div>
-      <div class="dropdown">
-	      <a href="stock.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
-	       Analytics</a>
+      <div>
+	      <button class="mybtn2" onclick="singlePage('single/s-stock.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       		Analytics</button>	
 	  </div>
   </div>  
   <button type="button" class="btn login-btn">Olá, administrador</button> 
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui %%-->
-
+<div id="troca">
 <div class="horizontal_div container">
 
 		<div class="info_box container">
@@ -104,6 +124,7 @@
 	<img src="../img/sales_chart.png" alt="Sales Chart" class="chart" style="width: 700px; height: 400px; margin: 50px">
 	<img src="../img/pie_chart.png" alt="Products pie chart" class="chart" style="width: 300px; height: 400px; margin-left: 70px; margin-bottom: 50px">
 
+</div>
  <!-- Seu html não pode passar daqui %%-->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
@@ -117,5 +138,7 @@
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/utils.js"></script>
+  <script src="../script/new_user.js"></script>
 </body>
 </html>
