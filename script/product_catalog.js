@@ -8,8 +8,8 @@ request.onsuccess = function(){
 		var list = getAllRequest.result;
 
 		for(var i=0; i<list.length; i++){
+			console.log(list[i].img);
 			var a = createChild(list[i]);
-			console.log(list[i].category);
 			placeChild(a, list[i]);
 		}
 
@@ -30,7 +30,15 @@ request.onsuccess = function(){
 
 
 function placeChild(child, prod){
-	document.getElementById(prod.category).getElementById(prod.subcategory).appendChild(child);
+	var cn = document.getElementById(prod.category).childNodes;
+	for(i=0; i<cn.length; i++){
+		if(cn[i].id == prod.category+"_"+prod.subcategory){
+			cn[i].appendChild(child);
+			break;
+		}
+		
+	}
+	//console.log(cn);
 }
 
 function createChild(prod){
