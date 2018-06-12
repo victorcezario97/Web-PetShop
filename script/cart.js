@@ -14,7 +14,7 @@ function createChild(prod){
 
 	let a = document.createElement("a");
 	a.setAttribute("class", "produto_block");
-	a.setAttribute("href", "product.html?id=" + prod.id);
+	a.setAttribute("href", "product_details.html?id=" + prod.id);
 
 	let img = document.createElement("img");
 	img.setAttribute("alt", "Imagem do Produto");
