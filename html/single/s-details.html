@@ -1,0 +1,46 @@
+<div id="troca">
+<div class="container">
+<h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Meus pets</h1>
+
+ <div class="row container">
+  <div class="confirm_box col" style="height: auto">
+    <div class="confirm_title"><h2>Informações do Pet</h2></div>
+    <div class="confirm_inner">
+      <p style="margin-bottom: 0px;">Nome:</p>
+      <p id= "name"></p>
+      
+      <p style="margin-bottom: 0px;">Idade:</p><br>
+      <p id = "age"></p>
+
+      <p style="margin-bottom: 0px;">Raça:</p><br>
+      <p id = "raca"></p>
+
+      <div class="horixontal_div">
+        <div>
+          <img id="img" src="../img/ugly_cat.jpg" alt="Foto do pet" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
+        </div>
+      </div>
+    </div>
+    <div>
+    <p style="text-align: center;"><a class="mybtn" style="display: inline-block;" onclick = "saveToUpdate();">Editar</a></p>
+    </div>
+  </div>
+  <div class="col container">
+    <h4 style="text-align: center;">Pets Cadastrados</h4>
+    <nav style="overflow-y: scroll; height: 200px">
+            <ul id="user_list">
+                
+            </ul>
+    </nav>
+  </div>
+</div>
+<div class="container">
+<!-- SPA -->
+<!-- <button class="mainbtn justify-content-center align-items-center" onclick="singlePage('single/s-registerpet.html');" type="button" style="vertical-align: center; margin: 0 auto">
+     Cadastrar Animal</button> -->
+     <p style="text-align: center"><a href="register_pet.html" class="mainbtn" style="vertical-align: center; margin: 0 auto">
+     Cadastrar Animal</a></p>
+</div>
+</div>
+</div>
+ <!-- Seu html não pode passar daqui %-->
