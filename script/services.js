@@ -2,11 +2,11 @@ var servicePhoto = null;
 
 // Cadastra um serviço
 function register(){
-	var serviceId, serviceName, serviceDesc, servicePrice, servicePhoto;
+	var serviceId, serviceName, serviceDesc, servicePrice, serviceCategory;
 	serviceName = $("#nome_servico").val();
 	serviceDesc = $("#comentarios_servico").val();
-	servicePhoto = null;
 	servicePrice = $("#preco_servico").val();
+	serviceCategory = $("#categoria_servico").val();
 
 	if(serviceName === "" || servicePrice === ""){
 		alert("Tenha certeza de que foram inseridos o nome e o preço do serviço.");
@@ -14,11 +14,13 @@ function register(){
 	}
 	if(serviceDesc === "")
 		serviceDesc = null;
+	if(serviceCategory === "")
+		serviceCategory = null;
 
 	// Cadastra
 	let objectStore = db.transaction("services", "readwrite").objectStore("services");
 
-	var newService = {name: serviceName, description: serviceDesc, photo: servicePhoto, price: servicePrice};
+	var newService = {name: serviceName, description: serviceDesc, category: serviceCategory, photo: servicePhoto, price: servicePrice};
 	var request = objectStore.add(newService);
 
 	request.onsuccess = function(event){
@@ -27,6 +29,7 @@ function register(){
 		$("#comentarios_servico").val("");
 		$("#preco_servico").val("");
 		$('#img').attr('src', "../img/service.jpeg");
+		$("#categoria_servico").val("");
 		servicePhoto = null;
 	};
 
