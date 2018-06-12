@@ -21,9 +21,8 @@
 </div>
 
 <nav class="navbar navbar-expand-sm">
-  <a class="navbar-brand" href="">
-  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
-  </a>
+  <a class="navbar-brand" href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
       <img src="../img/hamburger.png" width="30" height="30" alt="">
@@ -32,10 +31,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <div> 
       <!-- Usado na SPA -->
-      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Agendar</button> -->
-       <a href="agendar.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
-       Agendar</button></a>
+       <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+       Agendar</a>
     </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -80,18 +79,22 @@
   </div>  
   <div>
   <!-- Usado na SPA -->
-      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Entrar/Cadastrar</button> -->
    <div class="dropdown login-btn">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Olá Usuário/Sair
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="details.html">Meus Pets</a>
-        <a class="dropdown-item" href="cart.html">Carrinho</a>
-        <a class="dropdown-item" href="profile.html">Perfil</a>
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-details.html');" type="button" style="vertical-align: center; margin: 0 auto">Meus Pets</button>
+        </div>
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-cart.html');" type="button" style="vertical-align: center; margin: 0 auto">Carrinho</button>
+        </div>
+        <a class="dropdown-item" style="text-align: center" href="profile.html">Perfil</a>
       </div>
-   </a>
+  </div>
   </div>
 </nav>
 
@@ -146,5 +149,8 @@
   <script src="../script/utils.js"></script>
   <script src="../script/pet.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/cart.js"></script>
+
+
 </body>
 </html>

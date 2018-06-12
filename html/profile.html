@@ -30,7 +30,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <div> 
       <!-- Usado na SPA -->
-      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Agendar</button> -->
        <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
        Agendar</a>
@@ -78,16 +78,20 @@
   </div>  
   <div>
   <!-- Usado na SPA -->
-      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Entrar/Cadastrar</button> -->
    <div class="dropdown login-btn">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Olá Usuário/Sair
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="details.html">Meus Pets</a>
-        <a class="dropdown-item" href="cart.html">Carrinho</a>
-        <a class="dropdown-item" href="profile.html">Perfil</a>
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-details.html');" type="button" style="vertical-align: center; margin: 0 auto">Meus Pets</button>
+        </div>
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-cart.html');" type="button" style="vertical-align: center; margin: 0 auto">Carrinho</button>
+        </div>
+        <a class="dropdown-item" style="text-align: center" href="profile.html">Perfil</a>
       </div>
   </div>
   </div>
@@ -155,5 +159,9 @@
   <script src="../script/utils.js"></script>
   <script src="../script/edit_user.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/cart.js"></script>
+  
+
+  
 </body>
 </html>
