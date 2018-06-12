@@ -61,6 +61,9 @@ function removeCart(id){
 	for(i=0; i<carrinho.length; i++){
 		if (carrinho[i].id == id) {
 			carrinho.splice(i, 1);
+			sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
+			window.alert("Item removido!");
+			location.reload();
 		}
 	}
 }

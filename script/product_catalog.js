@@ -8,7 +8,6 @@ request.onsuccess = function(){
 		var list = getAllRequest.result;
 
 		for(var i=0; i<list.length; i++){
-			console.log(list[i].img);
 			var a = createChild(list[i]);
 			placeChild(a, list[i]);
 		}
@@ -42,8 +41,6 @@ function placeChild(child, prod){
 }
 
 function createChild(prod){
-	let divouter = document.createElement("div");
-
 	let a = document.createElement("a");
 	a.setAttribute("class", "produto_block");
 	a.setAttribute("href", "product_details.html?id=" + prod.id);
@@ -74,7 +71,42 @@ function createChild(prod){
 	a.appendChild(divname);
 	a.appendChild(divprice);
 
-	return a;
+	let btn = document.createElement("button");
+	btn.setAttribute("onclick", "addCart(" + prod.id + ");");
+	btn.innerHTML = "Adicionar ao carrinho";
+	btn.setAttribute("class", "mybtn");
+	btn.setAttribute("name", prod.id);
+	btn.setAttribute("style", "margin: auto; display: block");
+	
+	let divouter = document.createElement("div");
+	divouter.appendChild(a);
+	divouter.appendChild(btn);
+	
+	divouter.setAttribute("style", "display: inline-block; vertical-align: middle;");
+
+	return divouter;
 }
 
+function addCart(id){
+	if(id != null){
+	var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
+	request.onsuccess = function(){
+		let objectStore = db.transaction(["products"]).objectStore("products");
+
+		var request2 = objectStore.get(parseInt(id));
+		request2.onsuccess = function(){
+
+			if(request2.result == undefined) window.alert("Produto não encontrado!");
+			else{
+				carrinho.push(request2.result);
+				
+				sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
+				window.alert("Produto adicionado ao carrinho!");
+			}
+		}
+	}
+}else{
+	window.alert("Produto não encontrado!");
+}
+}
 
