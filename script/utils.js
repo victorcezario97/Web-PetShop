@@ -130,13 +130,13 @@ var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPass
 var carrinho = [];
 */
 //TESTE
-	var btn = document.getElementById("loginBtn");
-	var div = document.getElementById("loginDiv");
+	// var btn = document.getElementById("loginBtn");
+	// var div = document.getElementById("loginDiv");
 	
 	typeLogged = sessionStorage.getItem("typeLogged");
 	if(typeLogged === "client"){
 		
-		console.log(el);
+		//console.log(el);
 		clientId = parseInt(sessionStorage.getItem("clientId"));
 		clientName = sessionStorage.getItem("clientName");
 		clientUser = sessionStorage.getItem("clientUser");
@@ -149,12 +149,12 @@ var carrinho = [];
 		// Para salvar o carrinho: sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
 		if(carrinho == null) carrinho = [];
 //TESTE
-		btn.innerHTML = "Olá, " + clientName;
-		btn.removeAttribute("onclick");
-		btn.setAttribute("data-toggle", "dropdown");
-		btn.setAttribute("class", "btn dropdown-toggle");
+		// btn.innerHTML = "Olá, " + clientName;
+		// btn.removeAttribute("onclick");
+		// btn.setAttribute("data-toggle", "dropdown");
+		// btn.setAttribute("class", "btn dropdown-toggle");
 
-		div.setAttribute("class", "dropdown login-btn");
+		// div.setAttribute("class", "dropdown login-btn");
 		// Para salvar o carrinho: localStorage.setItem("carrinho", JSON.stringify(carrinho));
 	}
 	else if(typeLogged === "admin"){
@@ -167,22 +167,23 @@ var carrinho = [];
 		adminPassword = sessionStorage.getItem("adminPassword");
 
 		//TESTE
-		btn.innerHTML = "Olá, " + adminName;
-		btn.removeAttribute("onclick");
-		btn.setAttribute("data-toggle", "dropdown");
-		btn.setAttribute("class", "btn dropdown-toggle");
+		// btn.innerHTML = "Olá, " + adminName;
+		// btn.removeAttribute("onclick");
+		// btn.setAttribute("data-toggle", "dropdown");
+		// btn.setAttribute("class", "btn dropdown-toggle");
 
-		div.setAttribute("class", "dropdown login-btn");
-	}else{
-		//TESTE
-		btn.innerHTML = "Entrar";
-		btn.setAttribute("onclick", 'location.href="login.html"');
-		btn.removeAttribute("data-toggle");
-		btn.setAttribute("class", "mybtn");
+		// div.setAttribute("class", "dropdown login-btn");
+	// }else{
+	// 	//TESTE
+	// 	btn.innerHTML = "Entrar";
+	// 	btn.setAttribute("onclick", 'location.href="login.html"');
+	// 	btn.removeAttribute("data-toggle");
+	// 	btn.setAttribute("class", "mybtn");
 
-		div.removeAttribute("class");
+	// 	div.removeAttribute("class");
 
-	}
+	// }
+}
 }
 
 setVariables();
