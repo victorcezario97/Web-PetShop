@@ -1,3 +1,6 @@
+var selected = false, photo = null;
+$(".row container").hide();
+
 var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
 request.onsuccess = function(){
 	let objectStore = db.transaction(["clients"], "readwrite").objectStore("clients");
@@ -33,6 +36,10 @@ function makeUL(array) {
 }
 
 function getUser(client){
+	if(selected === false){
+
+	}
+	selected = true;
 	let objectStore = db.transaction(["clients"]).objectStore("clients");
 
 	var request = objectStore.get(client);
@@ -45,6 +52,8 @@ function getUser(client){
 		document.getElementById('telefone_user').value = request.result.phone;
 		document.getElementById('endereco_user').value = request.result.address;
 		document.getElementById('senha_user').value = request.result.password;
+		$("#img").attr('src', request.result.photo);
+		photo = request.result.photo;
 
 		document.getElementById('salvar_user').setAttribute("onClick", "update(" + client + ");")
 	}
@@ -76,9 +85,29 @@ function update(id){
 			data.password = senha;
 		}
 
+		data.photo = photo;
+
 		var updateRequest = objectStore.put(data);
 		updateRequest.onsuccess = function(){
 			window.alert("Alterado com sucesso!");
 		}
 	}
+}
+
+function readURL(input) {
+    	if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+
+	        reader.onload = function (e) {
+	            $('#img')
+	                .attr('src', e.target.result);
+	                //.width(150)
+	                //.height(200);
+	            photo = e.target.result;
+	        };
+
+	        reader.readAsDataURL(input.files[0]);
+	    }
+    
+    
 }
