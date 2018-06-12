@@ -26,3 +26,26 @@ if(id != null){
 }else{
 	window.alert("Produto não encontrado!");
 }
+
+function addCart(id){
+	if(id != null){
+	var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
+	request.onsuccess = function(){
+		let objectStore = db.transaction(["products"]).objectStore("products");
+
+		var request2 = objectStore.get(parseInt(id));
+		request2.onsuccess = function(){
+
+			if(request2.result == undefined) window.alert("Produto não encontrado!");
+			else{
+				carrinho.push(request2.result);
+				
+				sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
+				window.alert("Produto adicionado ao carrinho!");
+			}
+		}
+	}
+}else{
+	window.alert("Produto não encontrado!");
+}
+}
