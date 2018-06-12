@@ -3,18 +3,12 @@ O QUE FALTA FAZER?
 1 - Criar um javascript para saber se o usuário já está logado;
 (Usado para mostrar Olá Usurário/Sair ou Entrar/Cadastrar)
 
+2 - Trocar o header das páginas de manage de "Editar ..." para "Gerenciar ...";
+
 3 - Testar se todos os links das páginas estão funcionando corretamente;
 
 4 - Implementar o banco (faltam quais páginas?);
 
-5 - Corrigir o carrosel da home.html;
-(Imagem aparece, mas some em seguida)
-
-6 - Telas new_ALGO alterar a barra 
-(está na barra de usuário, mas a região é de admin)
-
-7 - Falta tela de produto
-(Mostrar um produto específico)
 
 8 - Botão "salvar" página edit_admin não funciona;
 9 - Botão "cadastrar" página edit_product não funciona;
