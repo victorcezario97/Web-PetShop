@@ -28,12 +28,3 @@ O QUE FALTA FAZER?
 15 - Barra "search" tela products não funcina;
 16 - Tela purchase botão "oncfirma compra" não funciona;
 
-
-INT_MAX: Passar as páginas no validador W3C;
-(Pode ser feito no último dia)
- 
-
-=================================================================
-FUNÇÃO DE CADA TELA:
-Edit_pet: Só altera as informações do pet que deve ser escolhido
-previamente;
