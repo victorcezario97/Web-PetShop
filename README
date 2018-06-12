@@ -26,8 +26,7 @@ O QUE FALTA FAZER?
 13 - Página manage_product, nenhum botão funciona;
 14 - Botão "salvar" não funciona;
 15 - Barra "search" tela products não funcina;
-16 - Remover botão "edit" na tela edit_profile;
-17 - Tela purchase botão "oncfirma compra" não funciona;
+16 - Tela purchase botão "oncfirma compra" não funciona;
 
 
 INT_MAX: Passar as páginas no validador W3C;
