@@ -21,7 +21,7 @@
 </div>
 
 <nav class="navbar navbar-expand-sm">
-  <a class="navbar-brand" href="">
+  <a class="navbar-brand" href="home-admin.html">
   <img src="../img/p2.png" width="30" height="30" alt="">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -35,9 +35,10 @@
 		    Cadastrar
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="#">Link 1</a>
-		    <a class="dropdown-item" href="#">Link 2</a>
-	    	<a class="dropdown-item" href="#">Link 3</a>
+		    <a class="dropdown-item" href="new_admin.html">Administrador</a>
+		    <a class="dropdown-item" href="new_user.html">Usuário</a>
+	    	<a class="dropdown-item" href="new_product.html">Produto</a>
+	    	<a class="dropdown-item" href="new_service.html">Serviço</a>
 		  </div>
 	  </div> 
       <div class="dropdown">
@@ -45,73 +46,75 @@
 		    Gerenciar
 		  </button>
 		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="#">Link 1</a>
-		    <a class="dropdown-item" href="#">Link 2</a>
-	    	<a class="dropdown-item" href="#">Link 3</a>
+		    <a class="dropdown-item" href="manage_admins.html">Administradores</a>
+		    <a class="dropdown-item" href="manage_users.html">Usuários</a>
+	    	<a class="dropdown-item" href="manage_product.html">Produtos</a>
+	    	<a class="dropdown-item" href="#">Serviços</a>
+
 		  </div>
 	  </div> 
+	  <div>
+	      <a href="stock.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+	       Estoque</a>
+	  </div>
       <div class="dropdown">
-		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Estoque
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="#">Link 1</a>
-		    <a class="dropdown-item" href="#">Link 2</a>
-	    	<a class="dropdown-item" href="#">Link 3</a>
-		  </div>
-	  </div> 
-      <div class="dropdown">
-		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-		    Analytics
-		  </button>
-		  <div class="dropdown-menu">
-		    <a class="dropdown-item" href="#">Link 1</a>
-		    <a class="dropdown-item" href="#">Link 2</a>
-	    	<a class="dropdown-item" href="#">Link 3</a>
-		  </div>
-	  </div> 
+	      <a href="stock.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+	       Analytics</a>
+	  </div>
   </div>  
-  <button type="button" class="btn login-btn">Olá, Administrador</button> 
+  <button type="button" class="btn login-btn">Olá, administrador</button> 
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
 
-<div class="container">
-	<h1 style="margin-left: 20px; text-align: center">Gerenciar Produto</h1>
+ <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Informações</h1>
+  </div>
 <div class="row container">
 
-	<!-- Imagem do produto -->
-	<div class="col container">
-		<h3>Royal Canin</h3>
-		<img style="width: 200px; margin-left: 20px" src="../img/royal_canin.png" alt="Imagem do Produto">
-		<br>
-		<button class="mybtn">Alterar</button>
-	</div>
+  <!-- Imagem do produto -->
+   <nav style="overflow-y: scroll; height: 200px">
+            <ul id="prod_list">
+                
+            </ul>
+        </nav>
 
-	<div class="info col container" >
-		<h3>Descrição do Produto:</h3>
-		<p>- Com transgênico; </p>
-		<p>- Ração premium indicada para cães adultos;</p>
-		<p>- Alimento altamente digestível;</p>
-		<p>- Proporciona aos cães todo o sabor que eles adoram;</p>
-		<p>- Ingredientes rigorosamente selecionados;</p>
-		<p>- Proporciona aos cães uma nutrição equilibrada;</p>
-		<button class="mybtn">Alterar</button>
-		<hr>
-		<h3>Quantidade Disponível: 32 | Vendidos: 43</h3>
-		<button class="mybtn">Alterar</button>
-		<hr>
-		<h3>Preço: R$141,99</h3>
-		<button class="mybtn">Alterar</button>
-		<hr>
-		<h3>Deletar Produto do Site?</h3>
-		<button class="mybtn">Alterar</button>
+  <div class="info col">
+    <h4>Dados do Produto</h4><br>
 
-	</div>
-</div>
-	<div style="text-align: center">
-		<p><a class="mainbtn" style="display: inline-block;" href="#">Cadastrar</a></p>
-	</div>
+    <p style="display: inline;">ID: </p><p style="display: inline;" id="id_prod"></p>
+
+    <p>Nome: </p> 
+      <input id="nome_prod" style="width: 100%"/>
+    <hr>
+
+    <p>Descrição: </p> 
+      <textarea id="descricao_prod" style="width: 100%"></textarea>
+    <hr>
+
+    <p>Quantidade em estoque: </p>  
+      <input id="qtd_prod" type="number" step="1" min="0" />
+    <hr>
+
+    <p>Preço: </p>  
+      <input id="preco_prod" type="number" min="1" step="0.01"/>
+    <hr>
+
+    <p>Categoria: </p>  
+      	<select id="categoria_produto" style="margin-top: -20px; width: 95% ">
+			<option value="cachorro">Cachorro</option>
+			<option value="gato">Gato</option>
+			<option value="farmacia">Farmácia</option>
+			<option value="mais">Mais</option>
+		</select> 
+    <hr>
+
+    <p>Subcategoria: </p>  
+      <select id="subcategoria_produto"></select> 
+    <hr>
+
+   <button class="mainbtn" style="display: inline-block;" id="salvar_prod">Salvar</button>
+  <p>OBS: Campos em branco permanecerão inalterados.</p>
+  </div>
 </div>
 
  <!-- Seu html não pode passar daqui -->
@@ -126,6 +129,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
+  <script src="../script/products.js"></script>
+  <script src="../script/utils.js"></script>
+  <script src="../script/list_products.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>

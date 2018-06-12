@@ -21,28 +21,29 @@
 </div>
 
 <nav class="navbar navbar-expand-sm">
-  <a class="navbar-brand" href="">
-  <img src="../img/p2.png" width="30" height="30" alt="">
-  </a>
+  <a class="navbar-brand" href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
       <img src="../img/hamburger.png" width="30" height="30" alt="">
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div>
-      <a class="mybtn2" style="color: white" href="schedule.html">
-        Agendar
-      </a>
-    </div>
+      <div> 
+      <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button> -->
+       <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+       Agendar</a>
+    </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="products.html#Cachorro_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -50,9 +51,9 @@
         Gatos
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="products.html#Gato_alimentos">Alimentos</a>
+        <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
+        <a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -60,9 +61,9 @@
         Farmácia
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="products.html#Farmacia_vermifugo">Vermífugo</a>
+        <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
+        <a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
       </div>
     </div> 
       <div class="dropdown">
@@ -70,13 +71,27 @@
         Mais
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="products.html#Peixes">Peixes</a>
+        <a class="dropdown-item" href="products.html#Roedores">Roedores</a>
+        <a class="dropdown-item" href="products.html#Cobras">Cobras</a>
       </div>
     </div>
   </div>  
-  <a type="button" class="btn login-btn" style="color: white" href="login.html">Entrar/Cadastrar</a>  
+  <div>
+  <!-- Usado na SPA -->
+      <!-- <button class="mybtn2" onclick="singlePage('s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Entrar/Cadastrar</button> -->
+   <div class="dropdown login-btn">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="details.html">Meus Pets</a>
+        <a class="dropdown-item" href="cart.html">Carrinho</a>
+        <a class="dropdown-item" href="profile.html">Perfil</a>
+      </div>
+  </div>
+  </div>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui -->
@@ -89,12 +104,12 @@
         <hr>
 
         <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="login@email.com" name="email" required id="email">
+        <input type="email" placeholder="login@email.com" name="email" id="email">
 
         <label for="user"><b>Usuário</b></label>
         <input type="text" placeholder="Usuário" name="user" required id="user">
 
-        <label for="psw"><b>Senha</b></label>
+        <label for="password"><b>Senha</b></label>
         <input type="password" placeholder="Senha" name="psw" required id = "password">
 
         <label for="psw-repeat"><b>Confirme a senha</b></label>
@@ -109,7 +124,7 @@
         <label for="address"><b>Endereço</b></label>
         <input type="text" placeholder="Endereço" name="address" id="address">
 
-        <label for="image"><b>Foto</b></label>
+        <label for="picField"><b>Foto</b></label>
        <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
               <img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
 
