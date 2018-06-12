@@ -50,6 +50,10 @@ function openDB(){
 			startPets();
 		else if(page === "edit_pet.html")
 			loadPetToUpdate();
+		else if(page === "profile.html")
+			loadProfile();
+		else if(page === "edit_profile.html")
+			loadDatas();
 	};
 
 	request.onerror = function(event){

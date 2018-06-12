@@ -4,7 +4,7 @@ function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
 	// Cadastra
 	let objectStoreRegister = db.transaction("admins", "readwrite").objectStore("admins");
 	//{id: 2, name: "Bolsomito", user: "mitinho", address: "Rua das mitagens, 13", photo: null, phone: "13131313", email: "mito@gmail.com", password: "123456"}
-	var newUser = {name: userName, user: userUser, photo: null, phone: userPhone, email: userEmail, password: userPassword};
+	var newUser = {name: userName, user: userUser, photo: userPhoto, phone: userPhone, email: userEmail, password: userPassword};
 
 	var request = objectStoreRegister.add(newUser);
 
@@ -94,7 +94,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
   // Procura por email de client
   indexEmail.onsuccess = function(event){
     if(indexEmail.result != undefined){   // Se achou o email
-    	window.alert("achou email client");
     	if(resultUserClient === null || resultEmailAdmin === null || resultUserAdmin === null)	// Se ainda falta alguém
     		resultEmailClient = false;
     	else if(resultUserClient === true && resultEmailAdmin != null && resultUserAdmin === true)	// Se já tem só o email
@@ -103,7 +102,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
     		window.alert("Email e usuário já cadastrados.");
     }
     else{   // Se não achou o email
-    	window.alert("não achou email client");
       resultEmailClient = true;
       if(resultUserClient === true && resultEmailAdmin === true && resultUserAdmin === true){	// Se todos livres
       	if(registerType === "client")
@@ -119,7 +117,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
   // Procura por user de client
   indexUser.onsuccess = function(event){
     if(indexUser.result != undefined){   // Se achou o user
-    	window.alert("achou user client");
     	if(resultEmailClient === null || resultEmailAdmin === null || resultUserAdmin === null)	// Se ainda falta alguém
     		resultUserClient = false;
     	else if(resultEmailClient === true && resultEmailAdmin === true && resultUserAdmin != null)	// Se já tem só o usuário 
@@ -128,7 +125,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
     		window.alert("Email e usuário já cadastrados.");
     }
     else{   // Se não achou o user
-    	window.alert(" não achou user client");
 	    resultUserClient = true;
 	    if(resultEmailClient === true && resultEmailAdmin === true && resultUserAdmin === true){	// Se todos livres
 	      	if(registerType === "client")
@@ -144,7 +140,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
   // Procura por email de admin
   indexEmailAdmin.onsuccess = function(event){
     if(indexEmailAdmin.result != undefined){   // Se achou o email
-    	window.alert("achou email admin");
     	if(resultUserAdmin === null || resultEmailClient === null || resultUserClient === null)	// Se ainda falta alguém
     		resultEmailAdmin = false;
     	else if(resultUserClient === true && resultEmailClient != null && resultUserAdmin === true) // Só email já tem
@@ -154,7 +149,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
     }
     else{   // Se não achou o email
       resultEmailAdmin = true;
-      window.alert("Não achou email admin");
       if(resultUserClient === true && resultEmailClient === true && resultUserAdmin === true){	// Se todos livres
       	if(registerType === "client")
       		registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
@@ -169,7 +163,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
   // Procura por user de admin
   indexUserAdmin.onsuccess = function(event){
     if(indexUserAdmin.result != undefined){   // Se achou o user
-    	window.alert("achou user admin");
     	if(resultEmailAdmin === null || resultEmailClient === null || resultUserClient === null)	// Se ainda falta alguém
     		resultUserAdmin = false;
     	else if(resultEmailAdmin === true && resultEmailClient == true && resultUserClient != null)	// Se só o usuário já tem
@@ -178,7 +171,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
     		window.alert("Email e usuário já cadastrados.");
     }
     else{   // Se não achou o user
-    	window.alert("Não achou user admin");
 	    resultUserAdmin = true;
 	    if(resultEmailAdmin === true && resultUserAdmin === true && resultUserClient === true){	// Se todos livres
 	      	if(registerType === "client")
@@ -194,7 +186,6 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 
 // Inicia a rotina de cadastro
 function cadastrar(){
-	window.alert("cadastrar");
 	page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 	let address;
 	let name = $("#name").val();

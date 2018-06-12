@@ -16,7 +16,12 @@ function update(){
 	request.onsuccess = function(event) {
 	  // Obter os valores antigos
 	  var data = request.result;
-	  
+
+	  name = $("#name").val();
+	  phone = $("#phone").val();
+	  if(editType === "client")
+	  	address = $("#address").val();
+
 	  // atualiza os dados
 	  data.name = name;
 	  data.phone = phone;
@@ -33,10 +38,15 @@ function update(){
 	   requestUpdate.onsuccess = function(event) {
 	     window.alert("Dados atualizados com sucesso!");
 	     clientName = name;
+	     sessionStorage.setItem("clientName", clientName);
 	     clientPhone = phone;
-	     if(editType === "client")
+	     sessionStorage.setItem("clientPhone", clientPhone);
+	     if(editType === "client"){
 	     	clientAddress = address;
+	     	sessionStorage.setItem("clientAddress", clientAddress);
+	     }
 	     clientPhoto = photo;
+	     sessionStorage.setItem("clientPhoto", clientPhoto);
 	   };
 	};
 }
@@ -58,7 +68,7 @@ function loadDatas(){
 	$("#name").val(clientName);
 	$("#phone").val(clientPhone);
 	if(editType === "client")
-		$("#address").val(phone);
+		$("#address").val(address);
 	if(photo != null)
 		$("#img").attr('src', photo);
 }
@@ -79,4 +89,15 @@ function readURL(input) {
     }
 }
 
-loadDatas();
+function loadProfile(){
+	setVariables();
+	$("#name").html(clientName);
+	if(clientPhone != null)
+		$("#phone").html(clientPhone);
+	if(clientAddress != null)
+		$("#address").html(clientAddress);
+	$("#email").html(clientEmail);
+	$("#user").html(clientUser);
+	if(clientPhoto != "null")
+		$("#img").attr('src', clientPhoto);
+}

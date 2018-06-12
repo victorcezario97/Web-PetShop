@@ -20,9 +20,8 @@
 </div>
 
 <nav class="navbar navbar-expand-sm">
-  <a class="navbar-brand" href="">
-  <a href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
-  </a>
+  <a class="navbar-brand" href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
       <img src="../img/hamburger.png" width="30" height="30" alt="">
@@ -33,8 +32,8 @@
       <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Agendar</button> -->
-       <a href="schedule.html"><button class="mybtn2" type="button" style="vertical-align: center; margin: 0 auto">
-       Agendar</button></a>
+       <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+       Agendar</a>
     </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -90,7 +89,7 @@
         <a class="dropdown-item" href="cart.html">Carrinho</a>
         <a class="dropdown-item" href="profile.html">Perfil</a>
       </div>
-   </a>
+  </div>
   </div>
 </nav>
 
@@ -98,32 +97,38 @@
 <div class="row container">
 <div id="ProfilePage">
     <div id="LeftCol">
-        <div id="Photo"><img src="../img/perfil_icon.png"></div>
+<<<<<<< HEAD
+      <div>
+        <img id="img" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
+      </div>
+=======
+        <div id="Photo"><img src="../img/perfil_icon.png" alt="Image de Perfil"></div>
         <div id="ProfileOptions">
-        <button class="mybtn">Editar</button>
+          <button class="mybtn">Editar</button>
         </div>
+>>>>>>> 6026accdf93115ef5ef3448d6187a5db6f9b3a02
     </div>
 
     <div id="Info">
         <p>
             <strong>Nome:</strong>
-            <span>Meu Nome</span>
+            <span id = "name"></span>
         </p>
         <p>
             <strong>Tel.:</strong>
-            <span>(99)99999-9999</span>
+            <span id = "phone"></span>
         </p>
         <p>
             <strong>Endereço:</strong>
-            <span>Rua Qualquer Nº00</span>
+            <span id = "address"></span>
         </p>
         <p>
-            <strong>Pet1:</strong>
-            <span>Doguero</span>
+            <strong>Email:</strong>
+            <span id = "email"></span>
         </p>
         <p>
-            <strong>Pet2:</strong>
-            <span>Cobrero</span>
+            <strong>Nome de usuário:</strong>
+            <span id = "user"></span>
         </p>
     </div>
 
@@ -133,8 +138,7 @@
 
 </div>
   <div style="text-align: center">
-  <p><a type="button" class="mainbtn" style="display: inline-block;" href="edit_profile.html">Editar Perfil</a></p>  
-</div>
+  <p><a class="mainbtn" style="display: inline-block;" href="edit_profile.html">Editar Perfil</a></p>  
 </div>
  <!-- Seu html não pode passar daqui -->
 
@@ -148,6 +152,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
+  <script src="../script/utils.js"></script>
+  <script src="../script/edit_user.js"></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>
