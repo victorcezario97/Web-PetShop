@@ -47,10 +47,12 @@ function createChild(prod){
 	btn.innerHTML = "Remover";
 	btn.setAttribute("class", "mainbtn");
 	btn.setAttribute("name", prod.id);
+	btn.setAttribute("style", "margin: auto; display: block");
 	
 	divouter.appendChild(a);
 	divouter.appendChild(btn);
-	divouter.setAttribute("style", "display: inline-block;");
+	
+	divouter.setAttribute("style", "display: inline-block; vertical-align: middle;");
 
 	return divouter;
 }
@@ -61,7 +63,6 @@ function removeCart(id){
 			carrinho.splice(i, 1);
 		}
 	}
-	console.log(carrinho);
 }
 
 
