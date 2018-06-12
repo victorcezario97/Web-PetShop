@@ -19,7 +19,7 @@ function createChild(prod){
 	let img = document.createElement("img");
 	img.setAttribute("alt", "Imagem do Produto");
 	img.setAttribute("class", "produto_img");
-	img.setAttribute("src", prod.img);
+	img.setAttribute("src", prod.photo);
 
 	let divname = document.createElement("div");
 
@@ -61,6 +61,9 @@ function removeCart(id){
 	for(i=0; i<carrinho.length; i++){
 		if (carrinho[i].id == id) {
 			carrinho.splice(i, 1);
+			sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
+			window.alert("Item removido!");
+			location.reload();
 		}
 	}
 }

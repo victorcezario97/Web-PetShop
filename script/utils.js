@@ -8,7 +8,7 @@ let prod1 = {id: 1, name: "prod1", description: "description bla bla bla", qtd: 
 let prod2 = {id: 2, name: "prod2", description: "description bla bla bla", qtd: 24, price: 1000, category:"mais", subcategory:"roedores", img: "../img/object.jpg"};
 let prod3 = {id: 3, name: "prod3", description: "description bla bla bla", qtd: 100, price: 157, category:"mais", subcategory:"roedores", img: "../img/brinquedo_cachorro.png"};
 
-var carrinho = [prod1, prod2, prod3];
+	var carrinho = [];
 var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
@@ -141,6 +141,8 @@ var carrinho = [];
 		clientPassword = sessionStorage.getItem("clientPassword");
 		carrinho = JSON.parse(sessionStorage.getItem("carrinho"));
 		// Para salvar o carrinho: sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
+		if(carrinho == null) carrinho = [];
+		// Para salvar o carrinho: localStorage.setItem("carrinho", JSON.stringify(carrinho));
 	}
 	else if(typeLogged === "admin"){
 		adminId = parseInt(sessionStorage.getItem("adminId"));
