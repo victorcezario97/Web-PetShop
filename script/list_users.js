@@ -1,5 +1,5 @@
 var selected = false, photo = null;
-$(".row container").hide();
+$("#control").hide();
 
 var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
 request.onsuccess = function(){
@@ -36,10 +36,7 @@ function makeUL(array) {
 }
 
 function getUser(client){
-	if(selected === false){
-
-	}
-	selected = true;
+	$("#control").show();
 	let objectStore = db.transaction(["clients"]).objectStore("clients");
 
 	var request = objectStore.get(client);
@@ -108,6 +105,4 @@ function readURL(input) {
 
 	        reader.readAsDataURL(input.files[0]);
 	    }
-    
-    
 }
