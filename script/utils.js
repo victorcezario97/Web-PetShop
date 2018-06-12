@@ -3,7 +3,10 @@ const dbName = "DBPetShop";
 var typeLogged;
 var clientId, clientName, clientUser, clientAddress, clientPhoto, clientPhone, clientEmail, clientPassword;
 var adminId, adminName, adminUser, adminPhoto, adminPhone, adminEmail, adminPassword;
-var carrinho = [];
+//PARA TESTE
+let prod1 = {id: 1, name: "prod1", description: "description bla bla bla", qtd: 12, price: 100, category:"gato", subcategory:"higiene", img: "../img/object.jpg"};
+let prod2 = {id: 2, name: "prod2", description: "description bla bla bla", qtd: 24, price: 1000, category:"mais", subcategory:"roedores", img: "../img/object.jpg"};
+var carrinho = [prod1, prod2];
 var page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
 // Na linha abaixo, você deve incluir os prefixos do navegador que você vai testar.
