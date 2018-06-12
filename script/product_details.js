@@ -18,7 +18,7 @@ if(id != null){
 				document.getElementById('preco_produto').innerHTML = request2.result.price;
 				document.getElementById('categoria_produto').innerHTML = request2.result.category;
 				document.getElementById('subcategoria_produto').innerHTML = request2.result.subcategory;
-				//document.getElementById('img').setAttribute("src", request2.result.img);
+				document.getElementById('img').setAttribute("src", request2.result.photo);
 				document.getElementById('cartBtn').setAttribute("onclick", "addCart(" + request2.result.id + ");");
 			}
 		}
