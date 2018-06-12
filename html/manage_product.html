@@ -67,7 +67,7 @@
 
 <!-- Seu html deve ser escrito a partir daqui %%-->
 
- <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Informações</h1>
+ <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Produtos</h1>
   </div>
 <div class="row container">
 
@@ -77,11 +77,16 @@
                 
             </ul>
         </nav>
-
+<div id = "control">
   <div class="info col">
     <h4>Dados do Produto</h4><br>
 
     <p style="display: inline;">ID: </p><p style="display: inline;" id="id_prod"></p>
+
+    <div>
+          <img id="img" alt="Foto do produto" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
+          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+        </div>
 
     <p>Nome: </p> 
       <input id="nome_prod" style="width: 100%"/>
@@ -115,6 +120,7 @@
    <button class="mainbtn" style="display: inline-block;" id="salvar_prod">Salvar</button>
   <p>OBS: Campos em branco permanecerão inalterados.</p>
   </div>
+</div>
 </div>
 
  <!-- Seu html não pode passar daqui %%-->

@@ -1,3 +1,6 @@
+var photo = null;
+$("#control").hide();
+
 var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
 request.onsuccess = function(){
 	let objectStore = db.transaction(["products"], "readwrite").objectStore("products");
@@ -33,6 +36,7 @@ function makeUL(array) {
 }
 
 function getProd(prod){
+	$("#control").show();
 	let objectStore = db.transaction(["products"]).objectStore("products");
 
 	var request = objectStore.get(prod);
@@ -44,7 +48,8 @@ function getProd(prod){
 		document.getElementById('qtd_prod').value = request.result.qtd;
 		document.getElementById('preco_prod').value = request.result.price;
 		document.getElementById('categoria_produto').value = request.result.category;
-		
+		photo = request.result.photo;
+		$("$img").attr('src', photo);
 
 		document.getElementById('salvar_prod').setAttribute("onClick", "update(" + prod + ");")
 
@@ -106,6 +111,8 @@ function update(id){
 			data.subcategory = subcat;
 		}
 
+		data.photo = photo;
+
 		var updateRequest = objectStore.put(data);
 		updateRequest.onsuccess = function(){
 			window.alert("Alterado com sucesso!");
@@ -113,3 +120,18 @@ function update(id){
 	}
 }
 
+function readURL(input) {
+    	if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+
+	        reader.onload = function (e) {
+	            $('#img')
+	                .attr('src', e.target.result);
+	                //.width(150)
+	                //.height(200);
+	            photo = e.target.result;
+	        };
+
+	        reader.readAsDataURL(input.files[0]);
+	    }
+}
