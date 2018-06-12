@@ -1,23 +1,25 @@
 Checando no W3C:
 
-﻿agendar.html
-carrinho.html
-detalhes.html
+schedule.html		waning bagarai!
+cart.html		OK
+details.html		OK
 edit_admin.html 	
 edit_profile.html	
-edit_pet				
-estoque.html
-finalizar_compra.html
-home-admin.html
-home.html
-login.html 		
+edit_pet		OK		
+stock.html		OK
+purchase.html		Warning: The date input type is not supported in all browsers
+home-admin.html		OK
+home.html		warning: The type attribute is unnecessary for JavaScript resources.
+login.html 		warning: Consider using the h1 element as a top-level heading only
 new_admin.html	
 new_product.html	
 new_service.html
-new_user.html		
-produto.html
-produtos.html
-profile.html
-registrar.html 
+new_user.html
+manage_users.html	
+manage_product.html	OK
+manage_admins.html	OK
+prodcts.html		OK
+profile.html		OK
+sign_up.html 		OK
 register_pet	
 
