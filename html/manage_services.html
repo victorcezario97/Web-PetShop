@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gerenciar Produto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
+  <link rel="stylesheet" type="text/css" href="../css/selection.css">
+
+</head>
+<body>
+
+<div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
+  <div class="container banner">
+    <h1>Plus</h1>
+    <p>Seu filho bem cuidado</p> 
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm">
+  <a class="navbar-brand" href="home-admin.html">
+  <img src="../img/p2.png" width="30" height="30" alt="">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Cadastrar
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="new_admin.html">Administrador</a>
+		    <a class="dropdown-item" href="new_user.html">Usuário</a>
+	    	<a class="dropdown-item" href="new_product.html">Produto</a>
+	    	<a class="dropdown-item" href="new_service.html">Serviço</a>
+		  </div>
+	  </div> 
+      <div class="dropdown">
+		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+		    Gerenciar
+		  </button>
+		  <div class="dropdown-menu">
+		    <a class="dropdown-item" href="manage_admins.html">Administradores</a>
+		    <a class="dropdown-item" href="manage_users.html">Usuários</a>
+	    	<a class="dropdown-item" href="manage_product.html">Produtos</a>
+	    	<a class="dropdown-item" href="manage_services.html">Serviços</a>
+
+		  </div>
+	  </div> 
+	  <div>
+	      <a href="stock.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+	       Estoque</a>
+	  </div>
+      <div class="dropdown">
+	      <a href="stock.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+	       Analytics</a>
+	  </div>
+  </div>  
+  <button type="button" class="btn login-btn">Olá, administrador</button> 
+</nav>
+
+<!-- Seu html deve ser escrito a partir daqui %%-->
+
+ <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Serviços</h1>
+  </div>
+<div class="row container">
+
+  <!-- Imagem do produto -->
+   <nav style="overflow-y: scroll; height: 200px">
+            <ul id="serv_list">
+                
+            </ul>
+        </nav>
+<div id = "control">
+  <div class="info col">
+    <h4>Dados do Serviço</h4><br>
+
+    <p style="display: inline;">ID: </p><p style="display: inline;" id="id_serv"></p>
+
+    <div>
+          <img id="img" alt="Foto do serviço" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
+          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+        </div>
+
+    <p>Nome: </p> 
+      <input id="nome_serv" style="width: 100%"/>
+    <hr>
+
+    <p>Descrição: </p> 
+      <textarea id="descricao_serv" style="width: 100%"></textarea>
+    <hr>
+
+    <p>Preço: </p>  
+      <input id="preco_serv" type="number" min="1" step="0.01"/>
+    <hr>
+
+    <p>Categoria: </p> 
+      <input id="categ_serv" style="width: 100%"/>
+    <hr>
+
+   <button class="mainbtn" style="display: inline-block;" id="salvar_serv">Salvar</button>
+  <p>OBS: Campos em branco permanecerão inalterados.</p>
+  </div>
+</div>
+</div>
+
+ <!-- Seu html não pode passar daqui %%-->
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
+  <p>Plus © No mercado desde ontem</p>
+</div>
+
+
+  <script src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../script/bootstrap.min.js"></script>
+  <script src="../script/main.js"></script>
+  <script src="../script/products.js"></script>
+  <script src="../script/utils.js"></script>
+  <script src="../script/list_services.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+</body>
+</html>

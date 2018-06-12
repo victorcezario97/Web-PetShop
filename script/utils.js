@@ -140,7 +140,7 @@ var carrinho = [];
 		clientEmail = sessionStorage.getItem("clientEmail");
 		clientPassword = sessionStorage.getItem("clientPassword");
 		carrinho = JSON.parse(sessionStorage.getItem("carrinho"));
-		// Para salvar o carrinho: localStorage.setItem("carrinho", JSON.stringify(carrinho));
+		// Para salvar o carrinho: sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
 	}
 	else if(typeLogged === "admin"){
 		adminId = parseInt(sessionStorage.getItem("adminId"));
