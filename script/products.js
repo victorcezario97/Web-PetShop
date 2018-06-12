@@ -107,3 +107,4 @@ function list(array_list)
         $("#subcategoria_produto").append("<option value=\""+array_list[i].value+"\">"+array_list[i].display+"</option>");
     });
 }
+
