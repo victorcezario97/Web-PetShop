@@ -3,8 +3,8 @@ Checando no W3C:
 schedule.html		waning bagarai!
 cart.html		OK
 details.html		OK
-edit_admin.html 	
-edit_profile.html	
+edit_admin.html 	OK
+edit_profile.html	OK
 edit_pet		OK		
 stock.html		OK
 purchase.html		Warning: The date input type is not supported in all browsers
@@ -12,10 +12,10 @@ home-admin.html		OK
 home.html		warning: The type attribute is unnecessary for JavaScript resources.
 login.html 		warning: Consider using the h1 element as a top-level heading only
 new_admin.html		OK
-new_product.html	
-new_service.html
-new_user.html
-manage_users.html	
+new_product.html	OK
+new_service.html	OK
+new_user.html		OK
+manage_users.html	Ok
 manage_product.html	OK
 manage_admins.html	OK
 prodcts.html		OK
