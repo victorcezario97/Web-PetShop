@@ -43,8 +43,10 @@ function openDB(){
 	request.onsuccess = function(event) {  
 		db = event.target.result;
 		console.log("Abriu banco");
-		if(page === "detalhes.html")
+		if(page === "details.html")
 			startPets();
+		else if(page === "edit_pet.html")
+			loadPetToUpdate();
 	};
 
 	request.onerror = function(event){
@@ -81,7 +83,7 @@ function openDB(){
 		//Pets
 		objectStorePets.createIndex("id", "id", {unique: true});
 		objectStorePets.createIndex("client", "client", {unique: false});
-		objectStorePets.createIndex("name", "name", {unique: true});
+		objectStorePets.createIndex("name", "name", {unique: false});
 		objectStorePets.createIndex("nameAndClient", ["name", "client"], {unique: false});
 
 		// Products

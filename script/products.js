@@ -8,9 +8,10 @@ function register(){
 	productQtd = $("#qtd_produto").val();
 	productPrice = $("#preco_produto").val();
 	productCategory = $("#categoria_produto").val();
+	productSubcategory = $("#subcategoria_produto").val();
 
-	if(productName === "" || productPrice === "" || productCategory === ""){
-		alert("Tenha certeza de que foram inseridos o nome, o preço e a categoria do produto.");
+	if(productName === "" || productPrice === "" || productCategory === "" || productSubcategory === ""){
+		alert("Tenha certeza de que foram inseridos o nome, o preço, a categoria e a subcategoria do produto.");
 		return;
 	}
 	if(productQtd === "")
@@ -21,7 +22,7 @@ function register(){
 	// Cadastra
 	let objectStore = db.transaction("products", "readwrite").objectStore("products");
 
-	var newProduct = {name: productName, description: productDesc, qtd: productQtd, photo: productPhoto, price: productPrice, category: productCategory};
+	var newProduct = {name: productName, description: productDesc, qtd: productQtd, photo: productPhoto, price: productPrice, category: productCategory, subcategory: productSubcategory};
 	var request = objectStore.add(newProduct);
 
 	request.onsuccess = function(event){
@@ -56,3 +57,54 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
+var cachorro = [
+    {display: "Alimentos", value: "alimentos" }, 
+    {display: "Acessórios", value: "acessorios" }, 
+    {display: "Higiene", value: "higiene" }];
+
+var gato = cachorro;
+
+var farmacia = [
+    {display: "Vermífugo", value: "vermifugo" }, 
+    {display: "Antipulga", value: "antipulga" }, 
+    {display: "Eutanásia", value: "eutanasia" }];
+
+var mais = [
+    {display: "Peixes", value: "peixes" }, 
+    {display: "Roedores", value: "roedores" }, 
+    {display: "Cobras", value: "cobras" }];
+
+//If parent option is changed
+$("#categoria_produto").change(function() {
+
+        var parent = $(this).val(); //get option value from parent 
+
+        switch(parent){ //using switch compare selected option and populate child
+              case 'cachorro':
+                list(cachorro);
+                break;
+              case 'gato':
+                list(gato);
+                break;              
+              case 'farmacia':
+                list(farmacia);
+                break;  
+              case 'mais':
+                list(mais);
+                break;  
+            default: //default child option is blank
+                $("#subcategoria_produto").html('');  
+                break;
+           }
+});
+
+//function to populate child select box
+function list(array_list)
+{
+    $("#subcategoria_produto").html(""); //reset child options
+    $(array_list).each(function (i) { //populate child options 
+        $("#subcategoria_produto").append("<option value=\""+array_list[i].value+"\">"+array_list[i].display+"</option>");
+    });
+}
+

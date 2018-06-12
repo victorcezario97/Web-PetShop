@@ -1,4 +1,4 @@
-var petName, petNewName, petAge, petRaca, petPhoto = null, petId;
+var petName, petNewName, petAge, petRaca, petPhoto = null, petId, selected = false;
 	
 // Finaliza o update do pet
 function finishUpdate(){
@@ -41,7 +41,7 @@ function finishRegister(){
 	request.onsuccess = function(event){
 		window.alert("O seu pet " + petName + " foi cadastrado com sucesso!");
 
-		$("#name").val("");
+		$("#nome_pet").val("");
 		$("#idade_pet").val("");
 		$("#raca_pet").val("");
 	};
@@ -113,12 +113,32 @@ function update(){
 	getPet(finishUpdate, "update");
 }
 
+// Carrega os dados do pet na tela "edit_pet.html"
+function loadPetToUpdate(){
+	setVariables();
+	petName = sessionStorage.getItem("petName");
+	petId = sessionStorage.getItem("petId");
+	petAge = sessionStorage.getItem("petAge");
+	petRaca = sessionStorage.getItem("petRaca");
+	petPhoto = sessionStorage.getItem("petPhoto");
+
+	$("#nome_pet").val(petName);
+	if(petAge != "null")
+		$("#idade_pet").val(petAge);
+	$("#raca_pet").val(petRaca);
+
+	if(petPhoto != "null"){
+		$("#img").attr('src', petPhoto);
+		console.log("pet photo = " + petPhoto);
+	}
+}
+
 // Carrega os dados do pet
 function loadDatas(){
 	// As variáveis estarão setadas quando o pet for escolhido
-	$("#nome_pet").val(petName);
-	$("#idade_pet").val(petAge);
-	$("#raca_pet").val(petRaca);
+	$("#name").html(petName);
+	$("#age").html(petAge);
+	$("#raca").html(petRaca);
 	$('#img').attr('src', petPhoto);
 }
 
@@ -197,6 +217,8 @@ function makeUL(pet) {
 }
 
 function getUser(pet){
+	selected = true;
+
 	let objectStore = db.transaction(["pets"]).objectStore("pets");
 
 	var request = objectStore.get(pet);
@@ -226,4 +248,17 @@ function readURL(input) {
 
         reader.readAsDataURL(input.files[0]);
     }
+}
+
+function saveToUpdate(){
+	if(selected === true){
+		sessionStorage.setItem("petId", petId);
+		sessionStorage.setItem("petName", petName);
+		sessionStorage.setItem("petAge", petAge);
+		sessionStorage.setItem("petRaca", petRaca);
+		sessionStorage.setItem("petPhoto", petPhoto);
+		window.location.href = "edit_pet.html";
+	}
+	else
+		alert("Por favor, selecione um pet a ser editado.");
 }
