@@ -11,7 +11,7 @@ purchase.html		Warning: The date input type is not supported in all browsers
 home-admin.html		OK
 home.html		warning: The type attribute is unnecessary for JavaScript resources.
 login.html 		warning: Consider using the h1 element as a top-level heading only
-new_admin.html	
+new_admin.html		OK
 new_product.html	
 new_service.html
 new_user.html
