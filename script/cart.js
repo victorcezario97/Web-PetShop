@@ -45,7 +45,7 @@ function createChild(prod){
 	let btn = document.createElement("button");
 	btn.setAttribute("onclick", "removeCart(" + prod.id + ");");
 	btn.innerHTML = "Remover";
-	btn.setAttribute("class", "mainbtn");
+	btn.setAttribute("class", "mybtn");
 	btn.setAttribute("name", prod.id);
 	btn.setAttribute("style", "margin: auto; display: block");
 	

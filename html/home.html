@@ -33,10 +33,10 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <div> 
       <!-- Usado na SPA -->
-      <!-- <button class="mybtn2" onclick="singlePage('single/s-agendar.html');" type="button" style="vertical-align: center; margin: 0 auto">
-       Agendar</button> -->
-       <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
-       Agendar</a>
+      <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button>
+       <!-- <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
+       Agendar</a> -->
     </div> 
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -96,7 +96,7 @@
   </div>
 </nav>
 
-<!-- Seu html deve ser escrito a partir daqui -->
+<!-- Seu html deve ser escrito a partir daqui %%-->
 
 <!-- O html será trocado aqui na SPA -->
 <div id="troca">
@@ -254,7 +254,7 @@
 </div>
 </div>
 
- <!-- Seu html não pode passar daqui -->
+ <!-- Seu html não pode passar daqui %%-->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
   <p>Plus © No mercado desde ontem</p>
@@ -270,17 +270,7 @@
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
   <script src="../script/utils.js"></script>
   <script src="../script/login.js"></script>
-<script>
-  function singlePage(page){
-	var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", page, true);
-	xhttp.onreadystatechange = function() {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			document.getElementById("troca").innerHTML = xhttp.responseText;
-		}
-	}
-	xhttp.send();
-}
+  <!--  -->
 </script>
 </body>
 </html>
