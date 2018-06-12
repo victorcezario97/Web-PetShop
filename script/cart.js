@@ -3,13 +3,15 @@ let total = 0;
 for(var i=0; i<carrinho.length; i++){
 	let child = document.createElement("a");
 	console.log(carrinho[i]);
-	document.getElementById("div_prods").appendChild(createChild(carrinho[i]));
+	document.getElementById("div_prods").appendChild(createChild(carrinho[i]));	
 	total += carrinho[i].price;
 
 	document.getElementById("total").innerHTML = "TOTAL: R$" + total;
 }
 
 function createChild(prod){
+	let divouter = document.createElement("div");
+
 	let a = document.createElement("a");
 	a.setAttribute("class", "produto_block");
 	a.setAttribute("href", "product.html?id=" + prod.id);
@@ -29,7 +31,9 @@ function createChild(prod){
 
 	let pprice = document.createElement("p");
 	pprice.setAttribute("class", "produto_preco");
-	pprice.innerHTML = prod.price;
+	pprice.innerHTML = "R$" + prod.price;
+
+
 
 	divprice.appendChild(pprice);
 	divname.appendChild(pname);
@@ -38,7 +42,27 @@ function createChild(prod){
 	a.appendChild(divname);
 	a.appendChild(divprice);
 
-	return a;
+	let btn = document.createElement("button");
+	btn.setAttribute("onclick", "removeCart(" + prod.id + ");");
+	btn.innerHTML = "Remover";
+	btn.setAttribute("class", "mybtn");
+	btn.setAttribute("name", prod.id);
+	btn.setAttribute("style", "margin: auto; display: block");
+	
+	divouter.appendChild(a);
+	divouter.appendChild(btn);
+	
+	divouter.setAttribute("style", "display: inline-block; vertical-align: middle;");
+
+	return divouter;
+}
+
+function removeCart(id){
+	for(i=0; i<carrinho.length; i++){
+		if (carrinho[i].id == id) {
+			carrinho.splice(i, 1);
+		}
+	}
 }
 
 
