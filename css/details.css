@@ -1,0 +1,75 @@
+.body_container {
+	height: 1000px;
+}
+
+.box_container {
+	border-style: groove;
+	border-color: #000;
+	border-width: 1px;
+	width: 40%;
+	height: 40%;
+	margin-left: 30%;
+	margin-top: 10%;
+	margin-bottom: 10%; 
+}
+}
+
+.box_container .description {
+	border-top-style: groove;
+	border-width: 1px;
+	border-color: #000;
+}	
+
+.box_container .cell {
+	border-top-style: groove;
+	border-width: 1px;
+	border-color: #000;
+}
+
+.image-frame figcaption {
+	position: static;
+	margin-left: 42%;
+
+}
+
+.image-frame img {
+	position: static;
+	margin-left: 32%;
+	margin-top: 5px;
+	height: 200px;
+	text-align: center;	
+}
+
+.addbtn {
+	height: 10%;
+}
+
+#btn {
+	background-color: blue;
+    color: white;
+    padding: 20px;
+    margin-left: 30%;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.9;
+}
+
+.price {
+	float: right;
+	position: static;
+}
+.stock {
+	float: right;
+	position: static;
+}
+
+@media screen and (max-width: 600px) {
+	.image-frame img {
+		margin-left: 0;
+	}
+
+	.image-frame figcaption {
+		margin-left: 20%;
+	}
+}
