@@ -22,6 +22,8 @@ function update(){
 	  data.phone = phone;
 	  if(editType === "client")
 	  	data.address = address;
+	  data.photo = photo;
+
 
 	  // Atualizar esse dado no banco
 	  var requestUpdate = objectStore.put(data);
@@ -30,6 +32,11 @@ function update(){
 	   };
 	   requestUpdate.onsuccess = function(event) {
 	     window.alert("Dados atualizados com sucesso!");
+	     clientName = name;
+	     clientPhone = phone;
+	     if(editType === "client")
+	     	clientAddress = address;
+	     clientPhoto = photo;
 	   };
 	};
 }
@@ -39,7 +46,7 @@ function loadDatas(){
 	if(typeLogged === "client"){
 		id = clientId;
 		name = clientName;
-		user = userName;
+		user = clientUser;
 		address = clientAddress;
 		photo = clientPhoto;
 		phone = clientPhone;
@@ -52,6 +59,24 @@ function loadDatas(){
 	$("#phone").val(clientPhone);
 	if(editType === "client")
 		$("#address").val(phone);
+	if(photo != null)
+		$("#img").attr('src', photo);
+}
+
+// Muda a imagem e salva link
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#img')
+                .attr('src', e.target.result);
+                //.width(150)
+                //.height(200);
+            photo = e.target.result;        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 }
 
 loadDatas();
