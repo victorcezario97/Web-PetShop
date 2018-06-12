@@ -87,7 +87,7 @@
         Olá Usuário/Sair
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="details.html">Meus Pets</a>
+        <a class="dropdown-item" href="cart.html">Meus Pets</a>
         <a class="dropdown-item" href="cart.html">Carrinho</a>
         <a class="dropdown-item" href="profile.html">Perfil</a>
       </div>
@@ -97,7 +97,7 @@
 
 <!-- Seu html deve ser escrito a partir daqui %%-->
 
-
+<div id="troca">
 <h1 style="text-align: center; margin-top: 50px;margin-bottom: -30px;">MEU CARRINHO:</h1>
 <div class="horizontal_div">
    <div class="horizontal_div" id="div_prods" style="overflow: auto;">
@@ -117,13 +117,13 @@
 <h1 style="text-align: center" id="total"></h1>
 
 <div> 
-<p style="text-align: center">
-	<a class="mainbtn" style="display: inline-block;" href="products.html">Continuar Comprando</a>
-  <!-- SPA -->
-	<!-- <button class="mainbtn justify-content-center align-items-center" onclick="singlePage('single/s-confirmar_compra.html');" type="button" style="vertical-align: center; margin: 0 auto">
-     Confirmar Compra</button> -->
-  <a href="purchase.html" class="mainbtn" style="vertical-align: center; margin: 0 auto">Confirmar Compra</a>
-</p>
+  <button class="mybtn" onclick="singlePage('single/s-products.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Confirmar Comprar</button> 
+     <!-- SPA -->
+	<button class="mybtn" onclick="singlePage('single/s-purchase.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Confirmar Compra</button>
+  <!-- <a href="purchase.html" class="mainbtn" style="vertical-align: center; margin: 0 auto">Confirmar Compra</a> -->
+</div>
 </div>
 </div>
  <!-- Seu html não pode passar daqui %%-->
