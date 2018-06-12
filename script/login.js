@@ -24,6 +24,9 @@ function validateLogin(result, type){
       sessionStorage.setItem("typeLogged", typeLogged);
 
       window.alert("Bem-vindo, cliente " + clientName);
+
+      // Abre home
+    window.location.href = "home.html";
     }
     else{                 // Se é um admin
       adminId = result.id;
@@ -36,10 +39,10 @@ function validateLogin(result, type){
       adminPassword = result.password;
       typeLogged = "admin";
       window.alert("Bem-vindo, administrador " + adminName);
+
+       window.location.href = "home-admin.html";
     }
 
-    // Abre home
-    window.location.href = "home.html";
   }
   else  // Se não
     alert("Email/usuário e/ou senha inválidos.");
