@@ -1,3 +1,6 @@
+var photo = null;
+$("#control").hide();
+
 var request = indexedDB.open(dbName, 1); // request é um IDBOpenDBRequest
 request.onsuccess = function(){
 	let objectStore = db.transaction(["admins"]).objectStore("admins");
@@ -34,6 +37,7 @@ function makeUL(array) {
 
 function getAdmin(admin){
 	let objectStore = db.transaction(["admins"]).objectStore("admins");
+    $("#control").show();
 
 	var request = objectStore.get(admin);
 	request.onsuccess = function(){
@@ -41,8 +45,9 @@ function getAdmin(admin){
 		document.getElementById('username_admin').innerHTML = request.result.user;
 		document.getElementById('email_admin').innerHTML = request.result.email;
 		document.getElementById('telefone_admin').value = request.result.phone;
-		document.getElementById('endereco_admin').value = request.result.address;
 		document.getElementById('senha_admin').value = request.result.password;
+        $("#img").attr('src', request.result.photo);
+        photo = request.result.photo;
 
         document.getElementById('salvar_admin').setAttribute("onClick", "update(" + admin + ");")
 	}
@@ -64,14 +69,12 @@ function update(id){
         if(telefone != null && telefone != ""){
             data.phone = telefone;
         }
-        var endereco = document.getElementById('endereco_admin').value;
-        if(endereco != null && endereco != ""){
-            data.address = endereco;
-        }
         var senha = document.getElementById('senha_admin').value;
         if(senha != null && senha != ""){
             data.password = senha;
         }
+
+        data.photo = photo;
 
         var updateRequest = objectStore.put(data);
         updateRequest.onsuccess = function(){
@@ -79,4 +82,20 @@ function update(id){
         }
     }
 
+}
+
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img')
+                    .attr('src', e.target.result);
+                    //.width(150)
+                    //.height(200);
+                photo = e.target.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
 }

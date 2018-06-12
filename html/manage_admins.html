@@ -77,9 +77,14 @@
                 
             </ul>
         </nav>
-
+<div id = "control">
   <div class="info col">
     <h4>Dados do Usuário</h4><br>
+
+    <div>
+          <img id="img" alt="Foto do administrador" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
+          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+        </div>
 
     <p>Nome: </p> 
       <input id="nome_admin" style="width: 100%" />
@@ -94,20 +99,17 @@
     <hr>
 
     <p>Telefone: </p>  
-      <input id="telefone_admin" style="width: 100px%" />
+      <input type = "tel" id="telefone_admin" style="width: 100px%" />
     <hr>
-
-    <p>Endereço: </p>  
-      <input id="endereco_admin" style="width: 100%" />
-    <hr>
-
+    
     <p>Senha: </p>  
-      <input id="senha_admin" style="width: 100%" />
+      <input type = "password" id="senha_admin" style="width: 100%" />
     <hr>
 
    <button class="mainbtn" style="display: inline-block;" id="salvar_admin">Salvar</button>
   <p>OBS: Campos em branco permanecerão inalterados.</p>
   </div>
+</div>
 </div>
 
  <!-- Seu html não pode passar daqui %%-->
