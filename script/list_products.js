@@ -49,7 +49,7 @@ function getProd(prod){
 		document.getElementById('preco_prod').value = request.result.price;
 		document.getElementById('categoria_produto').value = request.result.category;
 		photo = request.result.photo;
-		$("$img").attr('src', photo);
+		$("#img").attr('src', photo);
 
 		document.getElementById('salvar_prod').setAttribute("onClick", "update(" + prod + ");")
 
