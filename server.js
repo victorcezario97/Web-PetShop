@@ -94,6 +94,7 @@ function requestHandler(req, res) {
     getFile((localFolder + fileName),res, /*page404,*/extensions[ext]);
 };
 
+
 //step 2) create the server
 http.createServer(requestHandler)
 
@@ -101,3 +102,62 @@ http.createServer(requestHandler)
 .listen(8080);
 
 console.log('Node server is running on http://localhost:8080');
+
+
+var request = require('request');
+
+var url = 'http://127.0.0.1:5984/';
+var db = 'mydatabase/';
+var id = 'document_id';
+
+/*
+// Create a database/collection inside CouchDB
+request.put(url + db, function(err, resp, body) {
+  /*
+  // Add a document with an ID
+  request.put({
+    url: url + db + id,
+    body: {message:'New Shiny Document', user: 'stefan'},
+    json: true,
+  }, function(err, resp, body) {
+    // Read the document
+    request(url + db + id, function(err, res, body) {
+      console.log(body.user + ' : ' + body.message);
+    });
+  });
+  
+});
+*/
+/*
+const NodeCouchDb = require('node-couchdb');
+ 
+// node-couchdb instance with default options
+const couch = new NodeCouchDb();
+ 
+// node-couchdb instance with Memcached
+const MemcacheNode = require('node-couchdb-plugin-memcached');
+const couchWithMemcache = new NodeCouchDb({
+    cache: new MemcacheNode
+});
+ 
+// node-couchdb instance talking to external service
+const couchExternal = new NodeCouchDb({
+    host: 'couchdb.external.service',
+    protocol: 'https',
+    port: 5984
+});
+
+var dbName = "test";
+couch.createDatabase(dbName).then(() => {}, err => {
+    // request error occured
+});
+*/
+
+var nano = require('nano')('http://localhost:5984');
+//module.exports = nano(process.env.COUCHDB_URL || url);
+
+nano.db.create('test2', function(err) {  
+  if (err) {
+    console.error(err);
+  }
+});
