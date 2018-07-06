@@ -47,7 +47,7 @@ function getFile(filePath,res,/*page404,*/mimeType){
 //a helper function to handle HTTP requests
 function requestHandler(req, res) {
     var
-    fileName = path.basename(req.url) || 'login.html',
+    fileName = path.basename(req.url) || 'home.html',
     ext = path.extname(fileName),
      localFolder = __dirname + '/html/';
     // page404 = localFolder + '404.html';
