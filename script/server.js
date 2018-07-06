@@ -1,6 +1,20 @@
-var http, path, fs, extensions, nano, httpDB;
-var request; 
-//var req = require('make-runnable');
+module.exports.init = function () {
+    //step 1) require the modules we need
+var
+http = require('http'),
+path = require('path'),
+fs = require('fs'),
+
+//these are the only file types we will support for now
+extensions = {
+    ".html" : "text/html",
+    ".css" : "text/css",
+    ".js" : "application/javascript",
+    ".png" : "image/png",
+    ".gif" : "image/gif",
+    ".jpg" : "image/jpeg",
+    ".jpeg" : "image/jpeg"
+};
 
 //helper function handles file verification
 function getFile(filePath,res,/*page404,*/mimeType){
@@ -47,7 +61,7 @@ function getFile(filePath,res,/*page404,*/mimeType){
 //a helper function to handle HTTP requests
 function requestHandler(req, res) {
     var
-    fileName = path.basename(req.url) || 'login.html',
+    fileName = path.basename(req.url) || 'home.html',
     ext = path.extname(fileName),
      localFolder = __dirname + '/html/';
     // page404 = localFolder + '404.html';
@@ -82,9 +96,20 @@ function requestHandler(req, res) {
 };
 
 
+//step 2) create the server
+http.createServer(requestHandler)
 
-    //step 1) require the modules we need
+//step 3) listen for an HTTP request on port 3000
+.listen(8080);
 
+console.log('Node server is running on http://localhost:8080');
+
+
+var request = require('request');
+
+var url = 'http://127.0.0.1:5984/';
+var db = 'mydatabase/';
+var id = 'document_id';
 
 
 /*
@@ -130,6 +155,8 @@ couch.createDatabase(dbName).then(() => {}, err => {
 });
 */
 
+var nano = require('nano')('http://localhost:5984');
+httpDB = require('http');
 //module.exports = nano(process.env.COUCHDB_URL || url);
 /*
 var serverDB = httpDB.createServer(function (request, response) { 
@@ -173,66 +200,26 @@ nano.db.create('test4', function(err) {
 });
 */
 
-//module.exports.start = function(){
-    console.log("Entrou");
-    http = require('http');
-    path = require('path');
-    fs = require('fs');
-    request = require('request');
+nano.db.create('mylibrary', function(err) {  
+    if (err) {
+        console.error(err);
+    }
 
-    //these are the only file types we will support for now
-    extensions = {
-        ".html" : "text/html",
-        ".css" : "text/css",
-        ".js" : "application/javascript",
-        ".png" : "image/png",
-        ".gif" : "image/gif",
-        ".jpg" : "image/jpeg",
-        ".jpeg" : "image/jpeg"
-    };
-
-    //step 2) create the server
-    http.createServer(requestHandler)
-
-    //step 3) listen for an HTTP request on port 3000
-    .listen(8080);
-
-    console.log('Node server is running on http://localhost:8080');
-
-
-    var url = 'http://127.0.0.1:5984/';
-    var db = 'mydatabase/';
-    var id = 'document_id';
-
-    nano = require('nano')('http://localhost:5984');
-    httpDB = require('http');
-
-    nano.db.create('mylibrary', function(err) {  
-        if (err) {
-            console.error(err);
-        }
-
-        var book = { 
-            Title: "A Brief History of Time", 
-            Author: "Stephen Hawking", 
-            Type: "Paperback – Unabridged, September 1, 1998", 
-            ISBN: "978-0553380163"
-        }; 
-         
-        nano.use("mylibrary").insert(book, book.ISBN, function(err, body, header) { 
-            if(err) { 
-                console.log("Insert error");
-            } else { 
-                console.log("Insert ok");
-            } 
-        });
+    var book = { 
+        Title: "A Brief History of Time", 
+        Author: "Stephen Hawking", 
+        Type: "Paperback – Unabridged, September 1, 1998", 
+        ISBN: "978-0553380163"
+    }; 
+     
+    nano.use("mylibrary").insert(book, book.ISBN, function(err, body, header) { 
+        if(err) { 
+            console.log("Insert error");
+        } else { 
+            console.log("Insert ok");
+        } 
     });
-//};
-
-
-
-//require('make-runnable');
+});
+};
 
 // node -e 'require("./server").init()'
-
-// node server.js init
