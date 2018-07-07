@@ -11,8 +11,7 @@
   <link rel="stylesheet" type="text/css" href="../css/selection.css">
   <link rel="stylesheet" type="text/css" href="../css/home.css">
   <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
-
-
+  <link rel="stylesheet" type="text/css" href="..css/agendar.css">
 
 </head>
 <body>
@@ -25,7 +24,7 @@
 </div>
 
 <nav class="navbar navbar-expand-sm">
-  <a class="navbar-brand" href="home.html"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+  <a class="navbar-brand" onclick="singlePage('single/s-home.html')"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon">
@@ -35,19 +34,17 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <div>
       <!-- Usado na SPA -->
-      <!-- <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
-       Agendar</button> -->
-       <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
-       Agendar</a>
+      <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button> 
     </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="products.html#Cachorro_alimentos">Alimentos</a>
-        <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
-        <a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Alimentos</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Acessórios</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Higiene</a>
       </div>
     </div>
       <div class="dropdown">
@@ -55,9 +52,9 @@
         Gatos
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="products.html#Gato_alimentos">Alimentos</a>
-        <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
-        <a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Alimentos</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Acessórios</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Higiene</a>
       </div>
     </div>
       <div class="dropdown">
@@ -65,9 +62,9 @@
         Farmácia
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="products.html#Farmacia_vermifugo">Vermífugo</a>
-        <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
-        <a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Vermífugo</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Antipulga</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Eutanásia</a>
       </div>
     </div>
       <div class="dropdown">
@@ -75,9 +72,9 @@
         Mais
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="products.html#Peixes">Peixes</a>
-        <a class="dropdown-item" href="products.html#Roedores">Roedores</a>
-        <a class="dropdown-item" href="products.html#Cobras">Cobras</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Peixes</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Roedores</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html');">Cobras</a>
       </div>
     </div>
   </div>
