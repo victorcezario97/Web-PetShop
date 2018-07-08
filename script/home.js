@@ -40,7 +40,7 @@ function createChild(prod){
 	pname.setAttribute("class", "produto_nome");
 	pname.innerHTML = prod.name;
 
-	let divprice = document.createElement("div");	
+	let divprice = document.createElement("div");
 
 	let pprice = document.createElement("p");
 	pprice.setAttribute("class", "produto_preco");
@@ -61,11 +61,11 @@ function createChild(prod){
 	btn.setAttribute("class", "mybtn");
 	btn.setAttribute("name", prod.id);
 	btn.setAttribute("style", "margin: auto; display: block");
-	
+
 	let divouter = document.createElement("div");
 	divouter.appendChild(a);
 	divouter.appendChild(btn);
-	
+
 	divouter.setAttribute("style", "display: inline-block; vertical-align: middle;");
 
 	return divouter;
@@ -83,7 +83,7 @@ function addCart(id){
 			if(request2.result == undefined) window.alert("Produto não encontrado!");
 			else{
 				carrinho.push(request2.result);
-				
+
 				sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
 				window.alert("Produto adicionado ao carrinho!");
 			}
@@ -93,4 +93,3 @@ function addCart(id){
 	window.alert("Produto não encontrado!");
 }
 }
-
