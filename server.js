@@ -82,97 +82,6 @@ function requestHandler(req, res) {
 };
 
 
-
-    //step 1) require the modules we need
-
-
-
-/*
-// Create a database/collection inside CouchDB
-request.put(url + db, function(err, resp, body) {
-  /*
-  // Add a document with an ID
-  request.put({
-    url: url + db + id,
-    body: {message:'New Shiny Document', user: 'stefan'},
-    json: true,
-  }, function(err, resp, body) {
-    // Read the document
-    request(url + db + id, function(err, res, body) {
-      console.log(body.user + ' : ' + body.message);
-    });
-  });
-  
-});
-*/
-/*
-const NodeCouchDb = require('node-couchdb');
- 
-// node-couchdb instance with default options
-const couch = new NodeCouchDb();
- 
-// node-couchdb instance with Memcached
-const MemcacheNode = require('node-couchdb-plugin-memcached');
-const couchWithMemcache = new NodeCouchDb({
-    cache: new MemcacheNode
-});
- 
-// node-couchdb instance talking to external service
-const couchExternal = new NodeCouchDb({
-    host: 'couchdb.external.service',
-    protocol: 'https',
-    port: 5984
-});
-
-var dbName = "test";
-couch.createDatabase(dbName).then(() => {}, err => {
-    // request error occured
-});
-*/
-
-//module.exports = nano(process.env.COUCHDB_URL || url);
-/*
-var serverDB = httpDB.createServer(function (request, response) { 
-    nano.db.create("mylibrary", function (err, body, header) { 
-        if (err) { 
-            response.writeHead(500, { "Content-Type": "text/plain" }); 
-            response.end("Database creation failed. " + err + "\n"); 
-        } else { 
-            response.writeHead(200, { "Content-Type": "text/plain" }); 
-            response.end("Database created. Response: " + JSON.stringify(body) + "\n"); 
-        } 
-    }); 
-
-    var book = { 
-        Title: "A Brief History of Time", 
-        Author: "Stephen Hawking", 
-        Type: "Paperback – Unabridged, September 1, 1998", 
-        ISBN: "978-0553380163"
-    }; 
-     
-    nano.use("mylibrary").insert(book, book.ISBN, function(err, body, header) { 
-        if(err) { 
-            response.writeHead(500, { "Content-Type": "text/plain" }); 
-            response.end("Inserting book failed. " + err + "\n"); 
-        } else { 
-            response.writeHead(200, { "Content-Type": "text/plain" }); 
-            response.end("Book inserted. Response: " + JSON.stringify(body) + "\n"); 
-        } 
-    }); 
-}); 
- 
-serverDB.listen(8000); 
-console.log("Server running at http://127.0.0.1:8000/"); 
-*/
-
-/*
-nano.db.create('test4', function(err) {  
-    if (err) {
-        console.error(err);
-    }
-});
-*/
-
 //module.exports.start = function(){
     console.log("Entrou");
     http = require('http');
@@ -204,22 +113,25 @@ nano.db.create('test4', function(err) {
     var db = 'mydatabase/';
     var id = 'document_id';
 
-    nano = require('nano')('http://localhost:5984');
+    // a base precisa ter o usuário admin e senha: 123456
+    nano = require('nano')('http://admin:123456@localhost:5984');
     httpDB = require('http');
 
-    nano.db.create('mylibrary', function(err) {  
+    nano.db.create('users', function(err) {  
         if (err) {
             console.error(err);
         }
-
-        var book = { 
-            Title: "A Brief History of Time", 
-            Author: "Stephen Hawking", 
-            Type: "Paperback – Unabridged, September 1, 1998", 
-            ISBN: "978-0553380163"
+// Insere no na base o seguinte usuário
+        var user = { 
+            Name: "wallace Cruz", 
+            Email: "wallace@usp.br", 
+            User: "admin", 
+            Password: "admin",
+            Address: "Rua Trabalho Pronto",
+            Phone: "1399100000"
         }; 
          
-        nano.use("mylibrary").insert(book, book.ISBN, function(err, body, header) { 
+        nano.use("users").insert(user, user.User, function(err, body, header) { 
             if(err) { 
                 console.log("Insert error");
             } else { 
