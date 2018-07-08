@@ -17,7 +17,7 @@
 <div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
   <div class="container banner">
     <h1>Plus</h1>
-    <p>Seu filho bem cuidado</p> 
+    <p>Seu filho bem cuidado</p>
   </div>
 </div>
 
@@ -30,13 +30,13 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div> 
+      <div>
       <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Agendar</button> -->
        <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
        Agendar</a>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
@@ -46,7 +46,7 @@
         <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
         <a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
       </div>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Gatos
@@ -56,7 +56,7 @@
         <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
         <a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
       </div>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Farmácia
@@ -66,7 +66,7 @@
         <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
         <a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
       </div>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Mais
@@ -77,7 +77,7 @@
         <a class="dropdown-item" href="products.html#Cobras">Cobras</a>
       </div>
     </div>
-  </div>  
+  </div>
   <div>
   <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
@@ -101,9 +101,10 @@
 
 <!-- Seu html deve ser escrito a partir daqui %%-->
 <div id="troca">
-	<div class="body">	
- 
-		<script type="text/javascript" src="../script/calendario.js"></script>
+	<div class="body">
+
+		<div id="calendar">
+    </div>
 		<div class="box">
 			<div class="header_box">
 				<h3>Seviços</h3>
@@ -162,15 +163,15 @@
                 <div class="edit_name">
                   <label for="animal"><b>Nome do Animal</b></label>
                   <input id="animal" type="text" placeholder="Nome do Animal" name="animal" required>
-                </div>    
-                <div class="edit_vet">    
+                </div>
+                <div class="edit_vet">
                       <label for="funcao"><b>Funcionário</b></label>
                       <input id="funcao" list="funcionario" name="veterinario">
                       <datalist id="funcionario">
-                        
+
                       </datalist>
-                </div>      
-              </div>    
+                </div>
+              </div>
             </div>
 					</div>
 				</div>
@@ -181,7 +182,7 @@
 			</div>
 		</div>
 	</div>
-</div>	
+</div>
  <!-- Seu html não pode passar daqui %%-->
 
 <div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">

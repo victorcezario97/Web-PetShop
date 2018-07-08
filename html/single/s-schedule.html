@@ -1,91 +1,85 @@
-<div id="troca">
-	<div class="body">	
- 
-		<script type="text/javascript" src="../script/calendario.js"></script>
-		<div class="box">
-			<div class="header_box">
-				<h3>Seviços</h3>
-			</div>
-			<div class="menu">
-				<div class="menu_body" style="overflow-y: auto">
-					<div class="menu_list">
-						<div id="opcoes">
-						  	<div class="celula" onclick="selectService('consulta')">
-						  		<div class="escolha">Consulta Veterinária</div>
-						  	</div>
-						  	<div class="celula" onclick="selectService('banho')">
-						  		<div class="escolha">Banho</div>
-						  	</div>
-						  	<div class="celula" onclick="selectService('tosa')">
-						  		<div class="escolha">Tosa</div>
-						  	</div>
-						  	<div class="celula" onclick="selectService('hospedagem')">
-						  		<div class="escolha">Hospedagem</div>
-						  	</div>
-						</div>
-            <div id="horario">
-              <div class="celula" onclick="selectSlot(7, 8, 0)">
-                <div class="escolha">7h - 8h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(8, 9, 1)">
-                <div class="escolha">8h - 9h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(9, 10, 2)">
-                <div class="escolha">9h - 10h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(10, 11, 3)">
-                <div class="escolha">10h - 11h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(11, 12, 4)">
-                <div class="escolha">11h - 12h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(14, 15, 5)">
-                <div class="escolha">14h - 15h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(15, 16, 6)">
-                <div class="escolha">15h - 16h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(16, 17, 7)">
-                <div class="escolha">16h - 17h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(17, 18, 8)">
-                <div class="escolha">17h - 18h</div>
-              </div>
-              <div class="celula" onclick="selectSlot(18, 19, 9)">
-                <div class="escolha">18h - 19h</div>
-              </div>
-            </div>
-            <div id="preenchimento">
-              <div class="mycontainer">
-                <div class="edit_name">
-                  <label for="animal"><b>Nome do Animal</b></label>
-                  <input id="animal" type="text" placeholder="Nome do Animal" name="animal" required>
-                </div>    
-                <div class="edit_vet">    
-                      <label for="funcao"><b>Funcionário</b></label>
-                      <input id="funcao" list="funcionario" name="veterinario">
-                      <datalist id="funcionario">
-                        
-                      </datalist>
-                </div>      
-              </div>    
-            </div>
+<div class="body">
+
+	<div id="calendar">
+  </div>
+	<div class="box">
+		<div class="header_box">
+			<h3>Seviços</h3>
+		</div>
+		<div class="menu">
+			<div class="menu_body" style="overflow-y: auto">
+				<div class="menu_list">
+					<div id="opcoes">
+					  	<div class="celula" onclick="selectService('consulta')">
+					  		<div class="escolha">Consulta Veterinária</div>
+					  	</div>
+					  	<div class="celula" onclick="selectService('banho')">
+					  		<div class="escolha">Banho</div>
+					  	</div>
+					  	<div class="celula" onclick="selectService('tosa')">
+					  		<div class="escolha">Tosa</div>
+					  	</div>
+					  	<div class="celula" onclick="selectService('hospedagem')">
+					  		<div class="escolha">Hospedagem</div>
+					  	</div>
 					</div>
+          <div id="horario">
+            <div class="celula" onclick="selectSlot(7, 8, 0)">
+              <div class="escolha">7h - 8h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(8, 9, 1)">
+              <div class="escolha">8h - 9h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(9, 10, 2)">
+              <div class="escolha">9h - 10h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(10, 11, 3)">
+              <div class="escolha">10h - 11h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(11, 12, 4)">
+              <div class="escolha">11h - 12h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(14, 15, 5)">
+              <div class="escolha">14h - 15h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(15, 16, 6)">
+              <div class="escolha">15h - 16h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(16, 17, 7)">
+              <div class="escolha">16h - 17h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(17, 18, 8)">
+              <div class="escolha">17h - 18h</div>
+            </div>
+            <div class="celula" onclick="selectSlot(18, 19, 9)">
+              <div class="escolha">18h - 19h</div>
+            </div>
+          </div>
+          <div id="preenchimento">
+            <div class="mycontainer">
+              <div class="edit_name">
+                <label for="animal"><b>Nome do Animal</b></label>
+                <input id="animal" type="text" placeholder="Nome do Animal" name="animal" required>
+              </div>
+              <div class="edit_vet">
+                    <label for="funcao"><b>Funcionário</b></label>
+                    <input id="funcao" list="funcionario" name="veterinario">
+                    <datalist id="funcionario">
+
+                    </datalist>
+              </div>
+            </div>
+          </div>
 				</div>
-				<button id="menubtn" onclick="saveDataBase()">Corfirmar</button>
-        <!-- Utilizar o botão de baixo quando tiver implementado a função saveDataBase() no arquivo agendar.js -->
-        <!-- A função deve armazenar todos os dados do agendamento no indexedDB -->
-        <!-- <button id="menubtn" onclick="saveDataBase()">Corfirmar</button> -->
 			</div>
+			<button id="menubtn" onclick="saveDataBase()">Corfirmar</button>
+      <!-- Utilizar o botão de baixo quando tiver implementado a função saveDataBase() no arquivo agendar.js -->
+      <!-- A função deve armazenar todos os dados do agendamento no indexedDB -->
+      <!-- <button id="menubtn" onclick="saveDataBase()">Corfirmar</button> -->
 		</div>
 	</div>
-</div>	
- <!-- Seu html não pode passar daqui %%-->
-
-<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
-  <p>Plus © No mercado desde ontem</p>
 </div>
-
+ <!-- Seu html não pode passar daqui %%-->
 
   <script type="text/javascript" src="../script/jquery.min.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
