@@ -1,3 +1,4 @@
+console.log('AAAAJKASJKSJ')
 var day, month, year; // armazenamento volátil da data selecionada e que seja válida (uma data igual ou após a data atual)
 var service; // armazenamento volátil do tipo de serviço
 var start, end; // intervalo do slot selecionado
@@ -21,7 +22,7 @@ function addFirstName(name) {
 // adiciona o restante que tiver
 function addName(name) {
 	var size = document.getElementsByTagName('option').length;
-	const div = document.getElementsByTagName('option')[size-1];  
+	const div = document.getElementsByTagName('option')[size-1];
 	div.insertAdjacentHTML('afterend', '<option value="'+name+'">');
 }
 
@@ -40,7 +41,7 @@ for (var i = 0; i < 10; i++) {
 
 // seleção de uma data do calendário
 function selectDate(day, month, year) {
-	var actual_day = new Date(); // data atual	
+	var actual_day = new Date(); // data atual
 	var select_day = new Date(year, month-1, day); // data selecionada
 
 	// verifica se a data selecionada é válida para o agendamento de serviços
@@ -63,24 +64,24 @@ function selectDate(day, month, year) {
 	}
 
 	// sempre ativar o scroll se for precisar deslizar a tela para baixo ou para cima
-	document.getElementsByClassName('menu_body')[0].style.overflowY = 'scroll';	
+	document.getElementsByClassName('menu_body')[0].style.overflowY = 'scroll';
 }
 
 // seleção do tipo de serviço
 function selectService(service) {
 	this.service = service; // armazena o tipo de serviço
-	if (service != 'hospedagem') { // se não for de hospedagem de animal 
+	if (service != 'hospedagem') { // se não for de hospedagem de animal
 		// mostra a tela de opção de  tipo de serviços
 		document.getElementById('opcoes').style.display = 'none';
 		document.getElementById('horario').style.display = 'block';
 		document.getElementById('preenchimento').style.display = 'none';
 		document.getElementById('menubtn').style.display = 'none';
 	} else {
-		
+
 	}
 
 	// mantem ativado o scroll
-	document.getElementsByClassName('menu_body')[0].style.overflowY = 'scroll';	
+	document.getElementsByClassName('menu_body')[0].style.overflowY = 'scroll';
 }
 
 // seleção de um slot de horário do serviço
