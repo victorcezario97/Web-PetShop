@@ -1,6 +1,19 @@
-var http, path, fs, extensions, nano, httpDB;
-var request; 
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
 //var req = require('make-runnable');
+
+//these are the only file types we will support for now
+extensions = {
+    ".html" : "text/html",
+    ".css" : "text/css",
+    ".js" : "application/javascript",
+    ".png" : "image/png",
+    ".gif" : "image/gif",
+    ".jpg" : "image/jpeg",
+    ".jpeg" : "image/jpeg"
+};
+
 
 //helper function handles file verification
 function getFile(filePath,res,/*page404,*/mimeType){
@@ -20,24 +33,10 @@ function getFile(filePath,res,/*page404,*/mimeType){
                     });
                     res.end(contents);
                 } else {
-                    //for our own troubleshooting
                     console.dir(err);
                 };
             });
-        } else {/*
-            //if the requested file was not found
-            //serve-up our custom 404 page
-            fs.readFile(page404,function(err,contents){
-                //if there was no error
-                if(!err){
-                    //send the contents with a 404/not found header 
-                    res.writeHead(404, {'Content-Type': 'text/html'});
-                    res.end(contents);
-                } else {
-                    //for our own troubleshooting
-                    console.dir(err);
-                };
-            });     */
+        } else {
             res.writeHead(404, {'Content-Type': 'text/html'});
             return res.end("404 Not Found");
         };
@@ -52,8 +51,8 @@ function requestHandler(req, res) {
      localFolder = __dirname + '/html/';
     // page404 = localFolder + '404.html';
     
-    if(ext === '.html' && fileName != 'home.html'){
-        localFolder = __dirname + '/html/single/';
+    if(ext === '.html' /*&& fileName != 'home.html' */){
+        localFolder = __dirname + '/html/'; //TESTANDO SEM O SPA
     }else if(ext === '.js'){
         localFolder = __dirname + '/script/';
     }else if(ext === '.css'){
@@ -74,72 +73,53 @@ function requestHandler(req, res) {
         res.end("&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;The requested file type is not supported&lt;/body&gt;&lt;/html&gt;");
     };
 
-    //call our helper function
-    //pass in the path to the file we want,
-    //the response object, and the 404 page path
-    //in case the requestd file is not found
     getFile((localFolder + fileName),res, /*page404,*/extensions[ext]);
 };
 
+//step 2) create the server
+    http.createServer(requestHandler)
+
+ //step 3) listen for an HTTP request on port 3000
+    .listen(8080);
+
+
+    console.log('Node server is running on http://localhost:8080');
+//Até as funções utilizadas só manipulavam a requisição de arquivo
+/////////////////////////////////////////////////////////////////////////////////////
 
 //module.exports.start = function(){
     console.log("Entrou");
-    http = require('http');
-    path = require('path');
-    fs = require('fs');
-    request = require('request');
-
-    //these are the only file types we will support for now
-    extensions = {
-        ".html" : "text/html",
-        ".css" : "text/css",
-        ".js" : "application/javascript",
-        ".png" : "image/png",
-        ".gif" : "image/gif",
-        ".jpg" : "image/jpeg",
-        ".jpeg" : "image/jpeg"
-    };
-
-    //step 2) create the server
-    http.createServer(requestHandler)
-
-    //step 3) listen for an HTTP request on port 3000
-    .listen(8080);
-
-    console.log('Node server is running on http://localhost:8080');
 
 
-    var url = 'http://127.0.0.1:5984/';
-    var db = 'mydatabase/';
-    var id = 'document_id';
+var express = require('express');
+var path = require('path');
+var bodyParser = require('body-parser');
 
-    // a base precisa ter o usuário admin e senha: 123456
-    nano = require('nano')('http://admin:123456@localhost:5984');
-    httpDB = require('http');
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
 
-    nano.db.create('users', function(err) {  
-        if (err) {
-            console.error(err);
-        }
-// Insere no na base o seguinte usuário
-        var user = { 
-            Name: "wallace Cruz", 
-            Email: "wallace@usp.br", 
-            User: "admin", 
-            Password: "admin",
-            Address: "Rua Trabalho Pronto",
-            Phone: "1399100000"
-        }; 
-         
-        nano.use("users").insert(user, user.User, function(err, body, header) { 
-            if(err) { 
-                console.log("Insert error");
-            } else { 
-                console.log("Insert ok");
-            } 
+var app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.resolve(__dirname, 'html')));
+
+
+MongoClient.connect(url, function(err, db) { //Estabelecendo a conexão no formato W3School
+  if (err) throw err;
+  var dbo = db.db("mydb");  //Acessando o banco previamente criado
+  
+  app.post('/insertUser', function (req, res) {
+        delete req.body._id; // for safety reasons (Na real não sei para que serve)
+        console.log(req.body); // Imprime no console os dados recebidos do form
+        dbo.collection('users').insertOne(req.body, function(err, res) { //Insere na coleção users
+            if (err) throw err;                                         //esses dados
+                console.log("1 document inserted");  //imprime no console que inserção foi executada
+            db.close();         //fecha o banco
         });
-    });
-//};
+    // res.send('Data received:\n' + JSON.stringify(req.body));  //usada para debug no browser
+  });
+
+});
 
 
 

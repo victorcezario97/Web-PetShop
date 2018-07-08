@@ -96,33 +96,34 @@
 
 <!-- Seu html deve ser escrito a partir daqui %%-->
 <div id="troca">
-<div class="register container">
-  <form style="border:1px solid #ccc">
+<div class="register container">      
+<!-- POST usado jogar no mongoDb, action = "função" que deve ser executada -->
+  <form style="border:1px solid #ccc" method="POST" action="/insertUser">
       <div class="container">
         <h1>Registrar</h1>
         <p>Preencha os campos abaixo</p>
         <hr>
 
         <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="login@email.com" name="email" id="email">
+        <input type="email" placeholder="login@email.com" name="Email" id="email">
 
         <label for="user"><b>Usuário</b></label>
-        <input type="text" placeholder="Usuário" name="user" required id="user">
+        <input type="text" placeholder="Usuário" name="User" required id="user">
 
         <label for="password"><b>Senha</b></label>
-        <input type="password" placeholder="Senha" name="psw" required id = "password">
+        <input type="password" placeholder="Senha" name="Password" required id = "password">
 
         <label for="psw-repeat"><b>Confirme a senha</b></label>
         <input type="password" placeholder="Confirme" name="psw-repeat" required id="psw-repeat">
 
         <label for="name"><b>Nome</b></label>
-        <input type="text" placeholder="Nome" name="name" required id="name">
+        <input type="text" placeholder="Nome" name="Name" required id="name">
 
         <label for="phone"><b>Telefone</b></label>
-        <input type="text" placeholder="(11)99999-9999" name="phone" id="phone">
+        <input type="text" placeholder="(11)99999-9999" name="Phone" id="phone">
 
         <label for="address"><b>Endereço</b></label>
-        <input type="text" placeholder="Endereço" name="address" id="address">
+        <input type="text" placeholder="Endereço" name="Address" id="address">
 
         <label for="picField"><b>Foto</b></label>
        <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
