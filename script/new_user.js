@@ -85,8 +85,9 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					    clientPassword = jresp.password;
 					    // Abre home/html/single/s-home.html
 					    ///////// ABREEE PÁGINAAAAAAA
-					    page = "./html/single/s-home.html";
-					    window.location.href = page;
+					    // page = "./html/single/s-home.html";
+					    // window.location.href = page;
+					    singlePage('/single/s-home.html', null, null);
 					};
 					xht.send(null);
 				}
