@@ -28,171 +28,168 @@ function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
 // Cadastra um novo cliente
 function registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone){
 	// Cadastra
-	let objectStoreRegister = db.transaction("clients", "readwrite").objectStore("clients");
+
 	//{id: 2, name: "Bolsomito", user: "mitinho", address: "Rua das mitagens, 13", photo: null, phone: "13131313", email: "mito@gmail.com", password: "123456"}
-	var newUser = {name: userName, user: userUser, address: userAddress, photo: userPhoto, phone: userPhone, email: userEmail, password: userPassword};
+	let newUser = JSON.stringify({
+		name : userName, 
+		user : userUser, 
+		address : userAddress, 
+		photo : userPhoto, 
+		phone : userPhone, 
+		email : userEmail, 
+		password : userPassword
+	});
 
-	var request = objectStoreRegister.add(newUser);
+	let xhttpr = new XMLHttpRequest();
+	xhttpr.open("POST", urlMongo + "router_client/register", true);
+	xhttpr.setRequestHeader("Content-Type", "application/json");
 
-	request.onsuccess = function(event){
-		window.alert("Cliente de email " + userEmail + " cadastrado com sucesso!");
+	xhttpr.onreadystatechange = function(){
+		if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
+			let resp = xhttpr.responseText;
+			if(resp === "Register ok"){
+				window.alert("Cliente de email " + userEmail + " cadastrado com sucesso!");
 
-		// Se estamos na página new_user
-		if(page === "new_user.html"){
-			$("#name").val("");
-			$("#email").val("");
-			$("#user").val("");
-			$("#password").val("");
-			$("#address").val("");
-			$("#phone").val("");
-			$("#img").attr('src', '../img/perfil.jpg');
-			userPhoto = null;
-		}
-		else if(page === "registrar.html"){
-			clientId = request.result.id;
-		    clientName = request.result.name;
-		    clientUser = request.result.user;
-		    clientAddress = request.result.address;
-		    clientPhoto = request.result.photo;
-		    clientPhone = request.result.phone;
-		    clientEmail = request.result.email;
-		    clientPassword = request.result.password;
-		    // Abre home
-		    window.location.href = "home.html";
+				// Se estamos na página new_user
+				if(page === "s-new_user.html"){
+					$("#name").val("");
+					$("#email").val("");
+					$("#user").val("");
+					$("#password").val("");
+					$("#address").val("");
+					$("#phone").val("");
+					$("#img").attr('src', '../img/perfil.jpg');
+					userPhoto = null;
+				}
+				else if(page === "s-registrar.html"){
+					let xht = new XMLHttpRequest();
+					xht.open("GET", urlMongo + "router_client/getClientByEmail/" + userEmail, true);
+					xht.setRequestHeader("Content-Type", "application/json");
+
+					xht.onload = function(){
+						let jresp = JSON.parse(xht.responseText);
+						clientId = jresp._id;
+					    clientName = jresp.name;
+					    clientUser = jresp.user;
+					    clientAddress = jresp.address;
+					    clientPhoto = jresp.photo;
+					    clientPhone = jresp.phone;
+					    clientEmail = jresp.email;
+					    clientPassword = jresp.password;
+					    // Abre home
+					    page = "s-home.html";
+					    window.location.href = page;
+					};
+					xht.send(null);
+				}
+			}
 		}
 	};
-
-	request.onerror = function(event){
-		window.alert("Houve um erro durante o cadastro. Por favor, tente novamente mais tarde.");
-	};
+	xhttpr.send(newUser);
 }
 
 // Verifica se os dados podem ser cadastrados
 function validateUser(userName, userEmail, userUser, userPassword, userAddress, userPhone){
 	let resultEmailClient = null, resultUserClient = null, resultEmailAdmin = null, resultUserAdmin = null;
 
-	let transactionClientEmail = db.transaction("clients", "readwrite");
-	let transactionClientUser = db.transaction("clients", "readwrite");
-	let transactionAdminEmail = db.transaction("admins", "readwrite");
-	let transactionAdminUser = db.transaction("admins", "readwrite");
-
-	if(page === "new_admin.html")
+	if(page === "s-new_admin.html")
 		registerType = "admin";
 	else
 		registerType = "client";
 
-	let objectStoreValidateEmailClient = transactionClientEmail.objectStore("clients");
-	let objectStoreValidateUserClient = transactionClientUser.objectStore("clients");
-	let objectStoreValidateEmailAdmin = transactionAdminEmail.objectStore("admins");
-	let objectStoreValidateUserAdmin = transactionAdminUser.objectStore("admins");
+	try{
+		let xhttpClient = new XMLHttpRequest();
+		let xhttpAdmin = new XMLHttpRequest();
 
-	var indexEmail = objectStoreValidateEmailClient.index("email").get(userEmail);
-  	var indexUser = objectStoreValidateUserClient.index("user").get(userUser);
-  	var indexEmailAdmin = objectStoreValidateEmailAdmin.index("email").get(userEmail);
-  	var indexUserAdmin = objectStoreValidateUserAdmin.index("user").get(userUser);
+		xhttpClient.open("GET", urlMongo + "router_client/checkEmailOrUser/" + userEmail + "/" + userUser, true);
+		xhttpAdmin.open("GET", urlMongo + "router_admin/checkUserOrEmail", true);
 
-  // Procura por email de client
-  indexEmail.onsuccess = function(event){
-    if(indexEmail.result != undefined){   // Se achou o email
-    	if(resultUserClient === null || resultEmailAdmin === null || resultUserAdmin === null)	// Se ainda falta alguém
-    		resultEmailClient = false;
-    	else if(resultUserClient === true && resultEmailAdmin != null && resultUserAdmin === true)	// Se já tem só o email
-    		window.alert("Email já cadastrado.");
-    	else if((resultUserClient === false || resultUserAdmin === false) && resultEmailAdmin != null) // Se já tem e-mail e usuário
-    		window.alert("Email e usuário já cadastrados.");
-    }
-    else{   // Se não achou o email
-      resultEmailClient = true;
-      if(resultUserClient === true && resultEmailAdmin === true && resultUserAdmin === true){	// Se todos livres
-      	if(registerType === "client")
-      		registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
-      	else
-      		registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
-      }
-      else if((resultUserClient === false || resultUserAdmin === false) && resultEmailAdmin === true)	// Se só o usuário já tem
-      	window.alert("Usuário já cadastrado.");
-    }
-  };
+		xhttpClient.setRequestHeader("Content-Type", "application/json");
+		xhttpAdmin.setRequestHeader("Content-Type", "application/json");
 
-  // Procura por user de client
-  indexUser.onsuccess = function(event){
-    if(indexUser.result != undefined){   // Se achou o user
-    	if(resultEmailClient === null || resultEmailAdmin === null || resultUserAdmin === null)	// Se ainda falta alguém
-    		resultUserClient = false;
-    	else if(resultEmailClient === true && resultEmailAdmin === true && resultUserAdmin != null)	// Se já tem só o usuário 
-    		window.alert("Usuário já cadastrado.");
-    	else if((resultEmailClient === false || resultEmailAdmin === false) && resultUserAdmin != null)	// Se já tem email e usuário
-    		window.alert("Email e usuário já cadastrados.");
-    }
-    else{   // Se não achou o user
-	    resultUserClient = true;
-	    if(resultEmailClient === true && resultEmailAdmin === true && resultUserAdmin === true){	// Se todos livres
-	      	if(registerType === "client")
-	      		registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
-	      	else
-	      		registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
-	    }
-	    else if((resultEmailClient === false || resultEmailAdmin === false) && resultUserAdmin === true)	// Se só o email já tem
-	    	window.alert("Email já cadastrado.");
-    }
-  };
+		xhttpClient.onreadystatechange = function(){
+			if(this.readyState == XMLHttpRequest.DONE){
+				let resp = xhttpClient.responseText;
 
-  // Procura por email de admin
-  indexEmailAdmin.onsuccess = function(event){
-    if(indexEmailAdmin.result != undefined){   // Se achou o email
-    	if(resultUserAdmin === null || resultEmailClient === null || resultUserClient === null)	// Se ainda falta alguém
-    		resultEmailAdmin = false;
-    	else if(resultUserClient === true && resultEmailClient != null && resultUserAdmin === true) // Só email já tem
-    		window.alert("Email já cadastrado.");
-    	else if((resultUserClient === false || resultUserAdmin === false) && resultEmailClient != null)	// Se já tem email e usuário
-    		window.alert("Email e usuário já cadastrados.");
-    }
-    else{   // Se não achou o email
-      resultEmailAdmin = true;
-      if(resultUserClient === true && resultEmailClient === true && resultUserAdmin === true){	// Se todos livres
-      	if(registerType === "client")
-      		registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
-      	else
-      		registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
-      }
-      else if((resultUserClient === false || resultUserAdmin === false) && resultEmailClient === true)	// Se só o usuário já tem
-      	window.alert("Usuário já cadastrado.");
-    }
-  };
+				if(resp === "Error")
+					window.alert("Ocorreu um erro. Tente novamente.");
 
-  // Procura por user de admin
-  indexUserAdmin.onsuccess = function(event){
-    if(indexUserAdmin.result != undefined){   // Se achou o user
-    	if(resultEmailAdmin === null || resultEmailClient === null || resultUserClient === null)	// Se ainda falta alguém
-    		resultUserAdmin = false;
-    	else if(resultEmailAdmin === true && resultEmailClient == true && resultUserClient != null)	// Se só o usuário já tem
-    		window.alert("Usuário já cadastrado.");
-    	else if((resultEmailAdmin === false || resultEmailClient === false) && resultUserClient != null)	// Se já tem email e usuário
-    		window.alert("Email e usuário já cadastrados.");
-    }
-    else{   // Se não achou o user
-	    resultUserAdmin = true;
-	    if(resultEmailAdmin === true && resultUserAdmin === true && resultUserClient === true){	// Se todos livres
-	      	if(registerType === "client")
-	      		registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
-	      	else
-	      		registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
-	      }
-	    else if((resultEmailAdmin === false || resultEmailClient === false) && resultUserClient === true)	// Se só o email já tem
-	    	window.alert("Email já cadastrado.");
-    }
-  };
+				if(this.status == 200){
+					if(resp === "User unavailable"){
+						resultUserClient = false;
+						resultEmailClient = true;
+					}
+					if(resp === "Email unavailable"){
+						resultUserClient = true;
+						resultEmailClient = false;
+					}
+					if(resp === "Register ok"){
+						resultUserClient = true;
+						resultEmailClient = true;
+					}
+				}
+			}
+		};
+
+		xhttpAdmin.onreadystatechange = function(){
+			if(this.readyState == XMLHttpRequest.DONE){
+				let resp = xhttpClient.responseText;
+				
+				if(resp === "Error")
+					window.alert("Ocorreu um erro. Tente novamente.");
+
+				if(this.status == 200){
+					if(resp === "User unavailable"){
+						resultUserAdmin = false;
+						resultEmailAdmin = true;
+					}
+					if(resp === "Email unavailable"){
+						resultUserAdmin = true;
+						resultEmailAdmin = false;
+					}
+					if(resp === "Register ok"){
+						resultUserAdmin = true;
+						resultEmailAdmin = true;
+					}
+				}
+			}
+		};
+
+		let data = JSON.stringify({
+			userEmail: userEmail, 
+			userUser: userUser
+		});
+		xhttpAdmin.send(data);
+		xhttpClient.send(data);
+	}
+	catch(e){
+		window.alert("Houve um erro de conexão.\nCódigo: " + err.message);
+	}
+	
+	// Email e user indisponíveis
+  	if((resultUserClient === false || resultUserAdmin === false) && (resultEmailAdmin === false || resultEmailClient === false))
+  		alert("Email e usuário indisponíveis. Por favor, tente novamente.");
+  	else if((resultUserClient === false || resultUserAdmin === false) && (resultEmailAdmin === true || resultEmailClient === true))
+  		alert("Usuário indisponível. Por favor, tente novamente.");
+  	else if((resultUserClient === true || resultUserAdmin === true) && (resultEmailAdmin === false || resultEmailClient === false))
+  		alert("Email indisponível. Por favor, tente novamente.");
+  	else if((resultUserClient === true || resultUserAdmin === true) && (resultEmailAdmin === true || resultEmailClient === true)){
+  		if(registerType === "admin")
+  			registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
+  		else if(registerType === "client")
+  			registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
+  	}
 }
 
 // Inicia a rotina de cadastro
-function cadastrar(){
-	page = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+function cadastrar(thisPage){
+	page = thisPage;
 	let address;
 	let name = $("#name").val();
 	let user = $("#user").val();
 	let email = $("#email").val();
 	let password = $("#password").val();
-	if(page === "new_user.html" || page === "registrar.html")
+	if(page === "s-new_user.html" || page === "s-registrar.html")
 		address = $("#address").val();
 	else
 		address = null;

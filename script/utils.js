@@ -1,3 +1,4 @@
+const urlMongo = "http://localhost:3000/";
 var db;
 const dbName = "DBPetShop";
 var typeLogged;

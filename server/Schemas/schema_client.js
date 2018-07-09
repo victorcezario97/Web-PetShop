@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var clientSchema = new mongoose.Schema({
      id : {type: Number, unique: true},
      name : {type: String},
+     user : {type: String, unique: true},
      email : {type : String, unique: true},
      password : {type : String},
      photo : {type : String, default : ''},
