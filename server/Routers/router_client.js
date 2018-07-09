@@ -48,16 +48,18 @@ router.get('/checkEmailOrUser/:email/:user', function(req, res){
 	let userUser = req.params.user;
 	let jsonParamEmail = {email : userEmail};
 	let jsonParamUser = {user: userUser};
-
-	Client.find(jsonParamEmail, function(error, result){
+	console.log("email = " + userEmail + " user = " + userUser);
+	console.log("checking email user");
+	Client.find({email : userEmail}, function(error, result){
+		console.log("result = " + result);
 		if(!result){
-			Client.find(jsonParamUser, function(error1, result1){
+			Client.find({user: userUser}, function(error1, result1){
 				if(!result1){
 					res.status(200).send("Register ok");
 				}
 				else
 					return res.status(200).send("User unavailable");
-			})
+			});
 		}
 		else
 			return res.status(200).send("Email unavailable");
@@ -80,7 +82,7 @@ router.get('/login/:user/:password', function(req, res){
 				}
 				else
 					return res.status(200).send("User found");
-			})
+			});
 		}
 		else
 			return res.status(200).send("Email found");

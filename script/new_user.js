@@ -113,9 +113,10 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 		xhttpAdmin.setRequestHeader("Content-Type", "application/json");
 
 		// Verifica disponibilidade em client
-		xhttpClient.onreadystatechange = function(){
+		xhttpClient.onload = function(){
 			if(this.readyState == XMLHttpRequest.DONE){
 				let resp = xhttpClient.responseText;
+				alert("check client resp = " + resp);
 
 				if(resp === "Error")
 					window.alert("Ocorreu um erro. Tente novamente.");
@@ -124,6 +125,7 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 					if(resp === "User unavailable"){
 						resultUserClient = false;
 						resultEmailClient = true;
+
 					}
 					if(resp === "Email unavailable"){
 						resultUserClient = true;
@@ -133,7 +135,8 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 						resultUserClient = true;
 						resultEmailClient = true;
 						// Verifica disponibilidade em admin
-						xhttpAdmin.onreadystatechange = function(){
+						xhttpAdmin.onload = function(){
+							alert("check admin");
 							if(this.readyState == XMLHttpRequest.DONE){
 								let resp1 = xhttpAdmin.responseText;
 								
@@ -184,7 +187,9 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 	}
 	catch(e){
 		window.alert("Houve um erro de conexão.\nCódigo: " + e.message);
-	}
+	}/*
+	xhttpClient.close();
+	xhttpAdmin.close();*/
 }
 
 // Inicia a rotina de cadastro

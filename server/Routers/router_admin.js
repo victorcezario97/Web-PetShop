@@ -84,7 +84,7 @@ router.get('/checkEmailOrUser/:email/:user', function(req, res){
                 }
                 else
                     return res.status(200).send("User unavailable");
-            })
+            });
         }
         else
             return res.status(200).send("Email unavailable");
