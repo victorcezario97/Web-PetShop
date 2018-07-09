@@ -3,6 +3,7 @@ var day, month, year; // armazenamento volátil da data selecionada e que seja v
 var service; // armazenamento volátil do tipo de serviço
 var start, end; // intervalo do slot selecionado
 var flag = new Array(10).fill(true); // verifica qual slot não está ocupado
+var month_of_year = new Array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro');
 
 var animal_name; // nome do animal
 var func_name; // nome do funcionário
@@ -42,7 +43,7 @@ for (var i = 0; i < 10; i++) {
 // seleção de uma data do calendário
 function selectDate(day, month, year) {
 	var actual_day = new Date(); // data atual
-	var select_day = new Date(year, month-1, day); // data selecionada
+	var select_day = new Date(year, month, day); // data selecionada
 
 	// verifica se a data selecionada é válida para o agendamento de serviços
 	if (actual_day < select_day) {

@@ -82,7 +82,7 @@ function createCalendar(actual_month, actual_year) {
                     +(Calendar.getMonth()+1)+', '+Calendar.getFullYear()+')"><center>' + day + TD_end; // concatena strings para a formação do calendário
         else
           cal += '<td width="30" class="dia"><div class="mydropdown" onclick="selectDate('+Calendar.getDate()+', '
-                    +(Calendar.getMonth()+1)+', '+Calendar.getFullYear()+')"><center>' + day + TD_end; // concatena strings para a formação do calendário
+                    +Calendar.getMonth()+', '+Calendar.getFullYear()+')"><center>' + day + TD_end; // concatena strings para a formação do calendário
       }
       if(week_day == DAYS_OF_WEEK)
         cal += TR_end; // concatena strings para a formação do calendário
@@ -92,7 +92,7 @@ function createCalendar(actual_month, actual_year) {
   cal += '</table>';
 }
 
-function nextMonth(argument) {
+function nextMonth() {
   var actual_day = new Date();
   if (month+1 <= actual_day.getMonth()+2) {
     month += 1;
@@ -101,7 +101,7 @@ function nextMonth(argument) {
   }
 }
 
-function lastMonth(argument) {
+function lastMonth() {
   var actual_day = new Date();
   if (month-1 >= actual_day.getMonth()) {
     month -= 1;
