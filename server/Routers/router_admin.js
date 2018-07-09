@@ -8,6 +8,11 @@ let router = express.Router();
 
 router.post('/newAdmin', (req, res) => { //Função tem o mesmo nome do action="/newAdmin"
 	//delete req.body.id;					// no form do new_admin.html
+	
+	console.log(req.body.name);       //Pega somente os dados importantes do fomr
+	console.log(req.body.user);
+	console.log(req.body.email);
+
 	var obj = {
      	name : req.body.name,       //Pega somente os dados importantes do fomr
 			user : req.body.user,
