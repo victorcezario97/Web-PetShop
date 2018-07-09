@@ -87,36 +87,57 @@
 <!-- Seu html deve ser escrito a partir daqui %%-->
 
 <div class="horizontal_div container col">
-	<div class="confirm_box" style="height: 500px">
+	<div class="confirm_box" style="height: auto">
 		<div class="confirm_title"><h2>Novo Administrador</h2></div>
 		<div class="confirm_inner">
-			<p style="margin-bottom: 0px;">Nome e Sobrenome:</p>
-			<input type="text" id="name" style="margin-top: -20px; width: 95% ">
+		<form style="border:1px solid #ccc" method="POST" action="/newAdmin">
+	      <div class="container">
 
-			<p style="margin-bottom: 0px;">Usuário:</p>
-			<input type="text" id="user" style="margin-top: -20px; width: 95% ">
+        <div>
+        <label for="name"><b>Nome e Sobrenome</b></label>
+        <input type="text" placeholder="João Qualquer" name="name" required id = "name" style="width: 95% ">
+        </div>
 
-			<p style="margin-bottom: 0px;">Email:</p>
-			<input type="email" id="email" style="margin-top: -20px; width: 95% ">
+        <div>
+        <label for="user"><b>Usuário</b></label>
+        <input type="text" placeholder="Usuário" name="user" required id = "user" style="width: 95% ">
+        </div>
 
-			<p style="margin-bottom: 0px;">Senha: </p>
-			<input type="password" id="password" style="margin-top: -20px; width: 95% ">
-			
-			<div class="horixontal_div">	
-				<div style="display: inline-block; margin-left: 0px;">
-					<p style="margin-bottom: 0px;">Telefone:</p>
-					<input type="tel" id="phone" style="margin-top: -20px;max-width: 100px" placeholder="(11)99999-9999">		
-				</div>
+        <div>
+        <label for="email"><b>Email</b></label>
+        <input type="email" placeholder="name@name.com" name="email" required id = "email" style="width: 95% ">
+        </div>
 
-				<div style="text-align: center; margin-top: 20px">
-			
-   	 				<img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
-   	 				<input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-				</div>
-				<div style="text-align: center; margin-top: 30px">
-					<button class="mainbtn justify-content-center align-items-center" onclick="cadastrar();" style="vertical-align: center; margin: 0 auto">Cadastrar</button>
-				</div>
-			</div>
+        <div>
+        <label for="password"><b>Senha</b></label>
+        <input type="password" placeholder="Senha" name="password" required id = "password" style="width: 95% ">
+        </div>
+
+        <div>
+        <label for="psw-repeat"><b>Confirme a senha</b></label>
+        <input type="password" placeholder="Confirme" name="psw-repeat" required id="psw-repeat" style="width: 95% ">
+        </div>
+
+        <div>
+        <label for="phone"><b>Telefone</b></label>
+        <input type="text" placeholder="(11)99999-9999" name="phone" id="phone" style="width: 95% ">
+        </div>
+
+        <div>
+        <label for="address"><b>Endereço</b></label>
+        <input type="text" placeholder="Endereço" name="Address" id="address" style="width: 95% ">
+        </div>
+
+        <div>
+        <label for="picField"><b>Foto</b></label>
+          <img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
+       <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png" name="photo" />
+        </div>
+     	</div>
+     	<div style="text-align: center; margin-top: 30px">
+		<button class="mainbtn justify-content-center align-items-center" onclick="cadastrar();" style="vertical-align: center; margin: 0 auto">Cadastrar</button>
+		</div>
+  		</form> 
 		</div>
 	</div>
 </div>

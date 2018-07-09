@@ -10,5 +10,5 @@ var adminSchema = new mongoose.Schema({
      phone: {type: String, default: ''}
 });
 
-var Admin = mongoose.model('admin', adminSchema);
+var Admin = mongoose.model('admin', adminSchema); //Salvando na coleção admin
 module.exports = Admin;

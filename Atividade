@@ -1,0 +1,35 @@
+Bruno Homma:
+	- schedule.html
+	- edit_service.html
+	- new_admin.html
+	- manage_services.html
+	- product_details.html
+	- cart.html
+	- stock.html
+
+Gabriel Carvalho:
+	- edit_product.html
+	- edit_admin.html
+	- new_product.html
+	- new_service.html
+	- register_pet.html
+	- login.html
+	- new_user.html
+	
+
+Victor Cezário:
+	- edit_prfile.html
+	- manage_users.html
+	- manage_admins.html
+	- manage_product.html
+	- sign_up.html
+	- edit_pet.html
+
+Wallace Cruz:
+	- new_admin.html  (Feito)
+	- profile.html  (Tem o get)
+	- details.html  (Tem o get)
+	- purchase.html  (Tem o post)
+	- home.html     (Tem o get)
+	- home-admin.html (Tem o get)
+	- products.html  (Tem o get)
