@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Plus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/login.css">
+  <link rel="stylesheet" type="text/css" href="../css/selection.css">
+  <link rel="stylesheet" type="text/css" href="../css/home.css">
+  <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
+  <link rel="stylesheet" type="text/css" href="..css/agendar.css">
+
+</head>
+<body>
+
+<div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
+  <div class="container banner">
+    <h1>Plus</h1>
+    <p>Seu filho bem cuidado</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm">
+  <a class="navbar-brand" onclick="singlePage('single/s-home.html');"><img src="../img/p2.png" width="30" height="30" alt="plus"></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon">
+      <img src="../img/hamburger.png" width="30" height="30" alt="">
+    </span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div>
+      <!-- Usado na SPA -->
+      <button class="mybtn2" onclick="singlePage('single/s-schedule.html',null, true);" type="button" style="vertical-align: center; margin: 0 auto">
+       Agendar</button>
+    </div>
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Cachorros
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'cachorro_alimentos');">Alimentos</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'cachorro_acessorios');">Acessórios</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'cachorro_higiene');">Higiene</a>
+      </div>
+    </div>
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Gatos
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'gato_alimentos');">Alimentos</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'gato_acessorios');">Acessórios</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'gato_higiene');">Higiene</a>
+      </div>
+    </div>
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Farmácia
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'farmacia_vermifugo');">Vermífugo</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'farmacia_antipulga');">Antipulga</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'farmacia_eutanasia');">Eutanásia</a>
+      </div>
+    </div>
+      <div class="dropdown">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+        Mais
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'mais_peixes');">Peixes</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'mais_roedores');">Roedores</a>
+        <a class="dropdown-item" onclick="singlePage('single/s-products.html', 'mais_cobras');">Cobras</a>
+      </div>
+    </div>
+  </div>
+  <div>
+  <!-- Usado na SPA -->
+	  <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
+	   Entrar/Cadastrar</button>
+   <!-- <div class="dropdown login-btn" id="loginDiv">
+      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" id="loginBtn">
+        Olá Usuário/Sair
+      </button>
+      <div class="dropdown-menu">
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-details.html');" type="button" style="vertical-align: center; margin: 0 auto">Meus Pets</button>
+        </div>
+        <div>
+          <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-cart.html');" type="button" style="vertical-align: center; margin: 0 auto">Carrinho</button>
+        </div>
+        <a class="dropdown-item" style="text-align: center" href="profile.html">Perfil</a>
+      </div>
+  </div> -->
+  </div>
+</nav>
+
+<!-- Seu html deve ser escrito a partir daqui %%-->
+
+<!-- O html será trocado aqui na SPA -->
+<div id="troca">
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../img/index.jpeg" alt="First slide" style="height: 300px">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../img/roubo_petz.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../img/index2.jpeg" alt="Third slide" style="height: 300px">
+    </div>
+  </div>
+
+</div>
+
+
+<div class="selection">
+  <H2>Farmácia</H2>
+  <div id="farmacia" style="overflow: scroll">
+
+  </div>
+  <H2>Cachorro</H2>
+<div id="cachorro" style="overflow: scroll">
+
+</div>
+  <H2>Mais</H2>
+  <div id="mais" style="overflow: auto">
+
+  </div>
+</div>
+</div>
+
+ <!-- Seu html não pode passar daqui %%-->
+
+<div class="jumbotron text-center" style="margin-bottom:0; background-color:#ccffff">
+  <p>Plus © No mercado desde ontem</p>
+</div>
+
+
+  <script src="../script/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="../script/bootstrap.min.js"></script>
+  <script src="../script/scripts.js"></script>
+  <script src="../script/main.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+  <script src="../script/utils.js"></script>
+  <script src="../script/home.js"></script>
+  <script src="../script/agendar.js"></script>
+  <!-- <script src="../script/login.js"></script> -->
+
+
+</body>
+</html>
