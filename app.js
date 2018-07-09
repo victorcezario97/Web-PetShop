@@ -25,12 +25,16 @@ app.use('/img', express.static(path.resolve(__dirname, 'img')));
 
 
     console.log("Entrou");
-app.use('/', adminRouter); //Acessa as funções de admin quando requisitadas
-app.use('/', clientRouter);
-app.use('/', petRouter);
-app.use('/', productRouter);
-app.use('/', serviceRouter);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use('/admin', adminRouter); //Acessa as funções de admin quando requisitadas
+app.use('/client', clientRouter);
+app.use('/pet', petRouter);
+app.use('/product', productRouter);
+app.use('/service', serviceRouter);
 
 app.listen(port, () => {
     console.log("Server listening on http://localhost:" + port);
 });
+
+module.exports = app;

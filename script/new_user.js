@@ -6,7 +6,7 @@ function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
 	var newUser = JSON.stringify({name: userName, user: userUser, photo: userPhoto, phone: userPhone, email: userEmail, password: userPassword});
 
 	let xhttpr = new XMLHttpRequest();
-	xhttpr.open("POST", urlMongo + "router_admin/register", true);
+	xhttpr.open("POST", urlMongo + "admin/register", true);
 	xhttpr.setRequestHeader("Content-Type", "application/json");
 
 	xhttpr.onreadystatechange = function(){
@@ -46,7 +46,7 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 	});
 
 	let xhttpr = new XMLHttpRequest();
-	xhttpr.open("POST", urlMongo + "router_client/register", true);
+	xhttpr.open("POST", urlMongo + "client/register", true);
 	xhttpr.setRequestHeader("Content-Type", "application/json");
 
 	xhttpr.onreadystatechange = function(){
@@ -68,7 +68,7 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 				}
 				else if(page === "s-registrar.html"){
 					let xht = new XMLHttpRequest();
-					xht.open("GET", urlMongo + "router_client/getClientByEmail/" + userEmail, true);
+					xht.open("GET", urlMongo + "client/getClientByEmail/" + userEmail, true);
 					xht.setRequestHeader("Content-Type", "application/json");
 
 					xht.onload = function(){
@@ -106,12 +106,13 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 		let xhttpClient = new XMLHttpRequest();
 		let xhttpAdmin = new XMLHttpRequest();
 
-		xhttpClient.open("GET", urlMongo + "router_client/checkEmailOrUser/" + userEmail + "/" + userUser, true);
-		xhttpAdmin.open("GET", urlMongo + "router_admin/checkEmailOrUser/" + userEmail + "/" + userUser, true);
+		xhttpClient.open("GET", urlMongo + "client/checkEmailOrUser/" + userEmail + "/" + userUser, true);
+		xhttpAdmin.open("GET", urlMongo + "admin/checkEmailOrUser/" + userEmail + "/" + userUser, true);
 
 		xhttpClient.setRequestHeader("Content-Type", "application/json");
 		xhttpAdmin.setRequestHeader("Content-Type", "application/json");
 
+		// Verifica disponibilidade em client
 		xhttpClient.onreadystatechange = function(){
 			if(this.readyState == XMLHttpRequest.DONE){
 				let resp = xhttpClient.responseText;
@@ -131,7 +132,7 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 					if(resp === "Register ok"){
 						resultUserClient = true;
 						resultEmailClient = true;
-
+						// Verifica disponibilidade em admin
 						xhttpAdmin.onreadystatechange = function(){
 							if(this.readyState == XMLHttpRequest.DONE){
 								let resp1 = xhttpAdmin.responseText;
@@ -213,6 +214,7 @@ function cadastrar(thisPage){
 
 // Checa a senha digitada
 function checkPassword(thisPage){
+	console.log("checkPassword");
 	page = thisPage;
 	let psw = $("#password").val();
 	let pswRepeat = $("#psw-repeat").val();

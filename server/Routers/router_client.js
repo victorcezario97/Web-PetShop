@@ -28,10 +28,10 @@ router.post('/register', function(req, res){
 });
 
 // Retorna um cliente dado um email
-router.get('/getClient/:email', function(err, res){
+router.get('/getClient/:email', function(req, res){
 	let userEmail = req.params.email;
 	let jsonParam = {email : userEmail};
-
+	console.log("getclient");
 	Client.find(jsonParam, function(error, result){
 		if(error)
 			return res.status(404);
@@ -43,7 +43,7 @@ router.get('/getClient/:email', function(err, res){
 });
 
 // Retorna se tá disponível
-router.get('/checkEmailOrUser/:email/:user', function(err, res){
+router.get('/checkEmailOrUser/:email/:user', function(req, res){
 	let userEmail = req.params.email;
 	let userUser = req.params.user;
 	let jsonParamEmail = {email : userEmail};
@@ -66,24 +66,24 @@ router.get('/checkEmailOrUser/:email/:user', function(err, res){
 });
 
 //Verifica login
-router.get('/checkEmailOrUser/:email/:user', function(err, res){
-	let userEmail = req.params.email;
-	let userUser = req.params.user;
-	let jsonParamEmail = {email : userEmail};
-	let jsonParamUser = {user: userUser};
+router.get('/login/:user/:password', function(req, res){
+	let userIn = req.params.user;
+	let userPassword = req.params.password;
+	let jsonParamEmail = {email : userIn, password : userPassword};
+	let jsonParamUser = {user: userIn, password : userPassword};
 
 	Client.find(jsonParamEmail, function(error, result){
 		if(!result){
 			Client.find(jsonParamUser, function(error1, result1){
 				if(!result1){
-					res.status(200).send("Register ok");
+					res.status(200).send("Not found");
 				}
 				else
-					return res.status(200).send("User unavailable");
+					return res.status(200).send("User found");
 			})
 		}
 		else
-			return res.status(200).send("Email unavailable");
+			return res.status(200).send("Email found");
 		
 	});
 });

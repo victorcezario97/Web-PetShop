@@ -55,7 +55,7 @@ router.post('/register', function(req, res){
 });
 
 // Retorna um admine dado um email
-router.get('/getAdmin/:email', function(err, res){
+router.get('/getAdmin/:email', function(req, res){
     let userEmail = req.params.email;
     let jsonParam = {email : userEmail};
 
@@ -70,7 +70,7 @@ router.get('/getAdmin/:email', function(err, res){
 });
 
 // Retorna se tá disponível
-router.get('/checkEmailOrUser/:email/:user', function(err, res){
+router.get('/checkEmailOrUser/:email/:user', function(req, res){
     let userEmail = req.params.email;
     let userUser = req.params.user;
     let jsonParamEmail = {email : userEmail};
