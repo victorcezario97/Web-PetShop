@@ -28,14 +28,14 @@ router.post('/register', function(req, res){
 });
 
 // Retorna um cliente dado um email
-router.get('/getClient/:email', function(req, res){
+router.get('/getClientByEmail/:email', function(req, res){
 	let userEmail = req.params.email;
 	let jsonParam = {email : userEmail};
 	console.log("getclient");
 	Client.find(jsonParam, function(error, result){
 		if(error)
 			return res.status(404);
-		if(!result)
+		if(result == "")
 			return res.status(200).send("Email not found");
 		else
 			return res.status(200).send(result);
@@ -52,10 +52,10 @@ router.get('/checkEmailOrUser/:email/:user', function(req, res){
 	console.log("checking email user");
 	Client.find({email : userEmail}, function(error, result){
 		console.log("result = " + result);
-		if(!result){
+		if(result == ""){
 			Client.find({user: userUser}, function(error1, result1){
-				if(!result1){
-					res.status(200).send("Register ok");
+				if(result1 == ""){
+					return res.status(200).send("Register ok");
 				}
 				else
 					return res.status(200).send("User unavailable");

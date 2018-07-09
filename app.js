@@ -21,7 +21,7 @@ app.use(express.static(path.resolve(__dirname, 'html')));
 app.use('/css', express.static(path.resolve(__dirname, 'css')));
 app.use('/script',express.static(path.resolve(__dirname, 'script')));
 app.use('/img', express.static(path.resolve(__dirname, 'img')));
-
+app.use(express.static(path.resolve(__dirname, 'html/single')));
 
 
     console.log("Entrou");

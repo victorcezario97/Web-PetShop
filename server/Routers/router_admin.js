@@ -77,9 +77,9 @@ router.get('/checkEmailOrUser/:email/:user', function(req, res){
     let jsonParamUser = {user: userUser};
 
     Admin.find(jsonParamEmail, function(error, result){
-        if(!result){
+        if(result == ""){
             Admin.find(jsonParamUser, function(error1, result1){
-                if(!result1){
+                if(result1 == ""){
                     res.status(200).send("Register ok");
                 }
                 else

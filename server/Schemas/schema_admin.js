@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var autoIncrement = require('mongoose-auto-increment');
 
-//var connection = mongoose.createConnection("mongodb://localhost:27017/mydb");
+var connection = mongoose.createConnection("mongodb://localhost:27017/mydb");
 
-//autoIncrement.initialize(connection);
+autoIncrement.initialize(connection);
 
 // Admin
 var adminSchema = new mongoose.Schema({
@@ -16,7 +16,7 @@ var adminSchema = new mongoose.Schema({
      phone: {type: String, default: ''}
 });
 
-//adminSchema.plugin(autoIncrement.plugin, 'admin');
+adminSchema.plugin(autoIncrement.plugin, 'admin');
 
 var Admin = mongoose.model('admin', adminSchema); //Salvando na coleção admin
 

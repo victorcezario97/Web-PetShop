@@ -66,12 +66,14 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					$("#img").attr('src', '../img/perfil.jpg');
 					userPhoto = null;
 				}
-				else if(page === "s-registrar.html"){
+				else if(page === "s-sign_up.html"){
 					let xht = new XMLHttpRequest();
 					xht.open("GET", urlMongo + "client/getClientByEmail/" + userEmail, true);
 					xht.setRequestHeader("Content-Type", "application/json");
 
 					xht.onload = function(){
+						console.log("gettttt");
+						console.log("response = " + xht.responseText);
 						let jresp = JSON.parse(xht.responseText);
 						clientId = jresp._id;
 					    clientName = jresp.name;
@@ -81,8 +83,9 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					    clientPhone = jresp.phone;
 					    clientEmail = jresp.email;
 					    clientPassword = jresp.password;
-					    // Abre home
-					    page = "s-home.html";
+					    // Abre home/html/single/s-home.html
+					    ///////// ABREEE PÁGINAAAAAAA
+					    page = "./html/single/s-home.html";
 					    window.location.href = page;
 					};
 					xht.send(null);
@@ -104,13 +107,10 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 
 	try{
 		let xhttpClient = new XMLHttpRequest();
-		let xhttpAdmin = new XMLHttpRequest();
 
 		xhttpClient.open("GET", urlMongo + "client/checkEmailOrUser/" + userEmail + "/" + userUser, true);
-		xhttpAdmin.open("GET", urlMongo + "admin/checkEmailOrUser/" + userEmail + "/" + userUser, true);
 
 		xhttpClient.setRequestHeader("Content-Type", "application/json");
-		xhttpAdmin.setRequestHeader("Content-Type", "application/json");
 
 		// Verifica disponibilidade em client
 		xhttpClient.onload = function(){
@@ -135,6 +135,10 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 						resultUserClient = true;
 						resultEmailClient = true;
 						// Verifica disponibilidade em admin
+						let xhttpAdmin = new XMLHttpRequest();
+						xhttpAdmin.open("GET", urlMongo + "admin/checkEmailOrUser/" + userEmail + "/" + userUser, true);
+						xhttpAdmin.setRequestHeader("Content-Type", "application/json");
+
 						xhttpAdmin.onload = function(){
 							alert("check admin");
 							if(this.readyState == XMLHttpRequest.DONE){
@@ -199,7 +203,7 @@ function cadastrar(thisPage){
 	let user = $("#user").val();
 	let email = $("#email").val();
 	let password = $("#password").val();
-	if(page === "s-new_user.html" || page === "s-registrar.html")
+	if(page === "s-new_user.html" || page === "s-sign_up.html")
 		address = $("#address").val();
 	else
 		address = null;
@@ -220,7 +224,8 @@ function cadastrar(thisPage){
 // Checa a senha digitada
 function checkPassword(thisPage){
 	console.log("checkPassword");
-	page = thisPage;
+	page = "s-sign_up.html";
+	singlePage(page, null, null);
 	let psw = $("#password").val();
 	let pswRepeat = $("#psw-repeat").val();
 	if(psw === pswRepeat)
