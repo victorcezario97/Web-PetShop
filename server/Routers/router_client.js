@@ -10,23 +10,15 @@ router.post('/newClient', function(req, res){
 
 // Cadastra um cliente
 router.post('/register', function(req, res){
-	let name = req.body.name;
-	let user = req.body.user;
-	let address = req.body.address;
-	let photo = req.body.photo;
-	let phone = req.body.phone;
-	let email = req.body.email;
-	let password = req.body.password;
-
 	let registerClient = new Client();
 
-	registerClient.name = name;
-	registerClient.user = user;
-	registerClient.address = address;
-	registerClient.photo = photo;
-	registerClient.phone = phone;
-	registerClient.email = email;
-	registerClient.password = password;
+	registerClient.name = req.body.name;
+	registerClient.user = req.body.user;
+	registerClient.address = req.body.address;
+	registerClient.photo = req.body.photo;
+	registerClient.phone = req.body.phone;
+	registerClient.email = req.body.email;
+	registerClient.password = req.body.password;
 
 	registerClient.save(function(err, save){
 		if(err)
@@ -73,4 +65,29 @@ router.get('/checkEmailOrUser/:email/:user', function(err, res){
 	});
 });
 
+//Verifica login
+router.get('/checkEmailOrUser/:email/:user', function(err, res){
+	let userEmail = req.params.email;
+	let userUser = req.params.user;
+	let jsonParamEmail = {email : userEmail};
+	let jsonParamUser = {user: userUser};
+
+	Client.find(jsonParamEmail, function(error, result){
+		if(!result){
+			Client.find(jsonParamUser, function(error1, result1){
+				if(!result1){
+					res.status(200).send("Register ok");
+				}
+				else
+					return res.status(200).send("User unavailable");
+			})
+		}
+		else
+			return res.status(200).send("Email unavailable");
+		
+	});
+});
 module.exports = router;
+
+
+// <button type="submit" class="registerbtn" onclick = "checkPassword('s-sign_up.html');">Registrar</button>

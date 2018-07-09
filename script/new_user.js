@@ -1,28 +1,33 @@
 var page, registerType, userPhoto = null;
 
+// Cadastra um novo admin
 function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
-	// Cadastra
-	let objectStoreRegister = db.transaction("admins", "readwrite").objectStore("admins");
-	//{id: 2, name: "Bolsomito", user: "mitinho", address: "Rua das mitagens, 13", photo: null, phone: "13131313", email: "mito@gmail.com", password: "123456"}
-	var newUser = {name: userName, user: userUser, photo: userPhoto, phone: userPhone, email: userEmail, password: userPassword};
+	
+	var newUser = JSON.stringify({name: userName, user: userUser, photo: userPhoto, phone: userPhone, email: userEmail, password: userPassword});
 
-	var request = objectStoreRegister.add(newUser);
+	let xhttpr = new XMLHttpRequest();
+	xhttpr.open("POST", urlMongo + "router_admin/register", true);
+	xhttpr.setRequestHeader("Content-Type", "application/json");
 
-	request.onsuccess = function(event){
-		window.alert("Administrador de email " + userEmail + " cadastrado com sucesso!");
+	xhttpr.onreadystatechange = function(){
+		if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
+			let resp = xhttpr.responseText;
+			if(resp === "Register ok"){
+				window.alert("Administrador de email " + userEmail + " cadastrado com sucesso!");
 
-		$("#name").val("");
-		$("#email").val("");
-		$("#user").val("");
-		$("#password").val("");
-		$("#phone").val("");
-		$("#img").attr('src', '../img/perfil.jpg');
-		userPhoto = null;
+				$("#name").val("");
+				$("#email").val("");
+				$("#user").val("");
+				$("#password").val("");
+				$("#phone").val("");
+				$("#img").attr('src', '../img/perfil.jpg');
+				userPhoto = null;
+			}
+		}
+		else
+			window.alert("Houve um erro durante o cadastro. Por favor, tente novamente mais tarde.");
 	};
-
-	request.onerror = function(event){
-		window.alert("Houve um erro durante o cadastro. Por favor, tente novamente mais tarde.");
-	};
+	xhttpr.send(newUser);
 }
 
 // Cadastra um novo cliente
@@ -102,7 +107,7 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 		let xhttpAdmin = new XMLHttpRequest();
 
 		xhttpClient.open("GET", urlMongo + "router_client/checkEmailOrUser/" + userEmail + "/" + userUser, true);
-		xhttpAdmin.open("GET", urlMongo + "router_admin/checkUserOrEmail", true);
+		xhttpAdmin.open("GET", urlMongo + "router_admin/checkEmailOrUser/" + userEmail + "/" + userUser, true);
 
 		xhttpClient.setRequestHeader("Content-Type", "application/json");
 		xhttpAdmin.setRequestHeader("Content-Type", "application/json");
@@ -126,30 +131,45 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 					if(resp === "Register ok"){
 						resultUserClient = true;
 						resultEmailClient = true;
-					}
-				}
-			}
-		};
 
-		xhttpAdmin.onreadystatechange = function(){
-			if(this.readyState == XMLHttpRequest.DONE){
-				let resp = xhttpClient.responseText;
-				
-				if(resp === "Error")
-					window.alert("Ocorreu um erro. Tente novamente.");
+						xhttpAdmin.onreadystatechange = function(){
+							if(this.readyState == XMLHttpRequest.DONE){
+								let resp1 = xhttpAdmin.responseText;
+								
+								if(resp1 === "Error")
+									window.alert("Ocorreu um erro. Tente novamente.");
 
-				if(this.status == 200){
-					if(resp === "User unavailable"){
-						resultUserAdmin = false;
-						resultEmailAdmin = true;
-					}
-					if(resp === "Email unavailable"){
-						resultUserAdmin = true;
-						resultEmailAdmin = false;
-					}
-					if(resp === "Register ok"){
-						resultUserAdmin = true;
-						resultEmailAdmin = true;
+								if(this.status == 200){
+									if(resp1 === "User unavailable"){
+										resultUserAdmin = false;
+										resultEmailAdmin = true;
+									}
+									if(resp1 === "Email unavailable"){
+										resultUserAdmin = true;
+										resultEmailAdmin = false;
+									}
+									if(resp1 === "Register ok"){
+										resultUserAdmin = true;
+										resultEmailAdmin = true;
+									}
+
+									// Email e user indisponíveis
+								  	if((resultUserClient === false || resultUserAdmin === false) && (resultEmailAdmin === false || resultEmailClient === false))
+								  		alert("Email e usuário indisponíveis. Por favor, tente novamente.");
+								  	else if((resultUserClient === false || resultUserAdmin === false) && (resultEmailAdmin === true || resultEmailClient === true))
+								  		alert("Usuário indisponível. Por favor, tente novamente.");
+								  	else if((resultUserClient === true || resultUserAdmin === true) && (resultEmailAdmin === false || resultEmailClient === false))
+								  		alert("Email indisponível. Por favor, tente novamente.");
+								  	else if((resultUserClient === true || resultUserAdmin === true) && (resultEmailAdmin === true || resultEmailClient === true)){
+								  		if(registerType === "admin")
+								  			registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
+								  		else if(registerType === "client")
+								  			registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
+								  	}
+								}
+							}
+						};
+						xhttpAdmin.send(data);
 					}
 				}
 			}
@@ -159,31 +179,15 @@ function validateUser(userName, userEmail, userUser, userPassword, userAddress, 
 			userEmail: userEmail, 
 			userUser: userUser
 		});
-		xhttpAdmin.send(data);
 		xhttpClient.send(data);
 	}
 	catch(e){
-		window.alert("Houve um erro de conexão.\nCódigo: " + err.message);
+		window.alert("Houve um erro de conexão.\nCódigo: " + e.message);
 	}
-	
-	// Email e user indisponíveis
-  	if((resultUserClient === false || resultUserAdmin === false) && (resultEmailAdmin === false || resultEmailClient === false))
-  		alert("Email e usuário indisponíveis. Por favor, tente novamente.");
-  	else if((resultUserClient === false || resultUserAdmin === false) && (resultEmailAdmin === true || resultEmailClient === true))
-  		alert("Usuário indisponível. Por favor, tente novamente.");
-  	else if((resultUserClient === true || resultUserAdmin === true) && (resultEmailAdmin === false || resultEmailClient === false))
-  		alert("Email indisponível. Por favor, tente novamente.");
-  	else if((resultUserClient === true || resultUserAdmin === true) && (resultEmailAdmin === true || resultEmailClient === true)){
-  		if(registerType === "admin")
-  			registerAdmin(userName, userEmail, userUser, userPassword, userPhone);
-  		else if(registerType === "client")
-  			registerClient(userName, userEmail, userUser, userPassword, userAddress, userPhone);
-  	}
 }
 
 // Inicia a rotina de cadastro
 function cadastrar(thisPage){
-	page = thisPage;
 	let address;
 	let name = $("#name").val();
 	let user = $("#user").val();
@@ -208,7 +212,8 @@ function cadastrar(thisPage){
 }
 
 // Checa a senha digitada
-function checkPassword(){
+function checkPassword(thisPage){
+	page = thisPage;
 	let psw = $("#password").val();
 	let pswRepeat = $("#psw-repeat").val();
 	if(psw === pswRepeat)

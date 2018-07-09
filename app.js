@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/mydb");
+var connection = mongoose.connect("mongodb://localhost:27017/mydb");
 
 var adminRouter = require('./server/Routers/router_admin'); //Require da funções de admin
 var clientRouter = require('./server/Routers/router_client');

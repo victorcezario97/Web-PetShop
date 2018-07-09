@@ -3,13 +3,13 @@
 <div id="troca">
 <div class="register container_sign_up">
 <!-- POST usado jogar no mongoDb, action = "função" que deve ser executada -->
-  <form style="border:1px solid #ccc" method="POST" action="/insertUser">
+  <form style="border:1px solid #ccc"> 
       <div class="container_sign_up">
         <h1>Registrar</h1>
         <p>Preencha os campos abaixo</p>
         <hr>
 
-        <form method="post" action="/addClient">
+        <div>
           <label for="email"><b>Email</b></label>
           <input type="email" placeholder="login@email.com" name="Email" id="email">
 
@@ -34,11 +34,10 @@
           <label for="picField"><b>Foto</b></label>
          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
                 <img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
-
           <hr>
 
           <p>Ao criar a conta você concorda com os <a href="#">Termos de Uso</a>.</p>
-          <button type="submit" class="registerbtn" onclick = "checkPassword();">Registrar</button>
+          <button class="registerbtn" onclick = "checkPassword('s-sign_up.html');">Registrar</button>
         </form>
      </div>
 

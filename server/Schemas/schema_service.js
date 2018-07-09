@@ -9,5 +9,5 @@ var serviceSchema = new mongoose.Schema({
      price: {type: String, default: 'R$ 0,00'},
 });
 
-var Service = mongoose.model('service', productSchema);
+var Service = mongoose.model('service', serviceSchema);
 module.exports = Service;
