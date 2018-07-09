@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 
 // Admin
 var adminSchema = new mongoose.Schema({
-     id : {type: Number, unique: true},
+     //id : {type: Number, unique: true},
+     username : {type: String},
      name : {type: String},
      email : {type : String, unique: true},
      password : {type : String},

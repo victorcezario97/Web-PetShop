@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> -->
   <link rel="stylesheet" type="text/css" href="../css/home-admin.css">
-  <link rel="stylesheet" type="text/css" href="../css/selection.css"> 
+  <link rel="stylesheet" type="text/css" href="../css/selection.css">
 
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
   <div class="container banner">
     <h1>Plus</h1>
-    <p>Seu filho bem cuidado</p> 
+    <p>Seu filho bem cuidado</p>
   </div>
 </div>
 
@@ -37,22 +37,22 @@
 		  <div class="dropdown-menu">
 		    <div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-new_admin.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Administrador</button>	
+		       		Administrador</button>
 			</div>
 		    <div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-new_user.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Usuário</button>	
+		       		Usuário</button>
 			</div>
 	    	<div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-new_product.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Produto</button>	
+		       		Produto</button>
 			</div>
 	    	<div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-new_service.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Serviço</button>	
+		       		Serviço</button>
 			</div>
 		  </div>
-	  </div> 
+	  </div>
       <div class="dropdown">
 		  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
 		    Gerenciar
@@ -60,28 +60,28 @@
 		  <div class="dropdown-menu">
 		    <div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-manage_admins.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Administradores</button>	
+		       		Administradores</button>
 			</div>
 		    <div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-manage_users.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Usuários</button>	
+		       		Usuários</button>
 			</div>
 	    	<div>
 			      <button class="mybtn2" style="width: 100%" onclick="singlePage('single/s-manage_product.html');" type="button" style="vertical-align: center; margin: 0 auto">
-		       		Produto</button>	
+		       		Produto</button>
 			</div>
 		  </div>
-	  </div> 
+	  </div>
 	  <div>
 	      <button class="mybtn2" onclick="singlePage('single/s-stock.html');" type="button" style="vertical-align: center; margin: 0 auto">
-       		Estoque</button>	
+       		Estoque</button>
 	  </div>
       <div>
 	      <button class="mybtn2" onclick="singlePage('single/s-stock.html');" type="button" style="vertical-align: center; margin: 0 auto">
-       		Analytics</button>	
+       		Analytics</button>
 	  </div>
-  </div>  
-  <button type="button" class="btn login-btn">Olá, administrador</button> 
+  </div>
+  <button type="button" class="btn login-btn">Olá, administrador</button>
 </nav>
 
 <!-- Seu html deve ser escrito a partir daqui %%-->
@@ -90,7 +90,7 @@
 	<div class="confirm_box" style="height: auto">
 		<div class="confirm_title"><h2>Novo Administrador</h2></div>
 		<div class="confirm_inner">
-		<form style="border:1px solid #ccc" method="POST" action="/newAdmin">
+		<form style="border:1px solid #ccc" method="POST" action="/newAdmin" enctype="multipart/form-data">
 	      <div class="container">
 
         <div>
@@ -137,7 +137,7 @@
      	<div style="text-align: center; margin-top: 30px">
 		<button class="mainbtn justify-content-center align-items-center" onclick="cadastrar();" style="vertical-align: center; margin: 0 auto">Cadastrar</button>
 		</div>
-  		</form> 
+  		</form>
 		</div>
 	</div>
 </div>
@@ -159,6 +159,6 @@
   <script src="../script/new_user.js"></script>
 
 
-  
+
 </body>
 </html>

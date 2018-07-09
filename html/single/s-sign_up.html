@@ -1,7 +1,7 @@
 <!-- Seu html deve ser escrito a partir daqui %-->
 
 <div id="troca">
-<div class="register container_sign_up">      
+<div class="register container_sign_up">
 <!-- POST usado jogar no mongoDb, action = "função" que deve ser executada -->
   <form style="border:1px solid #ccc" method="POST" action="/insertUser">
       <div class="container_sign_up">
@@ -9,41 +9,43 @@
         <p>Preencha os campos abaixo</p>
         <hr>
 
-        <label for="email"><b>Email</b></label>
-        <input type="email" placeholder="login@email.com" name="Email" id="email">
+        <form method="post" action="/addClient">
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="login@email.com" name="Email" id="email">
 
-        <label for="user"><b>Usuário</b></label>
-        <input type="text" placeholder="Usuário" name="User" required id="user">
+          <label for="user"><b>Usuário</b></label>
+          <input type="text" placeholder="Usuário" name="User" required id="user">
 
-        <label for="password"><b>Senha</b></label>
-        <input type="password" placeholder="Senha" name="Password" required id = "password">
+          <label for="password"><b>Senha</b></label>
+          <input type="password" placeholder="Senha" name="Password" required id = "password">
 
-        <label for="psw-repeat"><b>Confirme a senha</b></label>
-        <input type="password" placeholder="Confirme" name="psw-repeat" required id="psw-repeat">
+          <label for="psw-repeat"><b>Confirme a senha</b></label>
+          <input type="password" placeholder="Confirme" name="psw-repeat" required id="psw-repeat">
 
-        <label for="name"><b>Nome</b></label>
-        <input type="text" placeholder="Nome" name="Name" required id="name">
+          <label for="name"><b>Nome</b></label>
+          <input type="text" placeholder="Nome" name="Name" required id="name">
 
-        <label for="phone"><b>Telefone</b></label>
-        <input type="text" placeholder="(11)99999-9999" name="Phone" id="phone">
+          <label for="phone"><b>Telefone</b></label>
+          <input type="text" placeholder="(11)99999-9999" name="Phone" id="phone">
 
-        <label for="address"><b>Endereço</b></label>
-        <input type="text" placeholder="Endereço" name="Address" id="address">
+          <label for="address"><b>Endereço</b></label>
+          <input type="text" placeholder="Endereço" name="Address" id="address">
 
-        <label for="picField"><b>Foto</b></label>
-       <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-              <img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
+          <label for="picField"><b>Foto</b></label>
+         <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+                <img id="img" src="../img/perfil.jpg" alt="Imagem de perfil" style="margin-top: 20px; width: 100px"/>
 
-        <hr>
+          <hr>
 
-        <p>Ao criar a conta você concorda com os <a href="#">Termos de Uso</a>.</p>
-        <button type="submit" class="registerbtn" onclick = "checkPassword();">Registrar</button>
+          <p>Ao criar a conta você concorda com os <a href="#">Termos de Uso</a>.</p>
+          <button type="submit" class="registerbtn" onclick = "checkPassword();">Registrar</button>
+        </form>
      </div>
 
       <div class="container_sign_up signin">
         <p>Já possui uma conta? <a href="login.html">Entrar</a>.</p>
       </div>
-  </form> 
+  </form>
 </div>
 </div>
 
