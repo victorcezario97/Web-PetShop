@@ -11,7 +11,7 @@ var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/mydb");
 
-var adminRouter = require('./server/Routers/router_admin');
+var adminRouter = require('./server/Routers/router_admin'); //Require da funções de admin
 
 app.use(express.static(path.resolve(__dirname, 'html')));
 app.use('/css', express.static(path.resolve(__dirname, 'css')));
@@ -21,7 +21,7 @@ app.use('/img', express.static(path.resolve(__dirname, 'img')));
 
 
     console.log("Entrou");
-app.use('/', adminRouter);
+app.use('/', adminRouter); //Acessa as funções de admin quando requisitadas
 
 app.listen(port, () => {
     console.log("Server listening on http://localhost:" + port);
