@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
 
+var connection = mongoose.createConnection("mongodb://localhost:27017/mydb");
+
+autoIncrement.initialize(connection);
+
+
 // Product
 var productSchema = new mongoose.Schema({
-     id : {type: Number, unique: true},
      name : {type: String},
      photo : {type : String, default : ''},
      description: {type: String, default: ''},
@@ -12,6 +16,8 @@ var productSchema = new mongoose.Schema({
      category: {type: String},
      subcategory: {type: String}
 });
+
+productSchema.plugin(autoIncrement.plugin, 'admin');
 
 var Product = mongoose.model('product', productSchema);
 module.exports = Product;

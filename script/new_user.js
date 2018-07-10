@@ -89,7 +89,12 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					    ///////// ABREEE PÁGINAAAAAAA
 					    // page = "./html/single/s-home.html";
 					    // window.location.href = page;
+<<<<<<< HEAD
 					    singlePage('/single/s-login.html', null, null);
+=======
+					    page = '/single/s-home.html';
+					    singlePage(page, null, null);
+>>>>>>> 0bececc338ca129a0c67833849e21ce29661453f
 					};
 					xht.send(null);
 				}
@@ -228,7 +233,6 @@ function cadastrar(thisPage){
 function checkPassword(thisPage){
 	console.log("checkPassword");
 	page = "s-sign_up.html";
-	singlePage(page, null, null);
 	let psw = $("#password").val();
 	let pswRepeat = $("#psw-repeat").val();
 	if(psw === pswRepeat)

@@ -34,9 +34,24 @@ router.get('/getClientByEmail/:email', function(req, res){
 	console.log("getclient");
 	Client.find(jsonParam, function(error, result){
 		if(error)
-			return res.status(404);
+			return res.status(404).send("Error");
 		if(result == "")
 			return res.status(200).send("Email not found");
+		else
+			return res.status(200).send(result);
+	});
+});
+
+// Retorna um cliente dado o user
+router.get('/getClientByUser/:user', function(req, res){
+	let userUser = req.params.user;
+	let jsonParam = {user : userUser};
+	console.log("getclient");
+	Client.find(jsonParam, function(error, result){
+		if(error)
+			return res.status(404).send("Error");
+		if(result == "")
+			return res.status(200).send("User not found");
 		else
 			return res.status(200).send(result);
 	});
@@ -75,10 +90,14 @@ router.get('/login/:user/:password', function(req, res){
 	let jsonParamUser = {user: userIn, password : userPassword};
 
 	Client.find(jsonParamEmail, function(error, result){
-		if(!result){
+		if(error)
+			return res.status(404).send("Error");
+		if(result == ""){
 			Client.find(jsonParamUser, function(error1, result1){
-				if(!result1){
-					res.status(200).send("Not found");
+				if(error1)
+					return res.status(404).send("Error");
+				if(result1 == ""){
+					return res.status(200).send("Not found");
 				}
 				else
 					return res.status(200).send("User found");
@@ -89,6 +108,7 @@ router.get('/login/:user/:password', function(req, res){
 		
 	});
 });
+
 module.exports = router;
 
 

@@ -1,3 +1,17 @@
+function onclickLogin(){
+  let userInput = $("#login").val();
+  let passwordInput = $("#password").val();
+  
+  // Se faltou inserir algum campo
+  if(userInput === "" || passwordInput === ""){
+    alert("Por favor, preencha os campos de email/usuário e senha");
+    return;
+  }
+
+  // Procura registro com os dados inseridos
+  getClient(userInput, passwordInput); 
+}
+
 // Valida o login
 function validateLogin(result, type){
   if(result !== null){
@@ -50,146 +64,135 @@ function validateLogin(result, type){
 
 // Chama validateLogin com result = dados do cliente, se email e senha corretos; result = null, caso contrário.
 function getClient(userInput, passwordInput){
-  let result = null, resultClientEmail = true, resultClientUser = true, resultAdminEmail = true, resultAdminUser = true;
-  
-  let objectStore = db.transaction(["clients"]).objectStore("clients");
-  let objectStore2 = db.transaction(["clients"]).objectStore("clients");
-  let objectStore3 = db.transaction(["admins"]).objectStore("admins");
-  let objectStore4 = db.transaction(["admins"]).objectStore("admins");
-  
-  // Procura por email
-  var indexEmail = objectStore.index("email").get(userInput);
-  var indexUser = objectStore2.index("user").get(userInput);
-  var indexEmailAdmin = objectStore3.index("email").get(userInput);
-  var indexUserAdmin = objectStore4.index("user").get(userInput);
-  //window.alert("Até indexes");
+  try{
+    let xhttpClient = new XMLHttpRequest();
 
-  indexEmail.onsuccess = function(event){
-    if(indexEmail.result != undefined){   // Se achou o email
-      if(indexEmail.result.password === passwordInput){ // Se a senha bate
-        result = event.target.result;
-        validateLogin(result, "client");
-        //return;
-      }
-      else{   // Se a senha não bate
-        if(resultClientUser === false && resultAdminUser === false && resultAdminEmail === false){
-          validateLogin(result, null);
-          //return;
-        }
-        else{
-          resultClientEmail = false;
-        }
-      }
-    }
-    else{   // Se não achou o email
-      if(resultClientUser === false && resultAdminUser === false && resultAdminEmail === false){
-        validateLogin(result, null);
-        //return;
-      }
-      else{
-        resultClientEmail = false;
-      }
-    }
-  };
+    xhttpClient.open("GET", urlMongo + "client/login/" + userInput + "/" + passwordInput, true);
 
-  // Procura por user
-  indexUser.onsuccess = function(event){
-    if(indexUser.result != undefined){   // Se o user existe
-      if(indexUser.result.password === passwordInput){  // Se a senha bate
-        result = event.target.result;
-        validateLogin(result, "client");
-        //return;
-      }
-      else{ // Se a senha não bate
-        if(resultClientEmail === false && resultAdminUser === false && resultAdminEmail === false){
-          validateLogin(result, null);
-          //return;
-        }
-        else{
-          resultClientUser = false;
-        }
-      }
-    }
-    else{   // Se o user não existe
-      if(resultClientEmail === false && resultAdminUser === false && resultAdminEmail === false){
-        validateLogin(result, null);
-        //return;
-      }
-      else{
-        resultClientUser = false;
-      }
-    }
-  }; 
+    xhttpClient.setRequestHeader("Content-Type", "application/json");
 
-  // Procura por email do admin
-  indexEmailAdmin.onsuccess = function(event){
-    if(indexEmailAdmin.result != undefined){   // Se achou o email
-      if(indexEmailAdmin.result.password === passwordInput){ // Se a senha bate
-        result = event.target.result;
-        validateLogin(result, "admin");
-        //return;
-      }
-      else{   // Se a senha não bate
-        if(resultAdminUser === false && resultClientUser === false && resultClientEmail === false){
-          validateLogin(result, null);
-          //return;
-        }
-        else{
-          resultAdminEmail = false;
-        }
-      }
-    }
-    else{   // Se não achou o email
-      if(resultAdminUser === false && resultClientUser === false && resultClientEmail === false){
-        validateLogin(result, null);
-        //return;
-      }
-      else{
-        resultAdminEmail = false;
-      }
-    }
-  };
+    // checa se existe o registro
+    xhttpClient.onload = function(){
+      if(this.readyState == XMLHttpRequest.DONE){
+        let resp = xhttpClient.responseText;
 
-  // Procura por user
-  indexUserAdmin.onsuccess = function(event){
-    if(indexUserAdmin.result != undefined){   // Se o user existe
-      if(indexUserAdmin.result.password === passwordInput){  // Se a senha bate
-        result = event.target.result;
-        validateLogin(result, "admin");
-        //return;
-      }
-      else{ // Se a senha não bate
-        if(resultAdminEmail === false && resultClientUser === false && resultClientEmail === false){
-          validateLogin(result, null);
-          //return;
-        }
-        else{
-          resultAdminUser = false;
-        }
-      }
-    }
-    else{   // Se o user não existe
-      if(resultAdminEmail === false && resultClientUser === false && resultClientEmail === false){
-        validateLogin(result, null);
-        //return;
-      }
-      else{
-        resultAdminUser = false;
-      }
-    }
-  }; 
-}
+        // Erro
+        if(resp === "Error")
+          window.alert("Ocorreu um erro. Tente novamente.");
+        if(this.status == 200){ // Resposta
+          if(resp === "Email found"){  // Se achou por email
+            typeLogged = "client";
+            let xht = new XMLHttpRequest();
+            xht.open("GET", urlMongo + "client/getClientByEmail/" + userInput, true);
+            xht.setRequestHeader("Content-Type", "application/json");
 
-function onclickLogin(){
-  let userInput = $("#login").val();
-  let passwordInput = $("#password").val();
-  
-  // Se faltou inserir algum campo
-  if(userInput === "" || passwordInput === ""){
-    alert("Por favor, preencha os campos de email/usuário e senha");
-    return;
+            xht.onload = function(){
+              let jresp = JSON.parse(xht.responseText);
+              console.log("Logou!");
+              clientId = jresp._id;
+              clientName = jresp.name;
+              clientUser = jresp.user;
+              clientAddress = jresp.address;
+              clientPhoto = jresp.photo;
+              clientPhone = jresp.phone;
+              clientEmail = jresp.email;
+              clientPassword = jresp.password;
+            };
+            xht.send(null);
+          }
+          else if(resp === "User found"){ // Se achou por user
+            typeLogged = "client";
+            let xht = new XMLHttpRequest();
+            xht.open("GET", urlMongo + "client/getClientByUser/" + userInput, true);
+            xht.setRequestHeader("Content-Type", "application/json");
+
+            xht.onload = function(){
+              let jresp = JSON.parse(xht.responseText);
+              console.log("Logou!");
+              clientId = jresp._id;
+              clientName = jresp.name;
+              clientUser = jresp.user;
+              clientAddress = jresp.address;
+              clientPhoto = jresp.photo;
+              clientPhone = jresp.phone;
+              clientEmail = jresp.email;
+              clientPassword = jresp.password;
+            };
+            xht.send(null);
+          }
+          else if(resp === "Not found"){  // Nãp encontrado. Procura por admin
+            let xhttpAdmin = new XMLHttpRequest();
+
+            xhttpAdmin.open("GET", urlMongo + "admin/login/" + userInput + "/" + passwordInput, true);
+
+            xhttpAdmin.setRequestHeader("Content-Type", "application/json");
+
+            // checa se existe o registro
+            xhttpAdmin.onload = function(){
+              if(this.readyState == XMLHttpRequest.DONE){
+                let resp = xhttpAdmin.responseText;
+                // Erro
+                if(resp === "Error")
+                  window.alert("Ocorreu um erro. Tente novamente.");
+                if(this.status == 200){ // Resposta
+                  else if(resp === "Email found"){  // Se achou por email
+                    typeLogged = "admin";
+                    let xht = new XMLHttpRequest();
+                    xht.open("GET", urlMongo + "admin/getAdminByEmail/" + userInput, true);
+                    xht.setRequestHeader("Content-Type", "application/json");
+
+                    xht.onload = function(){
+                      let jresp = JSON.parse(xht.responseText);
+                      console.log("Logou!");
+                      adminId = jresp._id;
+                      adminName = jresp.name;
+                      adminUser = jresp.user;
+                      adminPhoto = jresp.photo;
+                      adminPhone = jresp.phone;
+                      adminEmail = jresp.email;
+                      adminPassword = jresp.password;
+                    };
+                    xht.send(null);
+                  }
+                  else if(resp === "User found"){ // Se achou por user
+                    let xht = new XMLHttpRequest();
+                    xht.open("GET", urlMongo + "admin/getAdminByUser/" + userInput, true);
+                    xht.setRequestHeader("Content-Type", "application/json");
+
+                    xht.onload = function(){
+                      let jresp = JSON.parse(xht.responseText);
+                      console.log("Logou!");
+                      adminId = jresp._id;
+                      adminName = jresp.name;
+                      adminUser = jresp.user;
+                      adminPhoto = jresp.photo;
+                      adminPhone = jresp.phone;
+                      adminEmail = jresp.email;
+                      adminPassword = jresp.password;
+                    };
+                    xht.send(null);
+                  }
+                  else if(resp === "Not found")  // Nãp encontrado
+                     window.alert("E-mail/usuário e/ou senha inválidos. Tente novamente.");
+                 }
+               }
+             };
+             let data = JSON.stringify({
+              user: userInput, 
+              password: passwordInput
+              });
+              xhttpAdmin.send(data);
+          }
+        }
+      }
+    };
+    let data = JSON.stringify({
+      user: userInput, 
+      password: passwordInput
+    });
+    xhttpClient.send(data);
   }
-
-  // Procura registro com os dados inseridos
-  getClient(userInput, passwordInput); 
+  catch(e){
+    window.alert("Houve um erro de conexão.\nCódigo: " + e.message);
+  }
 }
