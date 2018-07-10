@@ -32,51 +32,57 @@ function finishUpdate(){
 
 // Finaliza o cadastro do pet
 function finishRegister(){
-	// Cadastra
-	let objectStore = db.transaction("pets", "readwrite").objectStore("pets");
+	var newPet = JSON.stringify({name: petName, age: petAge, photo: petPhoto, raca: petRaca, idClient: clientId});
 
-	var newPet = {name: petName, age: petAge, raca: petRaca, photo: petPhoto, client: clientId};
-	var request = objectStore.add(newPet);
+	let xhttpr = new XMLHttpRequest();
+	xhttpr.open("POST", urlMongo + "pet/register", true);
+	xhttpr.setRequestHeader("Content-Type", "application/json");
 
-	request.onsuccess = function(event){
-		window.alert("O seu pet " + petName + " foi cadastrado com sucesso!");
+	xhttpr.onreadystatechange = function(){
+		if(this.readyState == XMLHttpRequest.DONE && this.status == 200){
+			let resp = xhttpr.responseText;
+			if(resp === "Register ok"){
+				window.alert(petName + " cadastrado com sucesso!");
+				window.alert("O seu pet " + petName + " foi cadastrado com sucesso!");
 
-		$("#nome_pet").val("");
-		$("#idade_pet").val("");
-		$("#raca_pet").val("");
+				$("#nome_pet").val("");
+				$("#idade_pet").val("");
+				$("#raca_pet").val("");
+				userPhoto = null;
+			}
+		}
+		else
+			window.alert("Houve um erro durante o cadastro. Por favor, tente novamente mais tarde.");
 	};
-
-	request.onerror = function(event){
-		window.alert("Houve um erro durante o cadastro. Por favor, tente novamente mais tarde.");
-	};
+	xhttpr.send(newPet);
 }
 
-// Retorna um pet dado um nome
+// Retorna um pet dado um nome e dono
 function getPet(callback, operation){
-	var index = db.transaction("pets", "readonly").objectStore("pets").index("nameAndClient");
-	var request = index.get(IDBKeyRange.only([petName, clientId]));
+	var pet = JSON.stringify({name: petName, idClient : clientId});
 
-	request.onsuccess = function(event){
-		if(request.result == undefined){	// Se não encontrou o pet
+	let xhttpr = new XMLHttpRequest();
+	xhttpr.open("GET", urlMongo + "pet/getPetsByOwner/" + idClient + "/" + petName, true);
+	xhttpr.setRequestHeader("Content-Type", "application/json");
+
+	xhttpr.onload = function(){
+		let jresp = JSON.parse(xhttpr.responseText);
+		if(jresp === "Pet not found"){
 			if(operation === "register")	// Se for pra registrar
 				callback();
 			else	// Se for pra update
 				alert("Houve um erro ao retornar as informações do seu pet. Por favor, tente novamente mais tarde.");
 		}
-		else{	// Se encontrou o pet
+		else{
 			if(operation === "register")	// Se for pra registrar	
 				alert("Parece que você já tem um pet com esse nome. Por favor, cadastre com outro nome.");
 			else{		// Se for pra update
-				petId = request.result.id;
+				petId = responseText.id;
 				callback();
 			}
 		}
 	};
-
-	request.onerror = function(event){
-		alert("Houve um erro. Por favor, tente novamente mais tarde.");
-		return;
-	};
+	xhttpr.send(pet);
 }
 
 // Início da rotina de cadastro de pet

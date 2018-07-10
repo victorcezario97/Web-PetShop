@@ -135,7 +135,7 @@ function getClient(userInput, passwordInput){
                 if(resp === "Error")
                   window.alert("Ocorreu um erro. Tente novamente.");
                 if(this.status == 200){ // Resposta
-                  else if(resp === "Email found"){  // Se achou por email
+                  if(resp === "Email found"){  // Se achou por email
                     typeLogged = "admin";
                     let xht = new XMLHttpRequest();
                     xht.open("GET", urlMongo + "admin/getAdminByEmail/" + userInput, true);
