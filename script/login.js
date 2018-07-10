@@ -102,12 +102,12 @@ function getClient(userInput, passwordInput){
           }
           else if(resp === "User found"){ // Se achou por user
             typeLogged = "client";
-            let xht = new XMLHttpRequest();
-            xht.open("GET", urlMongo + "client/getClientByUser/" + userInput, true);
-            xht.setRequestHeader("Content-Type", "application/json");
+            let xht1 = new XMLHttpRequest();
+            xht1.open("GET", urlMongo + "client/getClientByUser/" + userInput, true);
+            xht1.setRequestHeader("Content-Type", "application/json");
 
-            xht.onload = function(){
-              let jresp = JSON.parse(xht.responseText);
+            xht1.onload = function(){
+              let jresp = JSON.parse(xht1.responseText);
               console.log("Logou!");
               clientId = jresp._id;
               clientName = jresp.name;
@@ -118,7 +118,7 @@ function getClient(userInput, passwordInput){
               clientEmail = jresp.email;
               clientPassword = jresp.password;
             };
-            xht.send(null);
+            xht1.send(null);
           }
           else if(resp === "Not found"){  // Nãp encontrado. Procura por admin
             let xhttpAdmin = new XMLHttpRequest();
@@ -135,14 +135,15 @@ function getClient(userInput, passwordInput){
                 if(resp === "Error")
                   window.alert("Ocorreu um erro. Tente novamente.");
                 if(this.status == 200){ // Resposta
+                   console.log("if 1");
                   if(resp === "Email found"){  // Se achou por email
                     typeLogged = "admin";
-                    let xht = new XMLHttpRequest();
-                    xht.open("GET", urlMongo + "admin/getAdminByEmail/" + userInput, true);
-                    xht.setRequestHeader("Content-Type", "application/json");
+                    let xht2 = new XMLHttpRequest();
+                    xht2.open("GET", urlMongo + "admin/getAdminByEmail/" + userInput, true);
+                    xht2.setRequestHeader("Content-Type", "application/json");
 
-                    xht.onload = function(){
-                      let jresp = JSON.parse(xht.responseText);
+                    xht2.onload = function(){
+                      let jresp = JSON.parse(xht2.responseText);
                       console.log("Logou!");
                       adminId = jresp._id;
                       adminName = jresp.name;
@@ -152,15 +153,15 @@ function getClient(userInput, passwordInput){
                       adminEmail = jresp.email;
                       adminPassword = jresp.password;
                     };
-                    xht.send(null);
+                    xht2.send(null);
                   }
                   else if(resp === "User found"){ // Se achou por user
-                    let xht = new XMLHttpRequest();
-                    xht.open("GET", urlMongo + "admin/getAdminByUser/" + userInput, true);
-                    xht.setRequestHeader("Content-Type", "application/json");
+                    let xht3 = new XMLHttpRequest();
+                    xht3.open("GET", urlMongo + "admin/getAdminByUser/" + userInput, true);
+                    xht3.setRequestHeader("Content-Type", "application/json");
 
-                    xht.onload = function(){
-                      let jresp = JSON.parse(xht.responseText);
+                    xht3.onload = function(){
+                      let jresp = JSON.parse(xht3.responseText);
                       console.log("Logou!");
                       adminId = jresp._id;
                       adminName = jresp.name;
@@ -170,27 +171,19 @@ function getClient(userInput, passwordInput){
                       adminEmail = jresp.email;
                       adminPassword = jresp.password;
                     };
-                    xht.send(null);
+                    xht3.send(null);
                   }
                   else if(resp === "Not found")  // Nãp encontrado
                      window.alert("E-mail/usuário e/ou senha inválidos. Tente novamente.");
                  }
                }
              };
-             let data = JSON.stringify({
-              user: userInput, 
-              password: passwordInput
-              });
-              xhttpAdmin.send(data);
+              xhttpAdmin.send(null);
           }
         }
       }
     };
-    let data = JSON.stringify({
-      user: userInput, 
-      password: passwordInput
-    });
-    xhttpClient.send(data);
+    xhttpClient.send(null);
   }
   catch(e){
     window.alert("Houve um erro de conexão.\nCódigo: " + e.message);
