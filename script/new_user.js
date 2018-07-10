@@ -22,8 +22,6 @@ function registerAdmin(userName, userEmail, userUser, userPassword, userPhone){
 				$("#phone").val("");
 				$("#img").attr('src', '../img/perfil.jpg');
 				userPhoto = null;
-
-				singlePage('/single/s-new_admin.html', null, null);
 			}
 		}
 		else
@@ -90,11 +88,15 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					    // page = "./html/single/s-home.html";
 					    // window.location.href = page;
 <<<<<<< HEAD
+<<<<<<< HEAD
 					    singlePage('/single/s-login.html', null, null);
 =======
 					    page = '/single/s-home.html';
 					    singlePage(page, null, null);
 >>>>>>> 0bececc338ca129a0c67833849e21ce29661453f
+=======
+					    singlePage('/single/s-home.html', null, null);
+>>>>>>> parent of f93e5bd... Correção dos scripts
 					};
 					xht.send(null);
 				}
