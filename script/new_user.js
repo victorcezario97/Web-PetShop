@@ -83,20 +83,11 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					    clientPhone = jresp.phone;
 					    clientEmail = jresp.email;
 					    clientPassword = jresp.password;
-					    // Abre home/html/single/s-home.html
-					    ///////// ABREEE PÁGINAAAAAAA
-					    // page = "./html/single/s-home.html";
-					    // window.location.href = page;
-<<<<<<< HEAD
-<<<<<<< HEAD
+	
+
 					    singlePage('/single/s-login.html', null, null);
-=======
-					    page = '/single/s-home.html';
-					    singlePage(page, null, null);
->>>>>>> 0bececc338ca129a0c67833849e21ce29661453f
-=======
-					    singlePage('/single/s-home.html', null, null);
->>>>>>> parent of f93e5bd... Correção dos scripts
+
+
 					};
 					xht.send(null);
 				}
