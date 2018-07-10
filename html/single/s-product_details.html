@@ -1,46 +1,40 @@
 <div id="troca">
-
-    <div class="body_container">
-      <div class="box_container">
-        <div class="image-frame">
-          <figure>
-            <img src="../img/racao_pedigree.png" id="img" alt="Imagem do produto">
-            <figcaption id="nome_produto"></figcaption>
-          </figure>
+  <div class="body_container">
+    <div class="box_container">
+      <div class="image-frame">
+        <figure>
+          <img src="../img/racao_pedigree.png" id="img" alt="Imagem do produto">
+          <figcaption id="nome_produto"></figcaption>
+        </figure>
+      </div>
+      <div class="description">
+        <div class="cell"><b>Preço: <b class="price" id="preco_produto"></b></b></div>
+        <div class="cell"><b>Quantidade em estoque:<b class="stock" id="qtd_produto"></b></b></div>
+        <div class="cell">
+          <div><b>Descrição:</b></div>
+          <div><b class="product" id="descricao_produto"></b></div>
         </div>
-        <div class="description">
-          <div class="cell"><b>Preço: <b class="price" id="preco_produto"></b></b></div>
-          <div class="cell"><b>Quantidade em estoque:<b class="stock" id="qtd_produto"></b></b></div>
-          <div class="cell">
-            <div><b>Descrição:</b></div>
-            <div><b class="product" id="descricao_produto"></b></div>
-          </div>
-          <div class="cell">
-            <div><b>Categoria:</b></div>
-            <div><b class="product" id="categoria_produto"></b></div>
-          </div>
-          <div class="cell">
-            <div><b>Subcategoria:</b></div>
-            <div><b class="product" id="subcategoria_produto"></b></div>
-          </div>
+        <div class="cell">
+          <div><b>Categoria:</b></div>
+          <div><b class="product" id="categoria_produto"></b></div>
+        </div>
+        <div class="cell">
+          <div><b>Subcategoria:</b></div>
+          <div><b class="product" id="subcategoria_produto"></b></div>
         </div>
       </div>
-      <button id="cartBtn" class="mybtn" style="display: block;margin: auto">Adicionar ao carrinho</button>
     </div>
+    <button id="cartBtn" class="mybtn" style="display: block;margin: auto">Adicionar ao carrinho</button>
+  </div>
 </div>
 
-<!-- Seu código não pode passar daqui %%-->
+<script src="../script/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="../script/bootstrap.min.js"></script>
+<script src="../script/scripts.js"></script>
+<script src="../script/main.js"></script>
+<script src="../script/utils.js"></script>
+<script src="../script/product_details.js"></script>
 
-    <script src="../script/jquery.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="../script/bootstrap.min.js"></script>
-  <script src="../script/scripts.js"></script>
-  <script src="../script/main.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
-  <script src="../script/utils.js"></script>
-  <script src="../script/product_details.js"></script>
-
-
-  </body>
+</body>
 </html>

@@ -1,48 +1,42 @@
 <div class="container">
   <h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Novo Animal</h1>
-<div class="row container">
+  <div class="row container">
 
-  <!-- Imagem do produto -->
-  <div class="col container">
+    <div class="col container">
 
-    <img id="img" src="../img/pet_icon.png" alt="Foto do pet" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
-    <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-  </div>
-
-  <div class="info col">
-    <h2>Informações do pet</h2><br>
-    <h3>Nome: </h3>
-      <input id="nome_pet" style="width: 100%" />
-    <hr>
-
-    <h3>Idade: </h3>
-      <input id="idade_pet" type="number" style="width: 40px;" max="99" />
-    <hr>
-
-    <h3>Raça: </h3>
-      <input id="raca_pet" style="width: 100%" />
-    <hr>
-
-  </div>
-
-</div>
-    <div class="container">
-    <p style="text-align: center;"><button class="mainbtn justify-content-center align-items-center" id="salvar_pet" onclick="register();" type="button" style="vertical-align: center; margin: 0 auto">
-     Salvar</button></p>
+      <img id="img" src="../img/pet_icon.png" alt="Foto do pet" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
+      <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
     </div>
-</div>
 
- <!-- Seu html não pode passar daqui %%-->
+    <div class="info col">
+      <h2>Informações do pet</h2><br>
+      <h3>Nome: </h3>
+      <input id="nome_pet" style="width: 100%" />
+      <hr>
+
+      <h3>Idade: </h3>
+      <input id="idade_pet" type="number" style="width: 40px;" max="99" />
+      <hr>
+
+      <h3>Raça: </h3>
+      <input id="raca_pet" style="width: 100%" />
+      <hr>
+
+    </div>
+
+  </div>
+  <div class="container">
+    <p style="text-align: center;"><button class="mainbtn justify-content-center align-items-center" id="salvar_pet" onclick="register();" type="button" style="vertical-align: center; margin: 0 auto">
+      Salvar</button></p>
+    </div>
+  </div>
 
   <script src="../script/jquery.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="../script/bootstrap.min.js"></script>
   <script src="../script/main.js"></script>
   <script src="../script/utils.js"></script>
   <script src="../script/pet.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
-
 
 </body>
 </html>

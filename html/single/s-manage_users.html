@@ -1,69 +1,61 @@
 <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Informações</h1>
-  </div>
+</div>
 
 <div class="row container">
 
-  <!-- Imagem do produto -->
-   <nav style="overflow-y: scroll; height: 200px">
-            <ul id="user_list">
+  <nav style="overflow-y: scroll; height: 200px">
+    <ul id="user_list">
 
-            </ul>
-        </nav>
-<div id = "control">
-  <div class="info col">
-    <h4>Dados do Usuário</h4><br>
+    </ul>
+  </nav>
+  <div id = "control">
+    <div class="info col">
+      <h4>Dados do Usuário</h4><br>
 
-    <p style="display: inline;">ID: </p><p style="display: inline;" id="id_user"></p>
+      <p style="display: inline;">ID: </p><p style="display: inline;" id="id_user"></p>
 
-    <div>
-          <img id="img" alt="Foto do cliente" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
-          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-        </div>
+      <div>
+        <img id="img" alt="Foto do cliente" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
+        <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+      </div>
 
-    <p>Nome: </p>
+      <p>Nome: </p>
       <input type = "text" id="nome_user" style="width: 100%"/>
-    <hr>
+      <hr>
 
-    <p>Username: </p>
+      <p>Username: </p>
       <p id="username_user" style="width: 100%;"></p>
-    <hr>
+      <hr>
 
-    <p>Email: </p>
+      <p>Email: </p>
       <p id="email_user" style="width: 100%"></p>
-    <hr>
+      <hr>
 
-    <p>Telefone: </p>
+      <p>Telefone: </p>
       <input type = "tel" id="telefone_user" style="width: 100px%" />
-    <hr>
+      <hr>
 
-    <p>Endereço: </p>
+      <p>Endereço: </p>
       <input type = "text" id="endereco_user" style="width: 100%" />
-    <hr>
+      <hr>
 
-    <p>Senha: </p>
+      <p>Senha: </p>
       <input type = "password" id="senha_user" style="width: 100%" />
-    <hr>
+      <hr>
 
-   <button class="mainbtn" style="display: inline-block;" id="salvar_user">Salvar</button>
-  <p>OBS: Campos em branco permanecerão inalterados.</p>
+      <button class="mainbtn" style="display: inline-block;" id="salvar_user">Salvar</button>
+      <p>OBS: Campos em branco permanecerão inalterados.</p>
+    </div>
   </div>
 </div>
-</div>
 
-
- <!-- Seu html não pode passar daqui %%-->
-
-
-  <script src="../script/jquery.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="../script/bootstrap.min.js"></script>
-  <script src="../script/main.js"></script>
-  <script src="../script/utils.js"></script>
-  <script src="../script/list_users.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
-  <script src="../script/new_user.js"></script>
-
+<script src="../script/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="../script/bootstrap.min.js"></script>
+<script src="../script/main.js"></script>
+<script src="../script/utils.js"></script>
+<script src="../script/list_users.js"></script>
+<script src="../script/new_user.js"></script>
 
 </body>
 </html>

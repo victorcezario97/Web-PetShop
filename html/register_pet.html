@@ -16,7 +16,7 @@
 <div class="jumbotron text-center myjumbotron" style="margin-bottom:0">
   <div class="container banner">
     <h1>Plus</h1>
-    <p>Seu filho bem cuidado</p> 
+    <p>Seu filho bem cuidado</p>
   </div>
 </div>
 
@@ -29,13 +29,13 @@
     </span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <div> 
+      <div>
       <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('single/s-schedule.html');" type="button" style="vertical-align: center; margin: 0 auto">
        Agendar</button> -->
        <a href="schedule.html" class="mybtn2" style="vertical-align: center; margin: 0 auto">
        Agendar</a>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Cachorros
@@ -45,7 +45,7 @@
         <a class="dropdown-item" href="products.html#Cachorro_acessorios">Acessórios</a>
         <a class="dropdown-item" href="products.html#Cachorro_higiene">Higiene</a>
       </div>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Gatos
@@ -55,7 +55,7 @@
         <a class="dropdown-item" href="products.html#Gato_acessorios">Acessórios</a>
         <a class="dropdown-item" href="products.html#Gato_higiene">Higiene</a>
       </div>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Farmácia
@@ -65,7 +65,7 @@
         <a class="dropdown-item" href="products.html#Farmacia_antipulga">Antipulga</a>
         <a class="dropdown-item" href="products.html#Farmacia_eutanasia">Eutanásia</a>
       </div>
-    </div> 
+    </div>
       <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
         Mais
@@ -76,7 +76,7 @@
         <a class="dropdown-item" href="products.html#Cobras">Cobras</a>
       </div>
     </div>
-  </div>  
+  </div>
   <div>
   <!-- Usado na SPA -->
       <!-- <button class="mybtn2" onclick="singlePage('single/s-login.html');" type="button" style="vertical-align: center; margin: 0 auto">
@@ -106,32 +106,32 @@
 
   <!-- Imagem do produto -->
   <div class="col container">
-    
+    <form formMethod="POST" action="/route_pet/newPet">
     <img id="img" src="../img/pet_icon.png" alt="Foto do pet" style="width: 200px; margin-left: 20px; display: block; margin-left: auto; margin-right: auto;"/>
-    <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+    <!--<input type='file' onchange="readURL(this);" id = "picField" name="photo" accept="image/gif, image/jpeg, image/png"/>-->
   </div>
 
   <div class="info col">
     <h2>Informações do pet</h2><br>
-    <h3>Nome: </h3> 
-      <input id="nome_pet" style="width: 100%" />
+    <h3>Nome: </h3>
+      <input id="nome_pet" name="name" style="width: 100%" />
     <hr>
 
-    <h3>Idade: </h3> 
-      <input id="idade_pet" type="number" style="width: 40px;" max="99" />
+    <h3>Idade: </h3>
+      <input id="idade_pet" name="age" type="number" style="width: 40px;" max="99" />
     <hr>
 
-    <h3>Raça: </h3>  
-      <input id="raca_pet" style="width: 100%" />
+    <h3>Raça: </h3>
+      <input id="raca_pet" name="raca" style="width: 100%" />
     <hr>
 
   </div>
 
 </div>
     <div class="container">
-    <p style="text-align: center;"><button class="mainbtn justify-content-center align-items-center" id="salvar_pet" onclick="register();" type="button" style="vertical-align: center; margin: 0 auto">
-     Salvar</button></p>
+    <p style="text-align: center;"><input value="Salvar" class="mainbtn justify-content-center align-items-center" id="salvar_pet" type="submit" style="vertical-align: center; margin: 0 auto"/></p>
     </div>
+  </form>
 </div>
 
  <!-- Seu html não pode passar daqui %%-->

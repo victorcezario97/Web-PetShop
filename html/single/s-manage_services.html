@@ -1,57 +1,52 @@
 <div><h1 style="margin-left: 20px; text-align: center; margin-bottom: 20px">Editar Serviços</h1>
-  </div>
+</div>
 <div class="row container">
 
-  <!-- Imagem do produto -->
-   <nav style="overflow-y: scroll; height: 200px">
-            <ul id="serv_list">
+  <nav style="overflow-y: scroll; height: 200px">
+    <ul id="serv_list">
 
-            </ul>
-        </nav>
-<div id = "control">
-  <div class="info col">
-    <h4>Dados do Serviço</h4><br>
+    </ul>
+  </nav>
+  <div id = "control">
+    <div class="info col">
+      <h4>Dados do Serviço</h4><br>
 
-    <p style="display: inline;">ID: </p><p style="display: inline;" id="id_serv"></p>
+      <p style="display: inline;">ID: </p><p style="display: inline;" id="id_serv"></p>
 
-    <div>
-          <img id="img" alt="Foto do serviço" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
-          <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
-        </div>
+      <div>
+        <img id="img" alt="Foto do serviço" style="margin-top: 20px;width: 100px; display: block; margin-left: auto; margin-right: auto;"/>
+        <input type='file' onchange="readURL(this);" id = "picField" accept="image/gif, image/jpeg, image/png"/>
+      </div>
 
-    <p>Nome: </p>
+      <p>Nome: </p>
       <input id="nome_serv" style="width: 100%"/>
-    <hr>
+      <hr>
 
-    <p>Descrição: </p>
+      <p>Descrição: </p>
       <textarea id="descricao_serv" style="width: 100%"></textarea>
-    <hr>
+      <hr>
 
-    <p>Preço: </p>
+      <p>Preço: </p>
       <input id="preco_serv" type="number" min="1" step="0.01"/>
-    <hr>
+      <hr>
 
-    <p>Categoria: </p>
+      <p>Categoria: </p>
       <input id="categ_serv" style="width: 100%"/>
-    <hr>
+      <hr>
 
-   <button class="mainbtn" style="display: inline-block;" id="salvar_serv">Salvar</button>
-  <p>OBS: Campos em branco permanecerão inalterados.</p>
+      <button class="mainbtn" style="display: inline-block;" id="salvar_serv">Salvar</button>
+      <p>OBS: Campos em branco permanecerão inalterados.</p>
+    </div>
   </div>
 </div>
-</div>
 
- <!-- Seu html não pode passar daqui %%-->
+<script src="../script/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="../script/bootstrap.min.js"></script>
+<script src="../script/main.js"></script>
+<script src="../script/products.js"></script>
+<script src="../script/utils.js"></script>
+<script src="../script/list_services.js"></script>
 
-
-  <script src="../script/jquery.min.js"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="../script/bootstrap.min.js"></script>
-  <script src="../script/main.js"></script>
-  <script src="../script/products.js"></script>
-  <script src="../script/utils.js"></script>
-  <script src="../script/list_services.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
 </body>
 </html>
