@@ -55,7 +55,7 @@ router.post('/register', function(req, res){
 });
 
 // Retorna um admine dado um email
-router.get('/getAdmin/:email', function(req, res){
+router.get('/getAdminByEmail/:email', function(req, res){
     let userEmail = req.params.email;
     let jsonParam = {email : userEmail};
 
@@ -64,6 +64,21 @@ router.get('/getAdmin/:email', function(req, res){
             return res.status(404);
         if(!result)
             return res.status(200).send("Email not found");
+        else
+            return res.status(200).send(result);
+    });
+});
+
+// Retorna um admine dado um user
+router.get('/getAdminByUser/:user', function(req, res){
+    let adminUser = req.params.user;
+    let jsonParam = {user : adminUser};
+
+    Admin.find(jsonParam, function(error, result){
+        if(error)
+            return res.status(404);
+        if(!result)
+            return res.status(200).send("User not found");
         else
             return res.status(200).send(result);
     });
@@ -88,6 +103,33 @@ router.get('/checkEmailOrUser/:email/:user', function(req, res){
         }
         else
             return res.status(200).send("Email unavailable");
+        
+    });
+});
+
+//Verifica login
+router.get('/login/:user/:password', function(req, res){
+    let userIn = req.params.user;
+    let userPassword = req.params.password;
+    let jsonParamEmail = {email : userIn, password : userPassword};
+    let jsonParamUser = {user: userIn, password : userPassword};
+
+    Client.find(jsonParamEmail, function(error, result){
+        if(error)
+            return res.status(404).send("Error");
+        if(result == ""){
+            Client.find(jsonParamUser, function(error1, result1){
+                if(error1)
+                    return res.status(404).send("Error");
+                if(result1 == ""){
+                    return res.status(200).send("Not found");
+                }
+                else
+                    return res.status(200).send("User found");
+            });
+        }
+        else
+            return res.status(200).send("Email found");
         
     });
 });

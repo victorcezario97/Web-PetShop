@@ -87,7 +87,8 @@ function registerClient(userName, userEmail, userUser, userPassword, userAddress
 					    ///////// ABREEE PÁGINAAAAAAA
 					    // page = "./html/single/s-home.html";
 					    // window.location.href = page;
-					    singlePage('/single/s-home.html', null, null);
+					    page = '/single/s-home.html';
+					    singlePage(page, null, null);
 					};
 					xht.send(null);
 				}
@@ -226,7 +227,6 @@ function cadastrar(thisPage){
 function checkPassword(thisPage){
 	console.log("checkPassword");
 	page = "s-sign_up.html";
-	singlePage(page, null, null);
 	let psw = $("#password").val();
 	let pswRepeat = $("#psw-repeat").val();
 	if(psw === pswRepeat)
